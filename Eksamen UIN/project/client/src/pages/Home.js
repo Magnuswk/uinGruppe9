@@ -1,9 +1,14 @@
-import Component from '../components/Component';
+import Header from '../components/Header'
+import Homebutton from "../components/Homebutton"
 
-/**
- * Home bruker nå komponenten jeg har laget og sender en prop
- */
+const Home = () => {
+    return (
+        <>
+            <Header />
+            <div id="kontakt">Kontakt Oss</div>
+            <Homebutton />
+        </>
+    )
+}
 
-const Home = () => <Component myProp="myValue" />;
-
-export default Home;
+export default Home
