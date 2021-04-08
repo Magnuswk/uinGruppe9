@@ -1,21 +1,21 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DefaultLayout from '../layouts/DefaultLayout';
-import Home from '../pages/Home';
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
+import Home from "../pages/Home"
+import Tjenester from "../pages/Tjenester"
+import Sortering from "../pages/Sortering"
 
-/**
- * Her har jeg laget en "rute" til "/" og bruker Home komponenten i pages mappen
- */
-
-const Routes = () => (
-  <Router>
-    <DefaultLayout>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </DefaultLayout>
-  </Router>
+const Routes = () =>(
+    <Router>
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route exact path="/Tjenester">
+                <Tjenester />
+            </Route>
+            <Route exact path="/Sortering">
+                <Sortering />
+            </Route>
+        </Switch>
+    </Router>
 );
-
 export default Routes;

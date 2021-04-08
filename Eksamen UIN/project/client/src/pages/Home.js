@@ -1,5 +1,5 @@
-import Header from '../Components/Header'
-import Homebutton from "../Components/Homebutton"
+import Header from '../components/Header'
+import Homebutton from "../components/Homebutton"
 
 const Home = () => {
     return (

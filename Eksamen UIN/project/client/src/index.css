@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* NAVBAR */
+header{
+  width: 100%;
+  height: 20%;
+  border-bottom: 1px solid black;
+}
+header nav ul{
+  position:absolute;
+  top: 3%;
+  left: 25%;
+}
+header nav ul li{
+  display: inline;
+  margin-right: 15%;
+  font-size: 25px;
+}
+header nav ul li a{
+  text-decoration: none;
+  color: inherit;
+}
+#search{
+  position:absolute;
+  top: 5%;
+  left:80%
+}
+#search input{
+  height: 25px;
+  border-radius: 10px;
+  margin-right:5px;
+}
+#search button{
+  height: 30px;
+  border-radius: 10px;
+}
+/* HOME MAIN SECTION */
+#mainsection{
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  top: 30%;
+  position:absolute;
+  left:30%;
+}
+#mainsection article{
+  margin-top: 15%;
+  border: solid 1px grey;
+  margin-left:50px;
+  border-radius: 30px;
+  text-align:center;
+  cursor:pointer;
+  background-color:rgb(0,0,0, 0.3);
+}
+#mainsection article:hover{
+  background-color:rgb(0,0,0,0.5);
+}
+/* KONTAKT OSS */
+#kontakt{
+  border:solid 1px black;
+  height:150px;
+  text-align:center;
+  margin-top: 5%;
+  margin-left: 98.6%;
+  writing-mode: vertical-rl;
+  position:sticky inline;
+  font-weight: bold;
+  font-size: 20px;
+  cursor:pointer;
+}
+#kontakt:hover{
+  background-color: rgb(0,0,0,0.3);
+}
