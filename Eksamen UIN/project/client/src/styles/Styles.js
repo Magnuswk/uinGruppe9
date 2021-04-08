@@ -5,7 +5,3 @@ import styled from 'styled-components/macro';
  * Derfor eksporteres den herfra
  * Når vi bruker export const Navn så må den importeres med import {Navn} from 'filepath'
  */
-
-export const Container = styled.section`
-  background-color: pink;
-`;
