@@ -7,19 +7,19 @@ const Nyheter = {
             title: 'Tittel',
             name: 'name',
             type: 'string',
-            validation: Rule => Rule.required().min(0).max(30)
+            validation: Rule => Rule.required().min(0).max(30).error('Dette feltet må utfylles')
         },
         {
             title: 'Innhold',
             name: 'innhold',
             type: 'text',
-            validation: Rule => Rule.required()
+            validation: Rule => Rule.required().error('Dette feltet må utfylles')
         },
         {
             title: 'Beskrivelse',
             name: 'beskrivelse',
             type: 'string',
-            validation: Rule => Rule.required()     
+            validation: Rule => Rule.required().error('Dette feltet må utfylles')   
         },
         {
             title: 'Bilde',
@@ -30,13 +30,13 @@ const Nyheter = {
             title: 'Dato',
             name: 'dato',
             type: 'datetime',
-            validation: Rule => Rule.required()
+            validation: Rule => Rule.required().error('Dette feltet må utfylles')
         },
         {   
             title: 'Nokkelord',
             name: 'nokkelord',
             type: "array",
-            validation: Rule => Rule.required(),
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'),
             of: [{type: "string"}]
             
         },
@@ -45,7 +45,7 @@ const Nyheter = {
             name: 'forfatter',
             type: 'reference',
             to: [{type: 'forfatter', title: 'navn'}],
-            validation: Rule => Rule.required()
+            validation: Rule => Rule.required().error('Dette feltet må utfylles')
         }
     ],
 }

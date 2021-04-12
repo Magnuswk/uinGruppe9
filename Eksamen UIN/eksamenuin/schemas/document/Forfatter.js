@@ -6,7 +6,8 @@ const Forfatter = {
         {
             title: 'Navn',
             name: 'navn',
-            type: 'string'   
+            type: 'string', 
+            validation: Rule => Rule.required().error('Dette feltet må utfylles') 
         }
     ]
 }
