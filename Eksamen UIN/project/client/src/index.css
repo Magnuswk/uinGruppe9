@@ -85,9 +85,9 @@ header nav ul li a{
 
 /*  Sidenbar */
 #sidebar{
-  width:379.1px;
-  margin-left: 80%;
-  height:1000px;
+  width:380px;
+  margin-left: 79.2%;
+  height:823px;
   border-left: solid 1px black;
 }
 #sidebar h1{
@@ -95,11 +95,41 @@ header nav ul li a{
   font-size: 25px;
 }
 #sidebar h2{
+  margin-left: 10px;
   margin-top: 45px;
   font-size: 20px;
 }
 #sidebar h2 ul li{
   text-decoration: none;
-  color:black;
   margin-bottom: 10px;
+}
+#sidebar h2 ul li NavLink{
+  text-decoration: none;
+}
+/* Artikkelmain */
+#artikkelmain{
+  width: 1520px;
+  height: 823px;
+  position:absolute;
+  top: 12%;
+}
+#artikkelmain section{
+  margin-top: 20px;
+  font-size: 20px;
+}
+#artikkelmain section article{
+  margin-left: 30%;
+  width: 50%;
+}
+#artikkelmain section article h1{
+  text-align:center;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+#artikkelmain section article h2{
+  margin-bottom: 0px;
+  font-weight:bold;
+}
+#artikkelmain section article p{
+  margin-bottom: 15px;
 }
