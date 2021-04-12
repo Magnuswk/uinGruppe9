@@ -1,5 +1,5 @@
 import Header from '../components/Header'
-import Sidebar from "../components/Sidebar"
+import Tjenester from "../components/Tjenester"
 import Artikkelmain from "../components/Artikkelmain"
 import { NavLink } from 'react-router-dom'
 
@@ -7,20 +7,7 @@ const Home = () => {
     return (
         <>
             <Header />
-            <Sidebar>
-                <h1>
-                    Tjenester
-                </h1>
-                <h2>
-                    <ul>
-                        <li><NavLink to="/Tjenester/Containerleie">Containerleie</NavLink></li>
-                        <li><NavLink to="/Tjenester/Avløpsrens" >Avløpsrens</NavLink></li>
-                        <li><NavLink to="/Tjenester/Olje-og-Fettutskilling">Olje og Fettutskilling</NavLink></li>
-                        <li><NavLink to="/Tjenester/Gravesuger">Gravesuger</NavLink></li>
-                        <li><NavLink to="/Tjenester/Henting-av-farlig-avfall">Henting av Farlig avfall</NavLink></li>
-                    </ul>
-                </h2>
-            </Sidebar>
+           <Tjenester />
             <Artikkelmain>
                 <h1>Tjenester</h1>
                 <p>På denne siden kan du finne informasjon om hvilke tjenester vi i østbø tilbyr!</p>

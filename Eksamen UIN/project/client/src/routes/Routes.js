@@ -3,6 +3,7 @@ import Home from "../pages/Home"
 import Tjenester from "../pages/Tjenester"
 import Sortering from "../pages/Sortering"
 import Byggavfall from "../pages/Byggavfall"
+import Containerleie from "../pages/Containerleie"
 
 const Routes = () =>(
     <Router>
@@ -18,6 +19,9 @@ const Routes = () =>(
             </Route>
             <Route exact path="/Sortering/Byggavfall">
                 <Byggavfall />
+            </Route>
+            <Route exact path="/Tjenester/Containerleie">
+                <Containerleie />
             </Route>
         </Switch>
     </Router>

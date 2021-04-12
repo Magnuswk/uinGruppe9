@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
-import Sidebar from "../components/Sidebar"
+import Sortering from "../components/Sortering"
 import { NavLink } from 'react-router-dom'
 import Artikkelmain from "../components/Artikkelmain"
 
@@ -8,19 +8,7 @@ const Byggavfall = () => {
     return (
         <>
             <Header />
-            <Sidebar>
-                <h1>
-                    Sortering
-                </h1>
-                <h2>
-                    <ul>
-                        <li><NavLink to="/Sortering/Næringsavfall">Næringsavfall</NavLink></li>
-                        <li><NavLink to="/Sortering/Farlig-avfall">Farlig avfall</NavLink></li>
-                        <li><NavLink to="/Sortering/Byggavfall">Byggavfall</NavLink></li>
-                        <li><NavLink to="/Sortering/Jern-og-Metall">Jern og Metall</NavLink></li>
-                    </ul>
-                </h2>
-            </Sidebar>
+            <Sortering />
             <Artikkelmain>
                 <h1>Byggavfall</h1>
                 <h2>Generelt om Byggavfall</h2>
