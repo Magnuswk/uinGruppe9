@@ -15,21 +15,15 @@ const Artikler = {
             of: [{type: "string"}],
         },
         { 
-            title: 'Maintittel',
-            name: 'maintittel',
+            title: 'Tittel',
+            name: 'tittel',
             type: 'string'
-        },
-        {
-            titel: 'Undertittel',
-            name: 'undertittel',
-            type: 'array',
-            of: [{type: 'string'}]
         },
         {
             title: 'Innhold',
             name: 'innhold',
             type: 'array',
-            of: [{type: 'text'}]
+            of: [{type: 'block'}]
         }
 
 
