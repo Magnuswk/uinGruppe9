@@ -8,13 +8,18 @@ const Home = () => {
         <>
             <Header />
             <Sidebar>
-                <ul>
-                    <li><NavLink to="/Containerleie">Containerleie</NavLink></li>
-                    <li><NavLink to="/Avløpsrens" >Avløpsrens</NavLink></li>
-                    <li><NavLink to="/OljeogFettutskilling">Olje og Fettutskilling</NavLink></li>
-                    <li><NavLink to="/Gravesuger">Gravesuger</NavLink></li>
-                    <li><NavLink to="/Bestillinghentingavfarligavfall">Bestilling og henting av farlig avfall</NavLink></li>
-                </ul>
+                <h1>
+                    Tjenester
+                </h1>
+                <h2>
+                    <ul>
+                        <li><NavLink to="/Containerleie">Containerleie</NavLink></li>
+                        <li><NavLink to="/Avløpsrens" >Avløpsrens</NavLink></li>
+                        <li><NavLink to="/OljeogFettutskilling">Olje og Fettutskilling</NavLink></li>
+                        <li><NavLink to="/Gravesuger">Gravesuger</NavLink></li>
+                        <li><NavLink to="/Bestillinghentingavfarligavfall">Bestilling og henting av farlig avfall</NavLink></li>
+                    </ul>
+                </h2>
             </Sidebar>
             <Artikkelmain>
                 <h1>Tjenester</h1>

@@ -103,9 +103,6 @@ header nav ul li a{
   text-decoration: none;
   margin-bottom: 10px;
 }
-#sidebar h2 ul li NavLink{
-  text-decoration: none;
-}
 /* Artikkelmain */
 #artikkelmain{
   width: 1520px;
