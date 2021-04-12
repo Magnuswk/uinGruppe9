@@ -126,7 +126,17 @@ header nav ul li a{
 #artikkelmain section article h2{
   margin-bottom: 0px;
   font-weight:bold;
+  font-size: 25px;
+}
+#artikkelmain section article h3{
+  margin-bottom: 0px;
+  font-weight:bold;
+  font-size: 20px;
 }
 #artikkelmain section article p{
   margin-bottom: 15px;
+}
+#artikkelmain section article p ul li{
+  list-style-type: circle;
+  margin-left: 50px;
 }

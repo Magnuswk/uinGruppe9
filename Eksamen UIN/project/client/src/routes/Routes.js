@@ -1,7 +1,8 @@
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Home from "../pages/Home"
 import Tjenester from "../pages/Tjenester"
 import Sortering from "../pages/Sortering"
+import Byggavfall from "../pages/Byggavfall"
 
 const Routes = () =>(
     <Router>
@@ -14,6 +15,9 @@ const Routes = () =>(
             </Route>
             <Route exact path="/Sortering">
                 <Sortering />
+            </Route>
+            <Route exact path="/Sortering/Byggavfall">
+                <Byggavfall />
             </Route>
         </Switch>
     </Router>
