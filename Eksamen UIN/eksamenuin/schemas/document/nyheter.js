@@ -16,6 +16,18 @@ const Nyheter = {
             validation: Rule => Rule.required().error('Dette feltet må utfylles')
         },
         {
+            title: 'Kategori',
+            name: 'kategori',
+            type: 'string',
+            options: {
+              list: [ 
+                { title: 'Tjenester', value: 'tjenester',  },
+                { title: 'Sortering', value: 'sortering',  },
+                { title: 'Nyheter', value: 'nyheter',  },
+              ],
+            },
+        },
+        {
             title: 'Beskrivelse',
             name: 'beskrivelse',
             type: 'string',
