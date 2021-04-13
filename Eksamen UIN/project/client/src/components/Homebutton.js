@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom'
 const Homebutton = () => {
     return (
         <section id="mainsection">
-            <article><NavLink to="/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
+            <article><NavLink to="/Tjenester/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Åpningstider">Åpningstider <img src={Åpningstider} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Bilvraking">Bilvraking<img src={Bilvraking} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Tjenester">Tjenester<img src={Tjenester} alt="Containerleie"></img></NavLink></article>
