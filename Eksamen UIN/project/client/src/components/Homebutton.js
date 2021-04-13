@@ -13,14 +13,14 @@ import { NavLink } from 'react-router-dom'
 const Homebutton = () => {
     return (
         <section id="mainsection">
-            <article><NavLink to="/Tjenester/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
+            <article><NavLink to="/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Åpningstider">Åpningstider <img src={Åpningstider} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Bilvraking">Bilvraking<img src={Bilvraking} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Tjenester">Tjenester<img src={Tjenester} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Avfallstømming">Avfallstømming<img src={Avfallstømming} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Om-Oss">Om oss<img src={Om_oss} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Nyheter">Nyheter<img src={Nyheter} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Farlingavfall">Farlig Avfall<img src={Farlig} alt="Containerleie"></img></NavLink></article>
+            <article><NavLink to="/Farligavfall">Farlig Avfall<img src={Farlig} alt="Containerleie"></img></NavLink></article>
         </section>
     )
 }

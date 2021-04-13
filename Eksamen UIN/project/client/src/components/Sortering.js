@@ -11,10 +11,10 @@ const Sortering = () => {
                 </h1>
                 <h2>
                     <ul>
-                        <li><NavLink to="/Sortering/Næringsavfall">Næringsavfall</NavLink></li>
-                        <li><NavLink to="/Sortering/Farlig-avfall">Farlig avfall</NavLink></li>
-                        <li><NavLink to="/Sortering/Byggavfall">Byggavfall</NavLink></li>
-                        <li><NavLink to="/Sortering/Jern-og-Metall">Jern og Metall</NavLink></li>
+                        <li><NavLink to="/Næringsavfall">Næringsavfall</NavLink></li>
+                        <li><NavLink to="/Farlig-avfall">Farlig avfall</NavLink></li>
+                        <li><NavLink to="/Byggavfall">Byggavfall</NavLink></li>
+                        <li><NavLink to="/Jern-og-Metall">Jern og Metall</NavLink></li>
                     </ul>
                 </h2>
             </Sidebar>
