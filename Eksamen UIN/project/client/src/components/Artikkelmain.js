@@ -13,3 +13,4 @@ const Artikkelmain = (props) => {
 }
 
 export default Artikkelmain
+
