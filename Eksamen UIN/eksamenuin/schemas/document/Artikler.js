@@ -34,9 +34,9 @@ const Artikler = {
             type: 'string',
             options: {
               list: [ 
-                { title: 'Tjenester', value: 'tjenester',  },
-                { title: 'Sortering', value: 'sortering',  },
-                { title: 'Nyheter', value: 'nyheter',  },
+                { title: 'Tjenester', value: 'Tjenester',  },
+                { title: 'Sortering', value: 'Sortering',  },
+                { title: 'Nyheter', value: 'Nyheter',  },
               ],
             },
         },
