@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../components/Header'
 import Sortering from "../components/Sortering"
 import { NavLink } from 'react-router-dom'
 import Artikkelmain from "../components/Artikkelmain"
@@ -7,7 +6,7 @@ import Artikkelmain from "../components/Artikkelmain"
 const Byggavfall = () => {
     return (
         <>
-            <Header />
+
             <Sortering />
             <Artikkelmain>
                 <h1>Byggavfall</h1>

@@ -9,6 +9,15 @@ const Artikler = {
             type: 'image',
             validation: Rule => Rule.required().error('Dette feltet må utfylles') 
         },
+        {
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'),
+            options: {
+                source: 'title'
+            },
+        },
         { 
             title: 'Tittel',
             name: 'tittel',
@@ -31,14 +40,8 @@ const Artikler = {
         {
             title: 'Kategori',
             name: 'kategori',
-            type: 'string',
-            options: {
-              list: [ 
-                { title: 'Tjenester', value: 'Tjenester',  },
-                { title: 'Sortering', value: 'Sortering',  },
-                { title: 'Nyheter', value: 'Nyheter',  },
-              ],
-            },
+            type: 'reference',
+            to:[{type: 'kategori', title: 'kategori'}]
         },
         {   
             title: 'Nokkelord',
