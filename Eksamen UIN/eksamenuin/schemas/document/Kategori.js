@@ -1,14 +1,14 @@
-const Forfatter = {
-    title: 'Forfatter',
-    name: 'forfatter',
+const Kategori = {
+    title: 'Kategori',
+    name: 'kategori',
     type: 'document',
     fields: [
         {
-            title: 'Navn',
-            name: 'navn',
+            title: 'Kategori',
+            name: 'kategori',
             type: 'string', 
             validation: Rule => Rule.required().error('Dette feltet må utfylles') 
         }
     ]
 }
-export default Forfatter
+export default Kategori
