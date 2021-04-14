@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Tjenester from "../components/Tjenester"
+import Sortering from '../components/Sortering'
 import Artikkelmain from "../components/Artikkelmain"
 import artikkelfetch from '../utils/artikkelService'
 import { useParams } from 'react-router'
@@ -15,34 +16,44 @@ const Containerleie = () => {
           } catch (error) {
               console.log(error)
           }  
-
         };
         fetchAsyncData();
     }, [slug]);
-    return(
-        <>
-            <Tjenester />
-            <Artikkelmain >
-                <h1>{data?.tittel}</h1>
-            </Artikkelmain>
-        </>
-    )
-}    
+    if(data?.kategori.toLowerCase()==='tjenester'){
+        return(
+            <>    
+                <Tjenester />
+                <Artikkelmain >
+                    <h1>
+                        {data?.tittel}
+                    </h1>
+                    {JSON.stringify(data.bilde.asset.url)}
+                    {data?.innhold}
+                    <img src={data?.bilde.asset.url} alt='yeetum'></img>
+ 
+                </Artikkelmain>
+            </>
+        )
+
+    }
+    else if(data?.kategori.toLowerCase()==='sortering'){
+        return(
+            <>    
+                <Sortering />
+                <Artikkelmain >
+                    <h1>
+                        {JSON.stringify(data.bilde.asset.url)}
+                        <img src={data?.bilde.asset.url} alt='yeetum'></img>
+                    </h1>
+                </Artikkelmain>
+            </>
+        )
+    }
+    else{
+        return(
+        <Artikkelmain>
+            <h1>Loading...</h1>
+        </Artikkelmain>)
+    }   
+}
 export default Containerleie
-
-  /*  const [artikkel, setArtikkel] = useState(null);
-    useEffect( ()=> {
-        client
-            .fetch(
-                `*[_type == "artikler" && tittel == "Containerleie"]
-            {
-                    tittel,
-                    kategori,
-                    innhold
-
-                }`
-            )
-            .then((data)=> setArtikkel(data[0]))
-            .catch(console.error)
-    }, [])
-    if (!artikkel) return <div>Loading...</div>   */ 

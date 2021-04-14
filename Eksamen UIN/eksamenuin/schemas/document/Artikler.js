@@ -15,7 +15,7 @@ const Artikler = {
             type: 'slug',
             validation: Rule => Rule.required().error('Dette feltet må utfylles'),
             options: {
-                source: 'title'
+                source: 'tittel'
             },
         },
         { 
