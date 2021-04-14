@@ -24,6 +24,7 @@ const Containerleie = () => {
             <Tjenester />
             <Artikkelmain >
                 <h1>{data?.tittel}</h1>
+
             </Artikkelmain>
         </>
     )
