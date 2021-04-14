@@ -4,6 +4,7 @@ import Sortering from '../components/Sortering'
 import Artikkelmain from "../components/Artikkelmain"
 import artikkelfetch from '../utils/artikkelService'
 import { useParams } from 'react-router'
+import BlockContent from '@sanity/block-content-to-react'
 const Containerleie = () => {
     const {slug} = useParams()
     const [data, setData] = useState(null)
@@ -27,8 +28,8 @@ const Containerleie = () => {
                     <h1>
                         {data?.tittel}
                     </h1>
-                    {JSON.stringify(data.bilde.asset.url)}
-                    {data?.innhold}
+
+                    <BlockContent blocks={data?.innhold}/>
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
  
                 </Artikkelmain>
@@ -42,9 +43,10 @@ const Containerleie = () => {
                 <Sortering />
                 <Artikkelmain >
                     <h1>
-                        {JSON.stringify(data.bilde.asset.url)}
-                        <img src={data?.bilde.asset.url} alt='yeetum'></img>
+                        {data?.tittel}
                     </h1>
+                    <img src={data?.bilde.asset.url} alt='yeetum'></img>
+                    <BlockContent blocks={data?.innhold}/>
                 </Artikkelmain>
             </>
         )
@@ -57,3 +59,4 @@ const Containerleie = () => {
     }   
 }
 export default Containerleie
+ /* {JSON.stringify(data.bilde.asset.url)} */
