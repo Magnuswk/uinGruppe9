@@ -4,6 +4,7 @@ import Containerleie from "../pages/Artikler"
 import React from 'react'
 import Header from "../components/Header"
 import Nyheter from "../pages/Nyheter"
+import Footer from "../components/Footer"
 
 
 
@@ -22,6 +23,7 @@ const Routes = () =>(
                 <Containerleie />
             </Route>
         </Switch>
+        <Footer />
     </Router>
 );
 export default Routes;
