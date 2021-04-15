@@ -28,7 +28,7 @@ export default artikkelfetch
 export const sidebarfetch = async (kategori) => {
   const data = await client.fetch(`*[_type == "artikler" && (kategori->kategori == $kategori)]{${sidebarfields}}`, {kategori}
   );
-  return data?.tittel;
+  return data;
 };
 
 

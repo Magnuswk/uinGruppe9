@@ -47,7 +47,7 @@ const Containerleie = () => {
                     <h1>
                         {data?.tittel}
                     </h1>
-                    <p>{sidebar?.kategori}</p>
+                    {console.log(sidebar)}
                     <BlockContent blocks={data?.body}/>
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
  
