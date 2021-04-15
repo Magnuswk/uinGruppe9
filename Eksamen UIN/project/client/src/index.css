@@ -93,15 +93,24 @@ header nav ul li a{
 #sidebar h1{
   text-align:center;
   font-size: 25px;
+  margin-bottom: 40px;
 }
 #sidebar h2{
   margin-left: 10px;
   margin-top: 45px;
   font-size: 20px;
 }
-#sidebar h2 ul li{
-  text-decoration: none;
-  margin-bottom: 10px;
+#sidebar a{
+  font-size: 20px;
+  margin-left: 25px;
+  margin-top: 5px;
+  text-decoration:none;
+  color: black;
+  cursor: pointer;
+}
+#sidebar a:hover{
+  color: red;
+
 }
 /* Artikkelmain */
 #artikkelmain{
