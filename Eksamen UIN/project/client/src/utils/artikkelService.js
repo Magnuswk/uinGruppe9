@@ -19,14 +19,16 @@ const artikkelfields = `
   );
   console.log(data)
   return data?.[0];
-}; 
+};
+export default artikkelfetch
+
 /* const artikkelsfetch = async () => {
   const data = await client.fetch(`*[_type == "artikler"]{${artikkelfields}}`);
   console.log(data)
   return data;
 }; 
 */
-export default artikkelfetch
+
 /*const Artikkelfetch = () => {
   const [artikkel, setArtikkel] = useState(null);
   useEffect( ()=> {
