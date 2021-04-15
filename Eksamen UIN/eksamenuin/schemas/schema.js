@@ -7,6 +7,7 @@ import Nyheter from './document/nyheter'
 import Forfatter from './document/Forfatter'
 import Artikler from './document/Artikler'
 import Kategori from './document/Kategori'
+import content from './object/content'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -18,6 +19,7 @@ export default createSchema({
     Nyheter,
     Forfatter,
     Artikler,
-    Kategori
+    Kategori,
+    content
   ]),
 })

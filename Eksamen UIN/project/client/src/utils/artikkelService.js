@@ -9,13 +9,13 @@ const artikkelfields = `
   innhold,
   'bilde': bilde{...,asset->{url}},
   nokkelord,
+  body,
   beskrivelse
 `
 
 
  const artikkelfetch = async (slug) => {
-  const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields}}`
-  , {slug}
+  const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
   );
   console.log(data)
   return data?.[0];
