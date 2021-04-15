@@ -47,6 +47,9 @@ const Containerleie = () => {
             links.push(temp)
         }
       }
+      if (data === null){
+          return(<h1 id="loading">Loading...</h1>)
+      }else{
         return(
             <>    
                 <Sidebar name={arr} lnk={links} kat={data?.kategori}/>
@@ -60,7 +63,7 @@ const Containerleie = () => {
                 </Artikkelmain>
             </>
         )
-
+      }
 }
 export default Containerleie
  /* {JSON.stringify(data.bilde.asset.url)} */

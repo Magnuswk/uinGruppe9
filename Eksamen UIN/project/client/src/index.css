@@ -152,3 +152,9 @@ header nav ul li a{
 #artikkelmain section article strong{
   font-weight: bold;
 }
+#loading{
+  position:absolute;
+  left:40%;
+  top:45%;
+  font-size: 100px;
+}
