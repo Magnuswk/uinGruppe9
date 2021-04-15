@@ -5,6 +5,7 @@ import Artikkelmain from "../components/Artikkelmain"
 import artikkelfetch from '../utils/artikkelService'
 import { useParams } from 'react-router'
 import BlockContent from '@sanity/block-content-to-react'
+import { sidebarfetch } from '../utils/artikkelService'
 const Containerleie = () => {
     const {slug} = useParams()
     const [data, setData] = useState(null)
@@ -13,13 +14,31 @@ const Containerleie = () => {
           try {
             const side = await artikkelfetch(slug)
             setData (side)
-            console.log(slug)
           } catch (error) {
               console.log(error)
           }  
         };
         fetchAsyncData();
     }, [slug]);
+
+
+    const [sidebar, setSidebar] = useState(null)
+    useEffect(()=> {
+        const fetchAsyncsidebar = async () =>{
+          try {
+            const info = await sidebarfetch(data?.kategori || [])
+            setSidebar (info)
+          } catch (error) {
+              console.log(error)
+          }  
+        };
+        fetchAsyncsidebar();
+    }, [data?.kategori]);
+
+
+
+
+
     if(data?.kategori.toLowerCase()==='tjenester'){
         return(
             <>    
@@ -28,7 +47,7 @@ const Containerleie = () => {
                     <h1>
                         {data?.tittel}
                     </h1>
-
+                    <p>{sidebar?.kategori}</p>
                     <BlockContent blocks={data?.body}/>
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
  
