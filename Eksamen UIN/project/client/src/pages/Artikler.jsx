@@ -3,6 +3,7 @@ import Tjenester from "../components/Tjenester"
 import Sortering from '../components/Sortering'
 import Artikkelmain from "../components/Artikkelmain"
 import artikkelfetch from '../utils/artikkelService'
+import Sidebar from "../components/Sidebar"
 import { useParams } from 'react-router'
 import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
@@ -34,7 +35,15 @@ const Containerleie = () => {
         };
         fetchAsyncsidebar();
     }, [data?.kategori]);
+    
+    let arr = []
 
+    for (let i = 0; i < sidebar?.length; i++) {
+        arr.push(sidebar[i].tittel)
+      }
+
+    
+    
 
 
 
@@ -42,12 +51,11 @@ const Containerleie = () => {
     if(data?.kategori.toLowerCase()==='tjenester'){
         return(
             <>    
-                <Tjenester />
+                <Sidebar/>
                 <Artikkelmain >
                     <h1>
                         {data?.tittel}
                     </h1>
-                    {console.log(sidebar)}
                     <BlockContent blocks={data?.body}/>
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
  
