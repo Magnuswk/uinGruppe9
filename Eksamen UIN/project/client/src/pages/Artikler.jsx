@@ -29,7 +29,7 @@ const Containerleie = () => {
                         {data?.tittel}
                     </h1>
 
-                    <BlockContent blocks={data?.innhold}/>
+                    <BlockContent blocks={data?.body}/>
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
  
                 </Artikkelmain>
@@ -46,7 +46,7 @@ const Containerleie = () => {
                         {data?.tittel}
                     </h1>
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
-                    <BlockContent blocks={data?.innhold}/>
+                    <BlockContent blocks={data?.body}/>
                 </Artikkelmain>
             </>
         )

@@ -31,12 +31,12 @@ const Artikler = {
             validation: Rule => Rule.required().error('Dette feltet må utfylles') 
         },
         {
-            title: 'Innhold',
-            name: 'innhold',
-            type: 'array',
-            of: [{type: 'block'}],
+            title: 'Content',
+            name: 'body',
+            type: 'content',
             validation: Rule => Rule.required().error('Dette feltet må utfylles') 
         },
+        
         {
             title: 'Kategori',
             name: 'kategori',

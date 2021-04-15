@@ -136,7 +136,10 @@ header nav ul li a{
 #artikkelmain section article p{
   margin-bottom: 15px;
 }
-#artikkelmain section article p ul li{
+#artikkelmain section article ul li{
   list-style-type: circle;
   margin-left: 50px;
+}
+#artikkelmain section article strong{
+  font-weight: bold;
 }
