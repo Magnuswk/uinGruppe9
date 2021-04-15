@@ -1,19 +1,25 @@
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Home from "../pages/Home"
-import Tjenester from "../pages/Tjenester"
-import Sortering from "../pages/Sortering"
+import Containerleie from "../pages/Artikler"
+import React from 'react'
+import Header from "../components/Header"
+import Nyheter from "../pages/Nyheter"
+
+
 
 const Routes = () =>(
+    
     <Router>
+        <Header />
         <Switch>
             <Route exact path="/">
                 <Home />
             </Route>
-            <Route exact path="/Tjenester">
-                <Tjenester />
+            <Route exact path="/Nyheter">
+                <Nyheter />
             </Route>
-            <Route exact path="/Sortering">
-                <Sortering />
+            <Route path="/:slug">
+                <Containerleie />
             </Route>
         </Switch>
     </Router>

@@ -1,5 +1,8 @@
 import React from 'react'
 import ostbo from "../Images/ostbo.png"
+import { NavLink } from 'react-router-dom'
+
+
 const Header = () => {
     return (
         <header>
@@ -8,9 +11,9 @@ const Header = () => {
             </a>
             <nav>
                 <ul>
-                    <li><a href="/">Hjem</a></li>
-                    <li><a href="/Tjenester">Tjenester</a></li>
-                    <li><a href="/Sortering">Sortering</a></li>
+                    <li><NavLink to="/">Hjem</NavLink></li>
+                    <li><NavLink to="/Tjenester">Tjenester</NavLink></li>
+                    <li><NavLink to="/Sortering">Sortering</NavLink></li>
                 </ul>
             </nav>
             <form id="search">
