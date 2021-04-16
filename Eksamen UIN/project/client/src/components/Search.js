@@ -1,9 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const Search = ({søkeliste}) => {
     const [search, setSearch] = useState('')
 
+    const ulRef = useRef()
+    const inputRef = useRef()
+
+    useEffect(() =>{
+        inputRef.current.addEventListener("click", (event) => {
+            event.stopPropagation();
+            ulRef.current.style.display="block";
+        })
+        document.addEventListener("click",(event) => {
+            ulRef.current.style.display="none";
+        })
+
+    })
 
     let arr = []
     let link = []
@@ -18,10 +31,8 @@ const Search = ({søkeliste}) => {
             }
         }
     })
-
-
-    console.log(arr)
-
+    
+   
     return (
         <form id="search">
             <input
@@ -30,16 +41,16 @@ const Search = ({søkeliste}) => {
                     className="searcharea"
                     placeholder="Search" 
                     value={search}
-                    onBlur={(e) => setSearch("")}
+                    ref={inputRef}
                     onChange={(e) => setSearch(e.target.value)
                     }
                     />
-            <ul id="searchresult" className="searcharea">
+             <ul id="searchresult" className="searcharea" ref={ulRef}>
                 {arr.map(function(name, index){
                     return <li><Link to={link[index]} key={ name[index] } onClick={(e) => setSearch("")}>{name}<br /><br /></Link></li>;
                 })}
             </ul>
-
+            
 
             <button>Search</button>        
         </form>
