@@ -17,6 +17,10 @@ const sidebarfields = `
   tittel,
   'slug': slug.current,
 `
+const searchfields = `
+  tittel,
+  nokkelord
+  `
 
  const artikkelfetch = async (slug) => {
   const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
@@ -35,6 +39,13 @@ export const sidebarfetch = async (kategori) => {
   );
   return data;
 };
+
+export const searchfetch = async () => {
+  const data = await client.fetch(`*[_type == "artikler"]{${searchfields}}`
+  );
+  return data;
+};
+
 
 
 /*
