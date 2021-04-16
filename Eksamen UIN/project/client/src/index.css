@@ -163,6 +163,7 @@ header nav ul li a{
   display: inline;
   text-decoration:none;
   margin-right: 0px;
+  margin-left:0px;
 }
 #error{
   position:absolute;
