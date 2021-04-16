@@ -19,7 +19,8 @@ const sidebarfields = `
 `
 const searchfields = `
   tittel,
-  nokkelord
+  nokkelord,
+  'slug': slug.current
 `
 
  const artikkelfetch = async (slug) => {
