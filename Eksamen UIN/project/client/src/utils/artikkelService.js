@@ -14,7 +14,8 @@ const artikkelfields = `
 `
 const sidebarfields = `
   'kategori':kategori->kategori,
-  tittel
+  tittel,
+  'slug': slug.current,
 `
 
  const artikkelfetch = async (slug) => {

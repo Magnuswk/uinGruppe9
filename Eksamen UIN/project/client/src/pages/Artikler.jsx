@@ -41,11 +41,7 @@ const Containerleie = () => {
     for (let i = 0; i < sidebar?.length; i++) {
         if (sidebar[i].tittel !== sidebar[i].kategori){
             arr.push(sidebar[i].tittel);
-            let temp = sidebar[i].tittel;
-            temp = temp.toLowerCase()
-            temp = temp.charAt(0).toUpperCase() + temp.slice(1)
-            temp = temp.replaceAll(" ", "-")
-            links.push(temp)
+            links.push(sidebar[i].slug)
         }
       }
     arr = arr.sort()
