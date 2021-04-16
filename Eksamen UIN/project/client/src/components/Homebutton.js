@@ -14,13 +14,13 @@ const Homebutton = () => {
     return (
         <section id="mainsection">
             <article><NavLink to="/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Åpningstider">Åpningstider <img src={Åpningstider} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Bilvraking">Bilvraking<img src={Bilvraking} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Tjenester">Tjenester<img src={Tjenester} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Avfallstømming">Avfallstømming<img src={Avfallstømming} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Om-Oss">Om oss<img src={Om_oss} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Nyheter">Nyheter<img src={Nyheter} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Farligavfall">Farlig Avfall<img src={Farlig} alt="Containerleie"></img></NavLink></article>
+            <article><NavLink to="/Åpningstider">Åpningstider <img src={Åpningstider} alt="Åpningstider"></img></NavLink></article>
+            <article><NavLink to="/Bilvraking">Bilvraking<img src={Bilvraking} alt="Bilvraking"></img></NavLink></article>
+            <article><NavLink to="/Tjenester">Tjenester<img src={Tjenester} alt="Tjenester"></img></NavLink></article>
+            <article><NavLink to="/Avfallstømming">Avfallstømming<img src={Avfallstømming} alt="Avfallstømming"></img></NavLink></article>
+            <article><NavLink to="/Om-Oss">Om oss<img src={Om_oss} alt="Om-Oss"></img></NavLink></article>
+            <article><NavLink to="/Nyheter">Nyheter<img src={Nyheter} alt="Nyheter"></img></NavLink></article>
+            <article><NavLink to="/Hva-er-farlig-avfall">Farlig Avfall<img src={Farlig} alt="Farlig Avfall"></img></NavLink></article>
         </section>
     )
 }

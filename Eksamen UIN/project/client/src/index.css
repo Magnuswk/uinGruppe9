@@ -93,15 +93,24 @@ header nav ul li a{
 #sidebar h1{
   text-align:center;
   font-size: 25px;
+  margin-bottom: 40px;
 }
 #sidebar h2{
   margin-left: 10px;
   margin-top: 45px;
   font-size: 20px;
 }
-#sidebar h2 ul li{
-  text-decoration: none;
-  margin-bottom: 10px;
+#sidebar a{
+  font-size: 20px;
+  margin-left: 25px;
+  margin-top: 5px;
+  text-decoration:none;
+  color: black;
+  cursor: pointer;
+}
+#sidebar a:hover{
+  color: red;
+
 }
 /* Artikkelmain */
 #artikkelmain{
@@ -122,6 +131,7 @@ header nav ul li a{
   text-align:center;
   font-size: 40px;
   margin-bottom: 30px;
+  margin-top: 50px;
 }
 #artikkelmain section article h2{
   margin-bottom: 0px;
@@ -136,7 +146,31 @@ header nav ul li a{
 #artikkelmain section article p{
   margin-bottom: 15px;
 }
-#artikkelmain section article p ul li{
+#artikkelmain section article ul li{
   list-style-type: circle;
   margin-left: 50px;
+}
+#artikkelmain section article strong{
+  font-weight: bold;
+}
+#loading{
+  position:absolute;
+  left:40%;
+  top:45%;
+  font-size: 100px;
+}
+#breadcrumbs li{
+  display: inline;
+  text-decoration:none;
+  margin-right: 0px;
+}
+#error{
+  position:absolute;
+  left:25%;
+  top:70%;
+  font-size: 100px;
+}
+#finnes-ikke{
+  width: 1000px;
+  margin-left:25%;
 }
