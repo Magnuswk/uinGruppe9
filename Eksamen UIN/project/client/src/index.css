@@ -131,6 +131,7 @@ header nav ul li a{
   text-align:center;
   font-size: 40px;
   margin-bottom: 30px;
+  margin-top: 50px;
 }
 #artikkelmain section article h2{
   margin-bottom: 0px;
@@ -157,4 +158,9 @@ header nav ul li a{
   left:40%;
   top:45%;
   font-size: 100px;
+}
+#breadcrumbs li{
+  display: inline;
+  text-decoration:none;
+  margin-right: 0px;
 }

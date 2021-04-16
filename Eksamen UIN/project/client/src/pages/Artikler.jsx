@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar"
 import { useParams } from 'react-router'
 import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
+import {NavLink} from 'react-router-dom'
 const Containerleie = () => {
     const {slug} = useParams()
     const [data, setData] = useState(null)
@@ -54,6 +55,14 @@ const Containerleie = () => {
             <>    
                 <Sidebar name={arr} lnk={links} kat={data?.kategori}/>
                 <Artikkelmain >
+                    <ul id="breadcrumbs">
+                        <li><NavLink to="/">Hjem</NavLink></li>
+                        <li>➞</li>
+                        <li><NavLink to={data?.kategori}>{data?.kategori}</NavLink></li>
+                        {data?.slug !== data?.kategori ? <li>➞</li>:""}
+                        {data?.slug !== data?.kategori ? <li><NavLink to={data?.slug}>{data?.tittel}</NavLink></li>:""}
+                        
+                    </ul>
                     <h1>
                         {data?.tittel}
                     </h1>
