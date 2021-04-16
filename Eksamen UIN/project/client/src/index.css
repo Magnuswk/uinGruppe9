@@ -164,3 +164,13 @@ header nav ul li a{
   text-decoration:none;
   margin-right: 0px;
 }
+#error{
+  position:absolute;
+  left:25%;
+  top:70%;
+  font-size: 100px;
+}
+#finnes-ikke{
+  width: 1000px;
+  margin-left:25%;
+}

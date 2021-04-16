@@ -17,11 +17,15 @@ const sidebarfields = `
   tittel
 `
 
-
  const artikkelfetch = async (slug) => {
   const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
   );
-  return data?.[0];
+  if (data?.length > 0){
+    return data?.[0];
+  }else{
+    return "ikke funnet"
+  }
+  
 };
 export default artikkelfetch
 
