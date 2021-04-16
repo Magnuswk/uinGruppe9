@@ -30,6 +30,7 @@ const Search = ({søkeliste}) => {
                     className="searcharea"
                     placeholder="Search" 
                     value={search}
+                    onBlur={(e) => setSearch("")}
                     onChange={(e) => setSearch(e.target.value)
                     }
                     />
