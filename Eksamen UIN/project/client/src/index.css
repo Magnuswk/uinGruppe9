@@ -88,12 +88,28 @@ header nav ul li a{
   width:380px;
   margin-left: 79.2%;
   height:823px;
-  border-left: solid 1px black;
+  background-color:aquamarine;
+  border-radius: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid, #ddd;
+  list-style: none;
 }
 #sidebar h1{
+  display: block;
+  padding: 20px, 20px, 20px, 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  background-color: black;
+  color: #ddd;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   text-align:center;
   font-size: 25px;
   margin-bottom: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 #sidebar h2{
   margin-left: 10px;
@@ -101,9 +117,17 @@ header nav ul li a{
   font-size: 20px;
 }
 #sidebar a{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid, #cecece ;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  position: relative;
+  overflow: hidden;
   font-size: 20px;
   margin-left: 25px;
   margin-top: 5px;
+  padding: 10px;
   text-decoration:none;
   color: black;
   cursor: pointer;
