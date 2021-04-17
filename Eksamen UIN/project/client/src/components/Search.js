@@ -32,8 +32,7 @@ const Search = ({søkeliste}) => {
             }
         }
     })
-    
-   
+
     return (
         <form id="search">
             {/* Input for søk */}
