@@ -1,7 +1,7 @@
 import Tjenester from "../components/Tjenester"
 import Artikkelmain from "../components/Artikkelmain"
 import { NavLink } from 'react-router-dom'
-
+/* Lager forsiden med linker til noen viktige sider */
 const Home = () => {
     return (
         <>

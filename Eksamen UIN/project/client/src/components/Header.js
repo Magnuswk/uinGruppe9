@@ -3,25 +3,30 @@ import ostbo from "../Images/ostbo.png"
 import { NavLink } from 'react-router-dom'
 import Search from './Search'
 import { searchfetch } from '../utils/artikkelService'
+import { useEffect, useState } from 'react'
 
-
+/* Fetcher nødvendig informasjon til søkefeltet */
 const Header = () => {
-    const fetchAsyncSearch = async () =>{
-        try {
-          const søk = await searchfetch()
-          let arr = []
-          for (let i = 0; i < søk?.length; i++) {
-            if (søk[i].tittel !== søk[i].kategori){
-                arr.push(søk[i].tittel);
-            }
-          }
-          return(arr)
-        } catch (error) {
-            console.log(error)
-        }  
-      };
+    const [header, setHeader] = useState(null)
+    useEffect(()=> {
+        const fetchAsyncSearch = async () =>{
+            try {
+                const resultat = await searchfetch()
+                setHeader (resultat)
+              } catch (error) {
+                  console.log(error)
+              }  
+            };
+            fetchAsyncSearch();
+    }, []);
 
-    const søk = fetchAsyncSearch();  
+    
+
+
+
+
+
+
     return (
         <header>
             <a id="logocontainer" href="/">
@@ -33,7 +38,8 @@ const Header = () => {
                     <li><NavLink to="/Tjenester">Tjenester</NavLink></li>
                     <li><NavLink to="/Sortering">Sortering</NavLink></li>
                 </ul>
-                <Search søkeliste={søk}/>
+                {/* Sender tidliger fetch som prop til søkeliste komponenten */}
+                <Search søkeliste={header}/>
             </nav>
         </header>
     )

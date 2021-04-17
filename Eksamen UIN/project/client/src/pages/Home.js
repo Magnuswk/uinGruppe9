@@ -1,5 +1,5 @@
 import Homebutton from "../components/Homebutton"
-
+/*  Dette komponenten lager siden!*/
 const Home = () => {
     return (
         <>
