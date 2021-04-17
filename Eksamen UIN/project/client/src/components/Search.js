@@ -6,9 +6,8 @@ const Search = ({søkeliste}) => {
 
     const ulRef = useRef()
     const inputRef = useRef()
-
+    /* Fjerner søkealternative når du trykker på dokumentet */    
     useEffect(() =>{
-       
         inputRef.current.addEventListener("click", (event) => {
             event.stopPropagation();
             ulRef.current.style.display="grid";
@@ -22,7 +21,7 @@ const Search = ({søkeliste}) => {
     let arr = []
     let link = []
     
-
+    /* Sjekker om bruker skriver inn ett nøkkelord og gjør det om til et tittel array og slug */
     const result = søkeliste?.map(function(name, index){
         for (let i = 0; i < name.nokkelord.length; i++) {
             if ([name.nokkelord[i]].includes(search.toLowerCase())) {
@@ -37,6 +36,7 @@ const Search = ({søkeliste}) => {
    
     return (
         <form id="search">
+            {/* Input for søk */}
             <input
                     type="text" 
                     id='searchbox'
@@ -47,9 +47,10 @@ const Search = ({søkeliste}) => {
                     }
                     />
              <ul id="searchresult" ref={ulRef}>
+                 {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
                 {
                 arr.map(function(name, index){
-                    return <li><Link to={link[index]} key={ name[index] } onClick={(e) => setSearch("")}>{name}<br /><br /></Link></li>;
+                    return <li><Link to={link[index]} key={ name[index] } onClick={(e) => setSearch("")}>{name}</Link></li>;
                 })
                 }
             </ul>
@@ -61,10 +62,3 @@ const Search = ({søkeliste}) => {
 }
 
 export default Search
-
-   /* const handleUpdate  = async (event) => {
-        setSearch(event.target.value)
-        console.log(search)
-    }
-    
-    */

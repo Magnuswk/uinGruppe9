@@ -113,7 +113,7 @@ header nav ul li a{
   color: red;
 
 }
-/* Artikkelmain */
+/* Hovedsiden */
 #artikkelmain{
   width: 1520px;
   height: 823px;
@@ -154,47 +154,59 @@ header nav ul li a{
 #artikkelmain section article strong{
   font-weight: bold;
 }
+/*  Siden Loader */
 #loading{
   position:absolute;
   left:40%;
   top:45%;
   font-size: 100px;
 }
+/* Breadcrumbs */ 
 #breadcrumbs li{
   display: inline;
   text-decoration:none;
   margin-right: 0px;
   margin-left:0px;
 }
+/* Error denne siden finnes ikke */
 #error{
   position:absolute;
   left:25%;
   top:70%;
   font-size: 100px;
 }
+/* Bilde på denne siden finnes ikke */
 #finnes-ikke{
   width: 1000px;
   margin-left:25%;
 }
+/*  Feltet for søking*/
 #searchresult{
-  width: 320px;
+  width: 355px;
   display: grid;
   place-items: center;
   background-color:rgb(0,0,0,0.1);
   position:absolute;
   top:35px;
-  left:35px;
+  left:20px;
 }
 #searchresult li{
   font-size: 20px;
   width:100%;;
   margin-left:15px;
-  padding: 20px;
   border: 1px solid grey;
   border-radius: 10px;
   background-color:rgb(255,255,255);
-  height: 40px;
+  height: 70px;
+  padding: 0;
 }
 #searchresult li:hover{
   background-color:rgb(200,200,200);
+}
+#searchresult li a{
+  padding-top: 20px;
+  padding-left: 10px;
+  display: block;;
+  height:100%;    
+  width: 100%;
 }

@@ -5,6 +5,7 @@ import Search from './Search'
 import { searchfetch } from '../utils/artikkelService'
 import { useEffect, useState } from 'react'
 
+/* Fetcher nødvendig informasjon til søkefeltet */
 const Header = () => {
     const [header, setHeader] = useState(null)
     useEffect(()=> {
@@ -37,6 +38,7 @@ const Header = () => {
                     <li><NavLink to="/Tjenester">Tjenester</NavLink></li>
                     <li><NavLink to="/Sortering">Sortering</NavLink></li>
                 </ul>
+                {/* Sender tidliger fetch som prop til søkeliste komponenten */}
                 <Search søkeliste={header}/>
             </nav>
         </header>

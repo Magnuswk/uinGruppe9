@@ -22,7 +22,7 @@ const searchfields = `
   nokkelord,
   'slug': slug.current
 `
-
+/* Fetch som henter bruker slug til å hente all informasjon fra sanity */
  const artikkelfetch = async (slug) => {
   const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
   );
@@ -35,13 +35,14 @@ const searchfields = `
 };
 export default artikkelfetch
 
+/* Fetch som henter aller informasjon som hører til sidebar */
 export const sidebarfetch = async (kategori) => {
   const data = await client.fetch(`*[_type == "artikler" && (kategori->kategori == $kategori)]{${sidebarfields}}`, {kategori}
   );
   return data;
 };
 
-
+/* Fetch som henter nødvendig informasjon for søkefunksjonen */
 export const searchfetch = async () => {
   const data = await client.fetch(`*[_type == "artikler"]{${searchfields}}`
   );
@@ -49,73 +50,5 @@ export const searchfetch = async () => {
 };
 
 
-/*
 
-
-*[_type == 'article' && (category->name == "category1") && ('tag1' in tags)]{'author': author->name, tags, 'category': category->name} 
-
-
-
-*/
-/* 
-export const sidebarfetch = async (kategori) => {
-  const data = await client.fetch(`*[_type == "artikler"]{${sidebarfields}}`, {kategori}
-  );
-  for(let i = 0; i < data.length; i++) {
-    if (data[i].kategori === kategori){
-      console.log(data[i].tittel)
-    }
-  }
-  return data?.tittel;
-};
-*/
-
-/* const artikkelsfetch = async () => {
-  const data = await client.fetch(`*[_type == "artikler"]{${artikkelfields}}`);
-  console.log(data)
-  return data;
-}; 
-*/
-
-/*const Artikkelfetch = () => {
-  const [artikkel, setArtikkel] = useState(null);
-  useEffect( ()=> {
-    client
-        .fetch(
-            `*[_type == "artikler" && tittel == Containerleie]
-        {
-                tittel,
-                kategori,
-                innhold
-
-            }`
-        )
-        .then((data)=> setArtikkel(data[0]))
-        .catch(console.error)
-        return(setArtikkel)
-}, [])
-}
-*/ 
-  
-/*
-const secondService = async () => {
-  const data = await client.fetch(`*[_type == "ADD_YOUR_TYPE_HERE"]{${otherFields}}`);
-  return data;
-};
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-*/
-
-/*
-
-export const firstServiceWithParam = async (slug) => {
-  const data = await client.fetch(`*[_type == "ADD_YOUR_TYPE_HERE"]{${anotherFields}}`, { slug });
-  return data?.[0];
-};
-*/
 
