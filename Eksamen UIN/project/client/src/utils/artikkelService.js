@@ -5,6 +5,7 @@ import client from './client';
 const artikkelfields = `
   tittel,
   'slug': slug.current,
+  'kategori':kategori->kategori,
   'bilde': bilde{...,asset->{url}},
   'kategori':kategori->kategori,
   nokkelord,
