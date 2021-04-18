@@ -36,11 +36,11 @@ const Artikler = {
             type: 'content',
             validation: Rule => Rule.required().error('Dette feltet må utfylles') 
         },
-        
         {
             title: 'Kategori',
             name: 'kategori',
             type: 'reference',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'),
             to:[{type: 'kategori', title: 'kategori'}]
         },
         {   

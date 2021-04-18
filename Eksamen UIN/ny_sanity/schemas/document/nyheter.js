@@ -5,27 +5,22 @@ const Nyheter = {
     fields: [
         {
             title: 'Tittel',
-            name: 'name',
+            name: 'tittel',
             type: 'string',
             validation: Rule => Rule.required().min(0).max(30).error('Dette feltet må utfylles')
         },
         {
-            title: 'Innhold',
-            name: 'innhold',
-            type: 'text',
-            validation: Rule => Rule.required().error('Dette feltet må utfylles')
+            title: 'Content',
+            name: 'body',
+            type: 'content',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles') 
         },
         {
             title: 'Kategori',
             name: 'kategori',
-            type: 'string',
-            options: {
-              list: [ 
-                { title: 'Tjenester', value: 'tjenester',  },
-                { title: 'Sortering', value: 'sortering',  },
-                { title: 'Nyheter', value: 'nyheter',  },
-              ],
-            },
+            type: 'reference',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'),
+            to:[{type: 'kategori', title: 'kategori'}]
         },
         {
             title: 'Beskrivelse',
@@ -37,6 +32,7 @@ const Nyheter = {
             title: 'Bilde',
             name: 'bilde',
             type: 'image',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'),
         },
         {
             title: 'Dato',
