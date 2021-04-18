@@ -17,18 +17,26 @@ const Home = () => {
             fetchAsyncNyhet();
     }, []);
     const arr = []
+    const første = []
+    /* Sorterer nyhetene etter dato */
+    nyhet?.sort(function (a, b) {
+        return b.dato.localeCompare(a.dato);
+    });
     for (let i = 0; i < nyhet?.length; i++) {
-        arr.push(nyhet[i]);
+        if(i === 0){
+            første.push(nyhet[i])
+        }else if(i === 11){
+            break;
+        }else{
+            arr.push(nyhet[i]);
+        }
       }
-    if (arr.length > 0) {
-        console.log(arr[0].tittel)
-    }  
 
     return (
         <>
             <div id="kontakt">Kontakt Oss</div>
             <Homebutton />
-            <Nyhetsvisning nyhet={arr} />
+            <Nyhetsvisning nyhet={første} andre={arr} />
         </>
     )
 }
