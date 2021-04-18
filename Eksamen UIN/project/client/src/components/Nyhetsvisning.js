@@ -4,8 +4,10 @@ const Nyhetsvisning = ({nyhet}) => {
         return(
             <section id='nyhetsboks'>
                 <article id='hovednyhet'>
-                <h1>{nyhet[0].tittel}</h1>
-    
+                    <h1>{nyhet[0].tittel}</h1>
+                </article>
+                <article id="extranyhet">
+                    <h1>ekstra</h1>
                 </article>
             </section>
         )

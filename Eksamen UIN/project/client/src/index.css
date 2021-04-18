@@ -237,3 +237,19 @@ header nav ul li a{
   height:100%;    
   width: 100%;
 }
+/* Styling for nyhets delen av forsiden */
+#nyhetsboks{
+  margin-top: 20%;
+  border: 1px solid black;
+  width: 60%;
+  margin-left: 20%;
+  height:500px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+#hovednyhet{
+  border: 1px solid red;   
+}
+#extranyhet{ 
+  border: 1px solid red;
+}
