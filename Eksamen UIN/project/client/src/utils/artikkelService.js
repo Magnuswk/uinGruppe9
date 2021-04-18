@@ -6,6 +6,7 @@ const artikkelfields = `
   tittel,
   'slug': slug.current,
   'bilde': bilde{...,asset->{url}},
+  'kategori':kategori->kategori,
   nokkelord,
   body,
   beskrivelse
