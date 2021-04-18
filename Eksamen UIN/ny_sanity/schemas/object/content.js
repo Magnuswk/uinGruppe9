@@ -20,6 +20,10 @@ const content = {
                         {title: 'Code', value: 'code'}
                                 ],
                         },
+                        
+        },
+        {
+            type: 'image'
         },
         ],
 }

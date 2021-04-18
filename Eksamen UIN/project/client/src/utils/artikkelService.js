@@ -5,8 +5,6 @@ import client from './client';
 const artikkelfields = `
   tittel,
   'slug': slug.current,
-  'kategori':kategori->kategori,
-  innhold,
   'bilde': bilde{...,asset->{url}},
   nokkelord,
   body,
@@ -21,6 +19,16 @@ const searchfields = `
   tittel,
   nokkelord,
   'slug': slug.current
+`
+const nyhetsfields = `
+  tittel,
+  body,
+  'kategori':kategori->kategori,
+  beskrivelse,
+  'bilde': bilde{...,asset->{url}},
+  nokkelord,
+  'forfatter':forfatter->forfatter,
+  dato,
 `
 /* Fetch som henter bruker slug til å hente all informasjon fra sanity */
  const artikkelfetch = async (slug) => {
@@ -48,6 +56,14 @@ export const searchfetch = async () => {
   );
   return data;
 };
+
+/* Fetch som henter nødvendig informasjon for nyheter */
+export const nyhetsfetch = async () => {
+  const data = await client.fetch(`*[_type == "nyheter"]{${nyhetsfields}}`
+  );
+  return data;
+};
+
 
 
 
