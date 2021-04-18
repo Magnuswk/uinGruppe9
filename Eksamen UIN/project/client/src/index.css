@@ -87,7 +87,8 @@ header nav ul li a{
 /*  Sidenbar */
 #sidebar{
   width:380px;
-  margin-left: 79.2%;
+  margin-left: 69%;
+  margin-top: 10%;
   height:823px;
   background-color:aquamarine;
   border-radius: 10px;
@@ -143,14 +144,15 @@ header nav ul li a{
   height: 823px;
   position:absolute;
   top: 12%;
+  line-height: 1.5;
 }
 #artikkelmain section{
   margin-top: 20px;
   font-size: 20px;
 }
 #artikkelmain section article{
-  margin-left: 30%;
-  width: 50%;
+  margin-left: 25%;
+  width: 60%;
 }
 #artikkelmain section article h1{
   text-align:center;

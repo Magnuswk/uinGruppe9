@@ -54,7 +54,7 @@ const Search = ({søkeliste}) => {
                  {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
                 {
                 arr.map(function(name, index){
-                    return <li><Link to={link[index]} key={ name[index] } onClick={(e) => setSearch("")}>{name}</Link></li>;
+                    return <li><Link to={link[index]} key={ index } onClick={(e) => setSearch("")}>{name}</Link></li>;
                 })
                 }
             </ul>
