@@ -76,7 +76,6 @@ export const nyhetsfetch = async () => {
 export const forsidefetch = async () => {
   const data = await client.fetch(`*[_type == "Forside"]{${forsidefields}}`
   );
-  console.log(data)
   return data;
 };
 
