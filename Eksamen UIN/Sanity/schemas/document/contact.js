@@ -1,6 +1,7 @@
 const contact = {
     name: "contact",
     title: "kontakt",
+    type: "document",
     fields: [
         {
         name:"name",

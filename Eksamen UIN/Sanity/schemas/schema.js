@@ -22,6 +22,5 @@ export default createSchema({
     Artikler,
     Kategori,
     content,
-    contact
   ]),
 })
