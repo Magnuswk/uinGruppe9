@@ -302,3 +302,11 @@ header nav ul li a{
   text-decoration: none;
   color:black;
 }
+#skjema{
+  border: 1px solid black;
+  width: 62%;
+  display:block;
+}
+#skjema label,input,select{
+  display:block;
+}

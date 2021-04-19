@@ -23,6 +23,7 @@ export default createSchema({
     Artikler,
     Kategori,
     content,
-    forside
+    forside,
+    contact
   ]),
 })

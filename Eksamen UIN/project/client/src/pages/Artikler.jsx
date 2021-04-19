@@ -6,6 +6,7 @@ import { useParams } from 'react-router'
 import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
 import {NavLink} from 'react-router-dom'
+import  Skjemaer from "../components/Skjemaer"
 /*  Denne komponenten lager alle sider */
 /*  Henter alle artikkler med slug som er lik nettadressen */
 const Containerleie = () => {
@@ -82,11 +83,11 @@ const Containerleie = () => {
                     <h1>
                         {data?.tittel}
                     </h1>
-                    {/* Alt innholdet som skal vere på hovuddelen av siden */}
-                    <BlockContent blocks={data?.body}/>
                     {/* Bilde som skal bli banner */}
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
- 
+                    {/* Alt innholdet som skal vere på hovuddelen av siden */}
+                    <BlockContent blocks={data?.body}/>
+                  {data?.slug === "Containerleie" ? <Skjemaer type="containerleie"/>: null }
                 </Artikkelmain>
             </>
         )
