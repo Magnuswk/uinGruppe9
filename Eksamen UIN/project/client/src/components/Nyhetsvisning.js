@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Nyhetsvisning = (props) => {
-    console.log(props?.andre)
-    if (props.nyhet?.length > 0) {
         return(
             <>
                 <h1 id="nyhettittel">Østbønytt</h1>
@@ -28,10 +26,6 @@ const Nyhetsvisning = (props) => {
                 <button id="lesmer"><Link to="/Nyheter">Les Flere nyheter her!</Link></button>
             </>
         )
-    }
-    else{
-        return(<h1>Loading...</h1>)
-    }
 }
 
 export default Nyhetsvisning

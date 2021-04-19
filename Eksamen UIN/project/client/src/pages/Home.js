@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Homebutton from "../components/Homebutton"
 import Nyhetsvisning from '../components/Nyhetsvisning'
-import { nyhetsfetch } from "../utils/artikkelService";
+import { nyhetsfetch, forsidefetch} from "../utils/artikkelService";
 /*  Dette komponenten lager siden!*/
 const Home = () => {
     const [nyhet, setNyhet] = useState(null)
@@ -16,6 +16,24 @@ const Home = () => {
             };
             fetchAsyncNyhet();
     }, []);
+
+
+    const [forside, setForside] = useState(null)
+    useEffect(()=> {
+        const fetchAsyncforside = async () =>{
+            try {
+                const resultat = await forsidefetch()
+                setForside (resultat)
+            } catch (error) {
+                console.log(error)
+                }  
+            };
+            fetchAsyncforside();
+        }, []);
+
+
+
+
     const arr = []
     const første = []
     /* Sorterer nyhetene etter dato */
@@ -31,14 +49,18 @@ const Home = () => {
             arr.push(nyhet[i]);
         }
       }
-
-    return (
-        <>
-            <div id="kontakt">Kontakt Oss</div>
-            <Homebutton />
-            <Nyhetsvisning nyhet={første} andre={arr} />
-        </>
-    )
+    
+    if (forside === null || nyhet === null){
+        return(<h1 id="loading">Loading...</h1>)
+    }else{
+        return (
+            <>
+                <div id="kontakt">Kontakt Oss</div>
+                <Homebutton forside={forside} />
+                <Nyhetsvisning nyhet={første} andre={arr} />
+            </>
+        )
+    }
 }
 
 export default Home

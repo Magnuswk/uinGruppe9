@@ -1,19 +1,27 @@
 const forside = {
     name: "Forside",
-    title: "forside",
+    title: "Forside",
     type: "document",
     fields: [
         {
         name:"tittel",
-        title: "tittel",
-        type: "string"
-        }
+        title: "Tittel",
+        type: "string",
+        validation: Rule => Rule.required().error('Dette feltet må utfylles'),
+        },
         {
-        name:"name",
-        title: "avsender",
-        type: "string"
-        }
+        name:"bilde",
+        title: "Bilde",
+        type: "image",
+        validation: Rule => Rule.required().error('Dette feltet må utfylles'),
+        },
+        {
+        name:"link",
+        title: "link",
+        type: "string",
+        validation: Rule => Rule.required().error('Dette feltet må utfylles'),
+        },
     ]
 }
 
-export default contact;
+export default forside;
