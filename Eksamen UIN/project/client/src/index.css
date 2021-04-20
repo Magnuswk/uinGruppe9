@@ -310,3 +310,11 @@ header nav ul li a{
 #skjema label,input,select{
   display:block;
 }
+#testartikkel article{
+  text-align:center;
+  text-decoration:none;
+  color:black;
+}
+#testartikkel article a{
+  font-size: 25px;
+}
