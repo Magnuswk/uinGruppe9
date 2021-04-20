@@ -38,7 +38,12 @@ const Nyheter = {
             title: 'Dato',
             name: 'dato',
             type: 'datetime',
-            validation: Rule => Rule.required().error('Dette feltet må utfylles')
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'),
+            options: {
+                dateFormat: "DD-MM-YYYY",
+                timeFormat: "HH:mm",
+                calendarTodayLabel: "Today"
+            }
         },
         {   
             title: 'Nokkelord',

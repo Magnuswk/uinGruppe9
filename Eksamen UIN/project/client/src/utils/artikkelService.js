@@ -32,6 +32,14 @@ const nyhetsfields = `
   'forfatter':forfatter->forfatter,
   dato,
 `
+const forsidefields = `
+  tittel,
+  'bilde': bilde{...,asset->{url}},
+  link
+`
+
+
+
 /* Fetch som henter bruker slug til å hente all informasjon fra sanity */
  const artikkelfetch = async (slug) => {
   const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
@@ -65,7 +73,12 @@ export const nyhetsfetch = async () => {
   );
   return data;
 };
-
+/* Fetch som henter nødvendig informasjon for Forsiden */
+export const forsidefetch = async () => {
+  const data = await client.fetch(`*[_type == "Forside"]{${forsidefields}}`
+  );
+  return data;
+};
 
 
 

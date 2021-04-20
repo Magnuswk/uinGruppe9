@@ -1,18 +1,31 @@
 import React from 'react'
-const Nyhetsvisning = ({nyhet}) => {
-    if (nyhet?.length > 0) {
+import { Link } from 'react-router-dom'
+
+const Nyhetsvisning = (props) => {
         return(
-            <section id='nyhetsboks'>
-                <article id='hovednyhet'>
-                <h1>{nyhet[0].tittel}</h1>
-    
-                </article>
-            </section>
+            <>
+                <h1 id="nyhettittel">Østbønytt</h1>
+                <section id='nyhetsboks'>
+                    <article id='hovednyhet'>
+                        <img src={props.nyhet[0].bilde.asset.url} alt={props.nyhet[0].beskrivelse}></img>
+                        <h2>{props.nyhet[0].dato.slice(0,10)}</h2>
+                        <h1>{props.nyhet[0].beskrivelse}</h1>
+                    </article>
+                    <article id="extranyhet">
+                        <h1>Flere nyheter</h1>
+                        {props.andre.map(function(name, index){
+                            return(
+                                <article className="eldrenyheter">
+                                     <img src={name.bilde.asset.url} alt={name.beskrivelse}></img>
+                                    <h2>{name.beskrivelse}</h2>
+                                </article>
+                            );
+                        })}
+                    </article>
+                </section>
+                <button id="lesmer"><Link to="/Nyheter">Les Flere nyheter her!</Link></button>
+            </>
         )
-    }
-    else{
-        return(<h1>Loading...</h1>)
-    }
 }
 
 export default Nyhetsvisning

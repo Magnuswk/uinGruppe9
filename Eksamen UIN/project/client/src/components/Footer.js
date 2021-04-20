@@ -7,11 +7,11 @@ const footerStyle = {
     borderTop: "1px solid #E7E7E7",
     textAlign: "center",
     padding: "20px",
-    position: "fixed",
     left: "0",
     bottom: "0",
     height: "60px",
-    width: "100%"
+    width: "100%",
+    display: "none"
   };
   
   const phantomStyle = {
@@ -26,7 +26,7 @@ const Footer = ({children}) =>  {
         <>
             <div style={phantomStyle}/>
             <div style={footerStyle}>{children}1235665767878</div>
-            <p>Test footer 1..2..3</p>
+            <p></p>
         </>
     );
 }
