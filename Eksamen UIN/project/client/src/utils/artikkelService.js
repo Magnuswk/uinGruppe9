@@ -79,7 +79,12 @@ export const forsidefetch = async () => {
   );
   return data;
 };
-
+/* Fetch som henter nødvendig informasjon for Artikkelsort */
+export const sortfetch = async () => {
+  const data = await client.fetch(`*[_type == "artikler"]{${sidebarfields}}`
+  );
+  return data;
+};
 
 
 
