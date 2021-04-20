@@ -87,7 +87,7 @@ const Containerleie = () => {
                     <img src={data?.bilde.asset.url} alt='yeetum'></img>
                     {/* Alt innholdet som skal vere på hovuddelen av siden */}
                     <BlockContent blocks={data?.body}/>
-                  {data?.slug === "Containerleie" ? <Skjemaer type="containerleie"/>: null }
+                  <Skjemaer type={data?.slug}/>
                 </Artikkelmain>
             </>
         )

@@ -24,10 +24,13 @@ const Search = ({søkeliste}) => {
     /* Sjekker om bruker skriver inn ett nøkkelord og gjør det om til et tittel array og slug */
     const result = søkeliste?.map(function(name, index){
         for (let i = 0; i < name.nokkelord.length; i++) {
-            if ([name.nokkelord[i]].includes(search.toLowerCase())) {
+            let temp = name.tittel.toLowerCase()
+            if (name.nokkelord[i].includes(search.toLowerCase() || temp.includes(search.toLowerCase()))) {
                 if (search !== ""){
-                    arr.push(name.tittel)
-                    link.push(name.slug)
+                    if (!arr.includes(name.tittel)){
+                        arr.push(name.tittel)
+                        link.push(name.slug)
+                    }  
                 }
             }
         }
