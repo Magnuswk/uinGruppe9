@@ -19,7 +19,8 @@ const sidebarfields = `
 const searchfields = `
   tittel,
   nokkelord,
-  'slug': slug.current
+  'slug': slug.current,
+  'kategori':kategori->kategori
 `
 const nyhetsfields = `
   tittel,

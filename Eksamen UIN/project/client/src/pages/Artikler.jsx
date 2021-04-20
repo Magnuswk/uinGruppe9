@@ -9,7 +9,7 @@ import {NavLink} from 'react-router-dom'
 import  Skjemaer from "../components/Skjemaer"
 /*  Denne komponenten lager alle sider */
 /*  Henter alle artikkler med slug som er lik nettadressen */
-const Containerleie = () => {
+const Artikler = () => {
     const {slug} = useParams()
     const [data, setData] = useState(null)
     useEffect(()=> {
@@ -93,4 +93,4 @@ const Containerleie = () => {
         )
       }
 }
-export default Containerleie
+export default Artikler
