@@ -31,6 +31,7 @@ const nyhetsfields = `
   nokkelord,
   'forfatter':forfatter->forfatter,
   dato,
+  'slug': slug.current,
 `
 const forsidefields = `
   tittel,
@@ -85,6 +86,15 @@ export const sortfetch = async () => {
   );
   return data;
 };
-
-
-
+/* Fetch som henter bruker slug til å hente riktig nyhet */
+export const mainnyhetfetch = async (slug) => {
+  slug= "/Nyheter/" + slug
+  console.log(slug)
+  const data = await client.fetch(`*[_type == "nyheter" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
+  );
+  if (data?.length > 0){
+    return data?.[0];
+  }else{
+    return "ikke funnet"
+  }
+};

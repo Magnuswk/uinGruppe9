@@ -20,7 +20,7 @@ const Testkategorisort = () => {
     const omoss = []
     const tjenester = []
     const sortering = []
-    const all = []
+
 
     for (let i = 0; i < artikel?.length; i++) {
         if (artikel[i].kategori === "Om-Oss"){
