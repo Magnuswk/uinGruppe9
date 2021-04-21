@@ -22,7 +22,7 @@ const Skjemaer = (type) => {
         }
     }
     return (
-        <div>
+        <div id='mainskjemawrapper'>
             <h1>KontaktSkjema</h1>
             {error ? <p>{error}</p>: null}
             {success ? <p>Takk din henvendelse er motatt!</p>: null}

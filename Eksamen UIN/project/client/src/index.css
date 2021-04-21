@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow-x:hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -309,10 +310,12 @@ header nav ul li a{
   margin-top: 10px;
 }
 /* CSS for skjemaene */
+
 #skjema{
   border: 1px solid black;
   width: 62%;
   display:block;
+  position: "flex";
 }
 #skjema label,input,select{
   display:block;

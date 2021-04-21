@@ -58,10 +58,10 @@ const Contact = (props) => {
             <label>Ønsker svar pr</label>
 
             <input type="checkbox" id="boks1" name="boks1"></input>
-            <label for="boks1">Telefon</label>
+            <label htmlFor="boks1">Telefon</label>
 
             <input type="checkbox" id="boks2" name="boks2"></input>
-            <label for="boks2">E-Post</label>
+            <label htmlFor="boks2">E-Post</label>
 
             <button type="submit">Send</button>
         </form>

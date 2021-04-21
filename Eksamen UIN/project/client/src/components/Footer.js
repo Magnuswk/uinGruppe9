@@ -11,7 +11,8 @@ const footerStyle = {
     bottom: "0",
     height: "60px",
     width: "100%",
-    display: "none"
+    position: "flex",
+    
   };
   
   const phantomStyle = {

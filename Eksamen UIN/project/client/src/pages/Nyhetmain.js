@@ -11,7 +11,6 @@ const Nyhetmain = () => {
           try {
             const side = await mainnyhetfetch(slug)
             setData (side)
-            console.log(data)
           } catch (error) {
               console.log(error)
           }  
