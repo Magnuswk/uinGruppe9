@@ -18,7 +18,7 @@ const footerStyle = {
     display: "block",
     padding: "20px",
     height: "60px",
-    width: "100%"
+    width: "90%"
   };
 
 const Footer = ({children}) =>  {

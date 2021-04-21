@@ -45,6 +45,15 @@ const Nyheter = {
                 calendarTodayLabel: "Today"
             }
         },
+        {
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'),
+            options: {
+                source: 'tittel'
+            },
+        },
         {   
             title: 'Nokkelord',
             name: 'nokkelord',
