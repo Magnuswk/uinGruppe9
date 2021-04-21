@@ -31,7 +31,7 @@ const Nyhetsvisning = (props) => {
                         <h1>Flere nyheter</h1>
                         {props.andre.map(function(name, index){
                             return(
-                                <article className="eldrenyheter">
+                                <article className="eldrenyheter" key={name.slug}>
                                      <img src={name.bilde.asset.url} alt={name.beskrivelse}></img>
                                     <h2>{name.beskrivelse}</h2>
                                 </article>
