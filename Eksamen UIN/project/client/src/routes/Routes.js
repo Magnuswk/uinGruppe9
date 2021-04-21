@@ -1,10 +1,12 @@
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Home from "../pages/Home"
-import Containerleie from "../pages/Artikler"
+import Artikler from "../pages/Artikler"
 import React from 'react'
 import Header from "../components/Header"
 import Nyheter from "../pages/Nyheter"
 import Footer from "../components/Footer"
+import Testkategorisort from "../pages/Testkategorisort"
+import Nyhetmain from "../pages/Nyhetmain"
 
 
 
@@ -19,8 +21,14 @@ const Routes = () =>(
             <Route exact path="/Nyheter">
                 <Nyheter />
             </Route>
+            <Route  path="/Nyheter/:slug">
+                <Nyhetmain />
+            </Route>
+            <Route exact path="/Testkategorisort">
+                <Testkategorisort />
+            </Route>
             <Route path="/:slug">
-                <Containerleie />
+                <Artikler />
             </Route>
         </Switch>
         <Footer />

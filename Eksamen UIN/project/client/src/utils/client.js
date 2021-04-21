@@ -9,6 +9,8 @@ const options = {
 const client = sanityClient({
   ...options,
   useCdn: process.env.NODE_ENV === 'production',
+  ignoreBrowserTokenWarning: true,
+  apiVersion: '2021-04-21'
 });
 
 export default client;

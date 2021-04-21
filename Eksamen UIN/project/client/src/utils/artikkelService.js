@@ -6,8 +6,8 @@ const artikkelfields = `
   tittel,
   'slug': slug.current,
   'kategori':kategori->kategori,
-  innhold,
   'bilde': bilde{...,asset->{url}},
+  'kategori':kategori->kategori,
   nokkelord,
   body,
   beskrivelse
@@ -20,8 +20,28 @@ const sidebarfields = `
 const searchfields = `
   tittel,
   nokkelord,
-  'slug': slug.current
+  'slug': slug.current,
+  'kategori':kategori->kategori
 `
+const nyhetsfields = `
+  tittel,
+  body,
+  'kategori':kategori->kategori,
+  beskrivelse,
+  'bilde': bilde{...,asset->{url}},
+  nokkelord,
+  'forfatter':forfatter->forfatter,
+  dato,
+  'slug': slug.current,
+`
+const forsidefields = `
+  tittel,
+  'bilde': bilde{...,asset->{url}},
+  link
+`
+
+
+
 /* Fetch som henter bruker slug til å hente all informasjon fra sanity */
  const artikkelfetch = async (slug) => {
   const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
@@ -49,6 +69,33 @@ export const searchfetch = async () => {
   return data;
 };
 
-
-
-
+/* Fetch som henter nødvendig informasjon for nyheter */
+export const nyhetsfetch = async () => {
+  const data = await client.fetch(`*[_type == "nyheter"]{${nyhetsfields}}`
+  );
+  return data;
+};
+/* Fetch som henter nødvendig informasjon for Forsiden */
+export const forsidefetch = async () => {
+  const data = await client.fetch(`*[_type == "Forside"]{${forsidefields}}`
+  );
+  return data;
+};
+/* Fetch som henter nødvendig informasjon for Artikkelsort */
+export const sortfetch = async () => {
+  const data = await client.fetch(`*[_type == "artikler"]{${sidebarfields}}`
+  );
+  return data;
+};
+/* Fetch som henter bruker slug til å hente riktig nyhet */
+export const mainnyhetfetch = async (slug) => {
+  slug= "/Nyheter/" + slug
+  console.log(slug)
+  const data = await client.fetch(`*[_type == "nyheter" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
+  );
+  if (data?.length > 0){
+    return data?.[0];
+  }else{
+    return "ikke funnet"
+  }
+};

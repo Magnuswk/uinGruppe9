@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "EksamenUIN"
-  },
   "api": {
     "projectId": "1dtwlr3t",
     "dataset": "production"
+  },
+  "project": {
+    "name": "EksamenUIN"
   },
   "plugins": [
     "@sanity/base",

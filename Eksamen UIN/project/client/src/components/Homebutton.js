@@ -1,19 +1,35 @@
 import React from 'react'
-import Container from "../Images/Container.png"
+/* import Container from "../Images/Container.png"
 import Bilvraking from "../Images/Bilvraking.png"
 import Avfallstømming from "../Images/Avfallstømming.png"
 import Farlig from "../Images/Farlig.png"
 import Nyheter from "../Images/Nyheter.png"
 import Om_oss from "../Images/Om_oss.png"
 import Tjenester from "../Images/Tjenester.png"
-import Åpningstider from "../Images/Åpningstider.png"
-import { NavLink } from 'react-router-dom'
+import Åpningstider from "../Images/Åpningstider.png" */
+import { Link } from 'react-router-dom' 
 
 
-const Homebutton = () => {
+const Homebutton = ({forside}) => {
+    console.log(forside)
     return (
         <section id="mainsection">
-            <article><NavLink to="/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
+            {forside?.map(function(name, index){
+                return(
+                    <article>
+                        {<Link to={name.link}><h2>{name.tittel}</h2><img src={name.bilde.asset.url} alt={name.tittel}></img></Link>}
+                    </article>
+                )
+            })}
+        </section>
+    )
+}
+
+export default Homebutton
+
+
+/* 
+<article><NavLink to="/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
             <article><NavLink to="/Åpningstider">Åpningstider <img src={Åpningstider} alt="Åpningstider"></img></NavLink></article>
             <article><NavLink to="/Bilvraking">Bilvraking<img src={Bilvraking} alt="Bilvraking"></img></NavLink></article>
             <article><NavLink to="/Tjenester">Tjenester<img src={Tjenester} alt="Tjenester"></img></NavLink></article>
@@ -21,8 +37,5 @@ const Homebutton = () => {
             <article><NavLink to="/Om-Oss">Om oss<img src={Om_oss} alt="Om-Oss"></img></NavLink></article>
             <article><NavLink to="/Nyheter">Nyheter<img src={Nyheter} alt="Nyheter"></img></NavLink></article>
             <article><NavLink to="/Hva-er-farlig-avfall">Farlig Avfall<img src={Farlig} alt="Farlig Avfall"></img></NavLink></article>
-        </section>
-    )
-}
 
-export default Homebutton
+*/

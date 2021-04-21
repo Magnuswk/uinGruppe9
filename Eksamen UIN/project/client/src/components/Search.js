@@ -24,16 +24,14 @@ const Search = ({søkeliste}) => {
     /* Sjekker om bruker skriver inn ett nøkkelord og gjør det om til et tittel array og slug */
     const result = søkeliste?.map(function(name, index){
         for (let i = 0; i < name.nokkelord.length; i++) {
-            if (name.nokkelord[i].includes(search.toLowerCase())) {
+            let temp = name.tittel.toLowerCase()
+            if (name.nokkelord[i].includes(search.toLowerCase() || temp.includes(search.toLowerCase()))) {
                 if (search !== ""){
-                    if (arr.includes(name.tittel)){
-                        // do nothing
-                    }else{
+                    if (!arr.includes(name.tittel)){
                         arr.push(name.tittel)
                         link.push(name.slug)
-                    }
+                    }  
                 }
-                
             }
         }
     })
@@ -54,7 +52,7 @@ const Search = ({søkeliste}) => {
                  {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
                 {
                 arr.map(function(name, index){
-                    return <li><Link to={link[index]} key={ name[index] } onClick={(e) => setSearch("")}>{name}</Link></li>;
+                    return <li><Link to={link[index]} key={ index } onClick={(e) => setSearch("")}>{name}</Link></li>;
                 })
                 }
             </ul>
