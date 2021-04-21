@@ -10,8 +10,7 @@ const Nyhetmain = () => {
         const fetchAsyncData = async () =>{
           try {
             const side = await mainnyhetfetch(slug)
-            setData (side)
-            console.log(data)
+            setData(side)
           } catch (error) {
               console.log(error)
           }  
@@ -24,7 +23,7 @@ const Nyhetmain = () => {
         const fetchAsyncNyhet = async () =>{
             try {
                 const resultat = await nyhetsfetch()
-                setNyhet (resultat)
+                setNyhet(resultat)
                 } catch (error) {
                     console.log(error)
                 }  

@@ -6,7 +6,7 @@ const Displaytestkategori = (props) => {
     return (
             <article>
                   {props.name.map(function(name, index){
-                    return <li> <Link to={name.slug} key={ index }>{name.tittel}<br /><br /></Link></li>;
+                    return <li key={ name.slug }> <Link to={name.slug} >{name.tittel}<br /><br /></Link></li>;
                   })}
             </article>
         

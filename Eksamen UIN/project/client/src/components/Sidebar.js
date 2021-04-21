@@ -7,7 +7,7 @@ const Sidebar = (props) => {
             <h1>{props.kat}</h1>
             <ul>
             {props.name.map(function(name, index){
-                    return <li> <Link to={props.lnk[index]} key={ index }>{name}<br /><br /></Link></li>;
+                    return <li key={ props.lnk }> <Link to={props.lnk[index]} >{name}<br /><br /></Link></li>;
                   })}
             </ul>
         </section>
