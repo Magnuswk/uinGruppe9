@@ -4,38 +4,25 @@ import { Link } from 'react-router-dom'
 const Search = ({søkeliste}) => {
     const [value, setValue] = useState('')
     const [result, setResult] = useState([])
-    const [link, setLink] = useState([])
 
     /* Fjerner søkealternative når du trykker på dokumentet */    
-
-    
     useEffect(() =>{
         /* update search result array */
         const filter = () => {
             const arr = []
-            const link = []
             if(value?.length < 1 || value === null || value === ""){
                 setResult(arr)
-                setLink(link)
                 return;
             }
-            for (let i = 0; i< søkeliste.length; i++) {
-                for (let x = 0; x< søkeliste[i].nokkelord.length; x++) {
-                    if(søkeliste[i].nokkelord[x].includes(value)){
-                        if (!arr.includes(søkeliste[i].tittel)){
-                            link.push(søkeliste[i].slug)
-                            arr.push(søkeliste[i].tittel)
-                        }  
-                    }
-                }
-            }
-            setResult(arr)
-            setLink(link)
+            const find = []
+            søkeliste.map(item => item.nokkelord.filter(x => x.includes(value.toLowerCase())).length > 0 ? find.push({title: item.tittel, slug: item.slug}) : null);
+            const limitResult = find.sort(function(a, b) { return b.title < a.title ? 1 : -1; })
+                .slice(0, 5);
+            setResult([...limitResult])
         }
         filter();
     },[value, søkeliste])
 
-    
     const handleBlur = () =>{
         setResult([])
     }
@@ -54,7 +41,7 @@ const Search = ({søkeliste}) => {
                  {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
                 {
                 result?.map(function(name, index){
-                    return <li key={ link[index] }><Link to={link[index]}>{name}</Link></li>;
+                   return <li key={ name.slug }><Link to={name.slug}>{name.title}</Link></li>;
                 })
              }
             </ul>
