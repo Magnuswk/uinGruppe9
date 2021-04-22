@@ -37,19 +37,8 @@ const Artikler = () => {
         };
         fetchAsyncsidebar();
     }, [data?.kategori]);
-    
-    let arr = []
-    let links = []
-    /* Legger informasjonen fra tidligere fetch inni arrays */
-    for (let i = 0; i < sidebar?.length; i++) {
-        if (sidebar[i].tittel !== sidebar[i].kategori){
-            arr.push(sidebar[i].tittel);
-            links.push(sidebar[i].slug)
-        }
-      }
-    arr = arr.sort()
-    links = links.sort()
-      /*  Fetch er ikke ferdig */
+
+      /*  Fetch loader */
       if (data === null){
           return(<h1 id="loading">Loading...</h1>)
       /* Siden er ikke funnet */
@@ -65,8 +54,8 @@ const Artikler = () => {
       else{
         return(
             <>   
-                {/* Tar imot arrays fra fetch og sender inn til sidebar */}
-                <Sidebar name={arr} lnk={links} kat={data?.kategori}/>
+                {/* Tar imot JSON fra fetch og sender inn til sidebar */}
+                <Sidebar sidebar={sidebar}/>
                 {/* Komponent som lager siden fra sanity innhold */}
                 <Artikkelmain >
                   {/* Lager breadcrumbs ved å bruke data hentet fra sanity */}
