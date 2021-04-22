@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 
 
 const Homebutton = ({forside}) => {
-    console.log(forside)
     return (
         <section id="mainsection">
             {forside?.map(function(name, index){
@@ -28,14 +27,3 @@ const Homebutton = ({forside}) => {
 export default Homebutton
 
 
-/* 
-<article><NavLink to="/Containerleie">Containerleie<img src={Container} alt="Containerleie"></img></NavLink></article>
-            <article><NavLink to="/Åpningstider">Åpningstider <img src={Åpningstider} alt="Åpningstider"></img></NavLink></article>
-            <article><NavLink to="/Bilvraking">Bilvraking<img src={Bilvraking} alt="Bilvraking"></img></NavLink></article>
-            <article><NavLink to="/Tjenester">Tjenester<img src={Tjenester} alt="Tjenester"></img></NavLink></article>
-            <article><NavLink to="/Avfallstømming">Avfallstømming<img src={Avfallstømming} alt="Avfallstømming"></img></NavLink></article>
-            <article><NavLink to="/Om-Oss">Om oss<img src={Om_oss} alt="Om-Oss"></img></NavLink></article>
-            <article><NavLink to="/Nyheter">Nyheter<img src={Nyheter} alt="Nyheter"></img></NavLink></article>
-            <article><NavLink to="/Hva-er-farlig-avfall">Farlig Avfall<img src={Farlig} alt="Farlig Avfall"></img></NavLink></article>
-
-*/

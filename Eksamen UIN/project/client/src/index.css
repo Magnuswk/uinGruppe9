@@ -181,6 +181,9 @@ header nav ul li a{
 #artikkelmain section article strong{
   font-weight: bold;
 }
+#artikkelmain section article img{
+  max-width: 900px;
+}
 /*  Siden Loader */
 #loading{
   position:absolute;
