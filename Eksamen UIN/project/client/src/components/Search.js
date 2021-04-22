@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const Search = ({søkeliste}) => {
     const [value, setValue] = useState('')
     const [result, setResult] = useState([])
+    const ulRef = useRef()
 
     /* Fjerner søkealternative når du trykker på dokumentet */    
     useEffect(() =>{
@@ -24,7 +25,12 @@ const Search = ({søkeliste}) => {
     },[value, søkeliste])
 
     const handleBlur = () =>{
+        /* ulRef.addEventListener("click", (event) => {
+            return;
+        })*/
         setResult([])
+      
+        
     }
     return (
         <form id="search">
@@ -37,7 +43,7 @@ const Search = ({søkeliste}) => {
                     onChange={(event) => setValue(event.target.value)}
                     onBlur={handleBlur}
                     />
-             <ul id="searchresult">{}
+             <ul id="searchresult" ref={ulRef}>{}
                  {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
                 {
                 result?.map(function(name, index){
