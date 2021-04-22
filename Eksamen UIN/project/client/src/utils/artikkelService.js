@@ -43,8 +43,8 @@ const forsidefields = `
 
 
 /* Fetch som henter bruker slug til å hente all informasjon fra sanity */
- const artikkelfetch = async (slug) => {
-  const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
+const artikkelfetch = async (slug) => {
+  const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{..., asset ->{..., '_key': _id}}}`, {slug}
   );
   if (data?.length > 0){
     return data?.[0];

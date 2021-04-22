@@ -10,6 +10,7 @@ const Sidebar = ({sidebar}) => {
     if (sidebar?.length > 0){
         return (
             <section id="sidebar">
+                {/* Alle objekter har samme kategori */}
                 <h1>{sidebar[0].kategori}</h1>
                 <ul>
                 {sidebar?.map(function(name, index){
