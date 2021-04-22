@@ -37,19 +37,8 @@ const Artikler = () => {
         };
         fetchAsyncsidebar();
     }, [data?.kategori]);
-    
-    let arr = []
-    let links = []
-    /* Legger informasjonen fra tidligere fetch inni arrays */
-    for (let i = 0; i < sidebar?.length; i++) {
-        if (sidebar[i].tittel !== sidebar[i].kategori){
-            arr.push(sidebar[i].tittel);
-            links.push(sidebar[i].slug)
-        }
-      }
-    arr = arr.sort()
-    links = links.sort()
-      /*  Fetch er ikke ferdig */
+
+      /*  Fetch loader */
       if (data === null){
           return(<h1 id="loading">Loading...</h1>)
       /* Siden er ikke funnet */
