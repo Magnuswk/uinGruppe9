@@ -11,7 +11,7 @@ const footerStyle = {
     bottom: "0",
     height: "60px",
     width: "100%",
-    position: "flex",
+    position: "sticky",
     
   };
   
