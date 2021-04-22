@@ -24,7 +24,7 @@ const Search = ({søkeliste}) => {
     },[value, søkeliste])
 
     const handleBlur = () =>{
-        setResult([])
+        /*setResult([]) */
     }
     return (
         <form id="search">

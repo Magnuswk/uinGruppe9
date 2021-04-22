@@ -9,7 +9,7 @@ const Sidebar = ({sidebar}) => {
     /* Sjekker om JSON er fetchet */
     if (sidebar?.length > 0){
         return (
-            <section id="sidebar">
+            <aside id="sidebar">
                 {/* Alle objekter har samme kategori */}
                 <h1>{sidebar[0].kategori}</h1>
                 <ul>
@@ -17,7 +17,7 @@ const Sidebar = ({sidebar}) => {
                         return <li key={ name.slug }> <Link to={name.slug} >{name.tittel}<br /><br /></Link></li>;
                       })}
                 </ul>
-            </section>
+            </aside>
         )
         /* Om JSON ikke er loadet */
     }else{
