@@ -49,14 +49,18 @@ header nav ul li a{
   border-radius: 10px;
 }
 /* HOME MAIN SECTION */
+main{ 
+  width: 100%; 
+  
+ }
+
 #mainsection{
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
   top: 30%;
   position:absolute;
   left:30%;
-  width: 100%;
-  max-width: 1500px;
+ 
 }
 #mainsection article{
   margin-top: 15%;
@@ -89,8 +93,14 @@ header nav ul li a{
 
 /*  Sidenbar */
 #sidebar{
- width:25%;
- float: right;
+  width:25%;
+  margin-top:5%;
+  float: right;
+  background-color:#93ba3d;
+  border-radius: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid, #ddd;
+  list-style: none;
 }
 #sidebar h1{
   display: block;
@@ -134,20 +144,24 @@ header nav ul li a{
   color: red;
 
 }
+
 /* Hovedsiden */
 #artikkelmain{
   width: 100%;
   float:left;
   
+  border: ¨solid;
   line-height: 1.5;
 }
 #artikkelmain section{
   margin-top: 20px;
   font-size: 20px;
+  width:80%;
+  margin-left:10%;
 }
 #artikkelmain section article{
-  margin-left: 25%;
-  width: 60%;
+  
+  width:70%;
 }
 #artikkelmain section article h1{
   text-align:center;

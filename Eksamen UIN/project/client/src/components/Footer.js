@@ -11,7 +11,7 @@ const footerStyle = {
     bottom: "0",
     height: "60px",
     width: "100%",
-    position: "block",
+    overflow: "hidden",
     
   };
   
@@ -19,7 +19,7 @@ const Footer = ({children}) =>  {
     return (
         <>
             
-            <div >{children}1235665767878</div>
+            <div style={footerStyle}>{children}1235665767878</div>
             <p></p>
         </>
     );
