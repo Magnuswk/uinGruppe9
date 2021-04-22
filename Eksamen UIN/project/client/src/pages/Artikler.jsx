@@ -65,10 +65,11 @@ const Artikler = () => {
       else{
         return(
             <>   
-                {/* Tar imot arrays fra fetch og sender inn til sidebar */}
-                <Sidebar name={arr} lnk={links} kat={data?.kategori}/>
+               
                 {/* Komponent som lager siden fra sanity innhold */}
                 <Artikkelmain >
+                {/* Tar imot arrays fra fetch og sender inn til sidebar */}
+                  <Sidebar name={arr} lnk={links} kat={data?.kategori}/>
                   {/* Lager breadcrumbs ved å bruke data hentet fra sanity */}
                     <ul id="breadcrumbs">
                         <li><NavLink to="/">Hjem</NavLink></li>

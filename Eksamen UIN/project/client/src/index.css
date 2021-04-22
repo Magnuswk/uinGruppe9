@@ -55,6 +55,8 @@ header nav ul li a{
   top: 30%;
   position:absolute;
   left:30%;
+  width: 100%;
+  max-width: 1500px;
 }
 #mainsection article{
   margin-top: 15%;
@@ -87,15 +89,8 @@ header nav ul li a{
 
 /*  Sidenbar */
 #sidebar{
-  width:380px;
-  margin-left: 69%;
-  margin-top: 10%;
-  height:823px;
-  background-color:#93ba3d;
-  border-radius: 10px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid, #ddd;
-  list-style: none;
+ width:25%;
+ float: right;
 }
 #sidebar h1{
   display: block;
@@ -141,10 +136,9 @@ header nav ul li a{
 }
 /* Hovedsiden */
 #artikkelmain{
-  width: 1520px;
-  height: 823px;
-  position:absolute;
-  top: 12%;
+  width: 100%;
+  float:left;
+  
   line-height: 1.5;
 }
 #artikkelmain section{
