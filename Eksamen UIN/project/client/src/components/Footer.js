@@ -11,21 +11,14 @@ const footerStyle = {
     bottom: "0",
     height: "60px",
     width: "100%",
-    position: "block",
+    overflow: "hidden",
     
   };
   
-  const phantomStyle = {
-    display: "block",
-    padding: "20px",
-    height: "60px",
-    width: "90%"
-  };
-
 const Footer = ({children}) =>  {
     return (
         <>
-            <div style={phantomStyle}/>
+            
             <div style={footerStyle}>{children}1235665767878</div>
             <p></p>
         </>

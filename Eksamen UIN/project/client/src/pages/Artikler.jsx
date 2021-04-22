@@ -54,10 +54,12 @@ const Artikler = () => {
       else{
         return(
             <>   
-                {/* Tar imot JSON fra fetch og sender inn til sidebar */}
-                <Sidebar sidebar={sidebar}/>
+               
                 {/* Komponent som lager siden fra sanity innhold */}
                 <Artikkelmain >
+                {/* Tar imot arrays fra fetch og sender inn til sidebar */}
+                <Sidebar sidebar={sidebar}/>
+                  <article>
                   {/* Lager breadcrumbs ved å bruke data hentet fra sanity */}
                     <ul id="breadcrumbs">
                         <li><NavLink to="/">Hjem</NavLink></li>
@@ -77,6 +79,7 @@ const Artikler = () => {
                     {/* Alt innholdet som skal vere på hovuddelen av siden */}
                     <BlockContent blocks={data?.body}/>
                   <Skjemaer type={data?.slug}/>
+                  </article>
                 </Artikkelmain>
             </>
         )
