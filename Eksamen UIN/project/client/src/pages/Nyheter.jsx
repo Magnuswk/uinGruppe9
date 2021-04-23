@@ -16,13 +16,11 @@ const Nyheter = () => {
     }, []);
 
     if (nyhet?.length > 0){
-        console.log(nyhet)
         return (
             <main>
                 <h1 id="nyhetoverskrift">Nyheter</h1>
                 <section id="nyhet">
                 {nyhet.map(function(name, index){
-                    console.log(name)
                     return <article> 
                             <h1>{name.tittel}</h1>
                             <img src={name.bilde.asset.url} alt={name.tittel}></img>

@@ -23,7 +23,21 @@ const content = {
                         
         },
         {
-            type: 'image'
+            type: 'image',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles'), 
+            options: {
+                hotspot: true
+            },
+            fields: [
+                {
+                    title: 'Alt tekst',
+                    name: 'blockalttekst',
+                    type: 'string',
+                    options: {
+                        isHighlighted: true
+                    }
+                }
+            ]
         },
         ],
 }
