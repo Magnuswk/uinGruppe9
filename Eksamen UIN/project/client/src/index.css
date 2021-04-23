@@ -37,7 +37,7 @@ header{
 #search{
   position:absolute;
   top: 5%;
-  left:70%
+  left:70%;
 }
 #search input{
   height: 30px;
@@ -124,13 +124,13 @@ main{
   text-transform: uppercase;
   text-align:center;
   font-size: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 #sidebar h2{
   margin-left: 10px;
-  margin-top: 45px;
+  margin-top: 10px;
   font-size: 20px;
 }
 #sidebar a{
@@ -143,8 +143,6 @@ main{
   overflow: hidden;
   font-size: 20px;
   margin-left: 25px;
-  margin-top: 5px;
-  padding: 10px;
   text-decoration:none;
   color: black;
   cursor: pointer;
@@ -157,8 +155,6 @@ main{
 #artikkelmain{
   width: 100%;
   float:left;
-  
-  border: ¨solid;
   line-height: 1.5;
   position: flex;
 }
@@ -169,7 +165,6 @@ main{
   margin-left:10%;
 }
 #artikkelmain section article{
-  
   width:70%;
 }
 #artikkelmain section article h1{

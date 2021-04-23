@@ -60,6 +60,7 @@ const Artikler = () => {
                 <Sidebar sidebar={sidebar}/>
                   <article>
                   {/* Lager breadcrumbs ved å bruke data hentet fra sanity */}
+                  <article>
                     <ul id="breadcrumbs">
                         <li><NavLink to="/">Hjem</NavLink></li>
                         <li>➞</li>
