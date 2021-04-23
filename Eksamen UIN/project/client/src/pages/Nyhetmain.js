@@ -3,20 +3,21 @@ import React, { useState, useEffect } from 'react'
 import { mainnyhetfetch, nyhetsfetch } from '../utils/artikkelService'
 import BlockContent from '@sanity/block-content-to-react'
 import Sistenytt from '../components/Sistenytt'
+import {useLocation} from 'react-router-dom'
 const Nyhetmain = () => {
-    const {slug} = useParams()
+    let location = useLocation()
     const [data, setData] = useState(null)
     useEffect(()=> {
         const fetchAsyncData = async () =>{
           try {
-            const side = await mainnyhetfetch(slug)
+            const side = await mainnyhetfetch(location.pathname)
             setData(side)
           } catch (error) {
               console.log(error)
           }  
         };
         fetchAsyncData();
-    }, [slug]);
+    }, [location]);
 
     const [nyhet, setNyhet] = useState(null)
     useEffect(()=> {
@@ -52,7 +53,6 @@ const Nyhetmain = () => {
     if (data === null){
         return(<h1 id="loading">Loading...</h1>)
     }else if (data === "ikke funnet"){
-        console.log(data)
         return(  
         <>
             <h1 id="error">Denne Nyhetssiden finnes ikke!</h1>

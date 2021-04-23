@@ -33,10 +33,11 @@ const Header = () => {
                 <img src={ostbo} alt="Østbø Logo"/>
             </a>
             <nav>
-                <ul>
+                <ul id="katLink">
                     <li><NavLink to="/">Hjem</NavLink></li>
                     <li><NavLink to="/Tjenester">Tjenester</NavLink></li>
                     <li><NavLink to="/Sortering">Sortering</NavLink></li>
+                    <li><NavLink to="/Om-Oss">Om-Oss</NavLink></li>
                 </ul>
                 {/* Sender tidliger fetch som prop til søkeliste komponenten */}
                 <Search søkeliste={header}/>
