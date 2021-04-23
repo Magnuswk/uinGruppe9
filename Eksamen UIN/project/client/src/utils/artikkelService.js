@@ -21,7 +21,9 @@ const searchfields = `
   tittel,
   nokkelord,
   'slug': slug.current,
-  'kategori':kategori->kategori
+  'kategori':kategori->kategori,
+  beskrivelse,
+  'bilde': bilde{...,asset->{url}},
 `
 const nyhetsfields = `
   tittel,
@@ -73,6 +75,9 @@ export const searchfetch = async () => {
 export const nyhetsfetch = async () => {
   const data = await client.fetch(`*[_type == "nyheter"]{${nyhetsfields}}`
   );
+  if (data === null){
+    return "finnes ikke"
+  }
   return data;
 };
 /* Fetch som henter nødvendig informasjon for Forsiden */

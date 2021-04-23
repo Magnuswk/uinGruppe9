@@ -411,3 +411,46 @@ main{
 #mainnyheter p{
   font-size: 20px;
 }
+#searchResult{
+  display:grid;
+  grid-template-columns: 22% 22% 22% 22%;
+  grid-gap: 50px;
+}
+#searchTitle{
+  text-align:center;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+#searchResult article{
+  margin-left:10%;
+  width: 100%;
+  position: relative;
+}
+#searchResult article a{
+  text-decoration:none;
+  color: black;
+}
+#searchResult article h2{
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+#searchResult article h3{
+  font-size: 18px;
+  margin-left: 15px;
+  margin-bottom: 40px;
+}
+#searchResult article img{
+  max-width: 400px;
+  margin-left: 10px;
+}
+#searchResult article a{
+  text-align:center;
+}
+#searchResult article button{
+  font-size: 20px;
+  border: solid 1px;
+  width: 25%;
+  margin-left: 37.5%;
+  position: absolute;
+  bottom: 0;
+}
