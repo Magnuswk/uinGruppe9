@@ -12,7 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-main { width: 100%; max-width: 1500px; }
 /* NAVBAR */
 header{
   width: 100%;
@@ -103,14 +102,6 @@ main{
   border-bottom: 1px solid, #ddd;
   list-style: none;
 }
-#sidebar { 
-  width: 25%;
-  float: right;
-  background-color:#93ba3d;
-  border-radius: 10px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid, #ddd;
-  list-style: none;}
 #sidebar h1{
   display: block;
   padding: 20px, 20px, 20px, 20px;
@@ -157,8 +148,8 @@ main{
 #artikkelmain section{
   margin-top: 20px;
   font-size: 20px;
-  width:80%;
   margin-left:10%;
+  border: solid;
 }
 #artikkelmain section article{
   width:70%;

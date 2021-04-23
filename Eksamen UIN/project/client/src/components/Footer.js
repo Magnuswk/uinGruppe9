@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-const footerStyle = styled.footer`
+const Footerstyle = styled.footer`
     background-color: "#93ba3d";
     font-Size: "20px";
     color: "white";
@@ -17,7 +17,7 @@ const footerStyle = styled.footer`
 const Footer = ({children}) =>  {
     return (
         <>
-            <footerStyle>{children}</footerStyle>
+            <Footerstyle>{children}</Footerstyle>
             <p></p>
         </>
     );
