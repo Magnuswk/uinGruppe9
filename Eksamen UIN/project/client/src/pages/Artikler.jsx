@@ -74,7 +74,7 @@ const Artikler = () => {
                         {data?.tittel}
                     </h1>
                     {/* Bilde som skal bli banner */}
-                    <img src={data?.bilde.asset.url} alt='yeetum'></img>
+                    <img src={data?.bilde.asset.url} alt={data?.tittel}></img>
                     {/* Alt innholdet som skal vere på hovuddelen av siden */}
                     <BlockContent blocks={data?.body}/>
                   <Skjemaer type={data?.slug}/>
