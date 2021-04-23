@@ -31,7 +31,7 @@ const content = {
             fields: [
                 {
                     title: 'Alt tekst',
-                    name: 'alttekst',
+                    name: 'blockalttekst',
                     type: 'string',
                     options: {
                         isHighlighted: true
