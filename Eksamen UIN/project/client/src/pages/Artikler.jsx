@@ -65,9 +65,8 @@ const Artikler = () => {
                         {/* Tar deg tilbake til kategorisiden som hører til siden du er på */}
                         <li><NavLink to={"/" + data?.kategori}>{data?.kategori}</NavLink></li>
                         {data?.slug.substring(1) !== data?.kategori ? <li>➞</li>:""}
-                        {console.log(data?.slug.substring())}
                         {/* Om linken din ikke er lik kategorien du er på lag en link til siden du er på */}
-                        {data?.slug !== data?.kategori ? <li><NavLink to={location}>{data?.tittel}</NavLink></li>:""}
+                        {data?.slug.substring(1) !== data?.kategori ? <li><NavLink to={location}>{data?.tittel}</NavLink></li>:""}
                     </ul>
                     {/* Displayer tittelen på siden du er på */}
                     <h1>
