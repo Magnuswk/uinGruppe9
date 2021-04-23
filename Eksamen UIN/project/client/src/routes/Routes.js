@@ -7,6 +7,7 @@ import Nyheter from "../pages/Nyheter"
 import Footer from "../components/Footer"
 import Testkategorisort from "../pages/Testkategorisort"
 import Nyhetmain from "../pages/Nyhetmain"
+import Search from "../pages/Search"
 
 
 
@@ -20,6 +21,12 @@ const Routes = () =>(
             </Route>
             <Route exact path="/Nyheter">
                 <Nyheter />
+            </Route>
+            <Route path="/Search/:slug">
+                <Search />
+            </Route>
+            <Route exact path="/Search/">
+                <Search />
             </Route>
             <Route  path="/Nyheter/:slug">
                 <Nyhetmain />

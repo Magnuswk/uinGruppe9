@@ -28,12 +28,15 @@ const Search = ({søkeliste}) => {
         /* ulRef.addEventListener("click", (event) => {
             return;
         })*/
-        setResult([])
-      
-        
+        //setResult([]) 
+    }
+    const handleClick = () =>{
+        if (value){
+            window.location.href = "/Search/" + value;
+        }
     }
     return (
-        <form id="search">
+        <section id="search">
             {/* Input for søk */}
             <input
                     type="text" 
@@ -53,8 +56,8 @@ const Search = ({søkeliste}) => {
             </ul>
             
 
-            <button>Search</button>        
-        </form>
+            <button onClick={handleClick}>Search</button> 
+        </section>
     )
 }
 
