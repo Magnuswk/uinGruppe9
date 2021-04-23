@@ -2,27 +2,26 @@ import React, { useState, useEffect } from 'react'
 import Artikkelmain from "../components/Artikkelmain"
 import artikkelfetch from '../utils/artikkelService'
 import Sidebar from "../components/Sidebar"
-import { useParams } from 'react-router'
 import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
 import  Skjemaer from "../components/Skjemaer"
 /*  Denne komponenten lager alle sider */
 /*  Henter alle artikkler med slug som er lik nettadressen */
 const Artikler = () => {
-    const {slug} = useParams()
+    let location = useLocation()
     const [data, setData] = useState(null)
     useEffect(()=> {
         const fetchAsyncData = async () =>{
           try {
-            const side = await artikkelfetch(slug)
+            const side = await artikkelfetch(location.pathname)
             setData (side)
           } catch (error) {
               console.log(error)
           }  
         };
         fetchAsyncData();
-    }, [slug]);
+    }, [location]);
 
     /* Fetcher tittel, kategori og slug fra alle sider som har samme kategori som siden */
     const [sidebar, setSidebar] = useState(null)
@@ -54,19 +53,20 @@ const Artikler = () => {
       else{
         return(
             <>   
-                {/* Tar imot JSON fra fetch og sender inn til sidebar */}
-                <Sidebar sidebar={sidebar}/>
+                
                 {/* Komponent som lager siden fra sanity innhold */}
                 <Artikkelmain >
+                  {/* Tar imot arrays fra fetch og sender inn til sidebar */}
+                <Sidebar sidebar={sidebar}/>
                   {/* Lager breadcrumbs ved å bruke data hentet fra sanity */}
                     <ul id="breadcrumbs">
                         <li><NavLink to="/">Hjem</NavLink></li>
                         <li>➞</li>
                         {/* Tar deg tilbake til kategorisiden som hører til siden du er på */}
-                        <li><NavLink to={data?.kategori}>{data?.kategori}</NavLink></li>
-                        {data?.slug !== data?.kategori ? <li>➞</li>:""}
+                        <li><NavLink to={"/" + data?.kategori}>{data?.kategori}</NavLink></li>
+                        {data?.slug.substring(1) !== data?.kategori ? <li>➞</li>:""}
                         {/* Om linken din ikke er lik kategorien du er på lag en link til siden du er på */}
-                        {data?.slug !== data?.kategori ? <li><NavLink to={data?.slug}>{data?.tittel}</NavLink></li>:""}
+                        {data?.slug.substring(1) !== data?.kategori ? <li><NavLink to={location}>{data?.tittel}</NavLink></li>:""}
                     </ul>
                     {/* Displayer tittelen på siden du er på */}
                     <h1>

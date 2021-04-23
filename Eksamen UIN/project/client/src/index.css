@@ -19,24 +19,25 @@ header{
   height: 20%;
   border-bottom: 1px solid black;
 }
-header nav ul{
+#katLink{
   position:absolute;
   top: 3%;
   left: 25%;
+  width: 40%;
 }
-header nav ul li{
+#katLink li{
   display: inline;
-  margin-right: 15%;
+  margin-right: 10%;
   font-size: 25px;
 }
-header nav ul li a{
+#katLink li a{
   text-decoration: none;
   color: inherit;
 }
 #search{
   position:absolute;
   top: 5%;
-  left:65%
+  left:70%
 }
 #search input{
   height: 30px;
@@ -49,12 +50,18 @@ header nav ul li a{
   border-radius: 10px;
 }
 /* HOME MAIN SECTION */
+main{ 
+  width: 100%; 
+  
+ }
+
 #mainsection{
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
   top: 30%;
   position:absolute;
   left:30%;
+ 
 }
 #mainsection article{
   margin-top: 15%;
@@ -87,10 +94,9 @@ header nav ul li a{
 
 /*  Sidenbar */
 #sidebar{
-  width:380px;
-  margin-left: 69%;
-  margin-top: 10%;
-  height:823px;
+  width:25%;
+  margin-top:5%;
+  float: right;
   background-color:#93ba3d;
   border-radius: 10px;
   padding-bottom: 30px;
@@ -146,20 +152,25 @@ header nav ul li a{
 #sidebar a:hover{
   color: red;
 }
+
 /* Hovedsiden */
 #artikkelmain{
-  width: 70%;
-  float: left;
+  width: 100%;
+  float:left;
+  
+  border: ¨solid;
   line-height: 1.5;
   position: flex;
 }
 #artikkelmain section{
   margin-top: 20px;
   font-size: 20px;
+  width:80%;
+  margin-left:10%;
 }
 #artikkelmain section article{
-  margin-left: 25%;
-  width: 60%;
+  
+  width:70%;
 }
 #artikkelmain section article h1{
   text-align:center;

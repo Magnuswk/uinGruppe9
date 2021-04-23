@@ -4,9 +4,7 @@ const Artikkelmain = (props) => {
     return (
         <main id="artikkelmain">
             <section>
-                <article>
-                    {props.children}
-                </article>
+                 {props.children}  
             </section>
         </main>
     )
