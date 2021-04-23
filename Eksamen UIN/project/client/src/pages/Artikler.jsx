@@ -58,7 +58,6 @@ const Artikler = () => {
                 <Artikkelmain >
                   {/* Tar imot arrays fra fetch og sender inn til sidebar */}
                 <Sidebar sidebar={sidebar}/>
-                  <article>
                   {/* Lager breadcrumbs ved å bruke data hentet fra sanity */}
                   <article>
                     <ul id="breadcrumbs">
