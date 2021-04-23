@@ -37,7 +37,7 @@ header{
 #search{
   position:absolute;
   top: 5%;
-  left:70%
+  left:70%;
 }
 #search input{
   height: 30px;
@@ -150,8 +150,6 @@ main{
 #artikkelmain{
   width: 100%;
   float:left;
-  
-  border: ¨solid;
   line-height: 1.5;
 }
 #artikkelmain section{
@@ -161,7 +159,6 @@ main{
   margin-left:10%;
 }
 #artikkelmain section article{
-  
   width:70%;
 }
 #artikkelmain section article h1{
