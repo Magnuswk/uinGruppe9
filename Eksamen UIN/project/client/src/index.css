@@ -12,7 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 /* NAVBAR */
 header{
   width: 100%;
@@ -114,10 +113,6 @@ main{
 #sidebar h1{
   display: block;
   padding: 20px, 20px, 20px, 20px;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
   background-color: black;
   color: #ddd;
   letter-spacing: 2px;
@@ -136,7 +131,7 @@ main{
 #sidebar a{
   display: flex;
   align-items: center;
-  border-bottom: 1px solid, #cecece ;
+  border-bottom: 1px solid, #cecece;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   position: relative;
@@ -149,7 +144,6 @@ main{
 }
 #sidebar a:hover{
   color: red;
-
 }
 
 /* Hovedsiden */
@@ -157,12 +151,13 @@ main{
   width: 100%;
   float:left;
   line-height: 1.5;
+  position: flex;
 }
 #artikkelmain section{
   margin-top: 20px;
   font-size: 20px;
-  width:80%;
   margin-left:10%;
+  border: solid;
 }
 #artikkelmain section article{
   width:70%;

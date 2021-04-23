@@ -1,6 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import styled from 'styled-components'
+const Søkeknapp = styled.button`
+  background: #93ba3d;
+  border-radius: 3px;
+  border: 2px solid #93ba3d;
+  color: white;
+  margin: 0.5em 1em;
+  padding: 0.25em 1em;
+`;
 const Search = ({søkeliste}) => {
     const [value, setValue] = useState('')
     const [result, setResult] = useState([])
