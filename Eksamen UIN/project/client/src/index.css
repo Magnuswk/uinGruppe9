@@ -85,15 +85,17 @@ main{
 /* KONTAKT OSS */
 #kontakt{
   border:solid 1px black;
-  height:150px;
+  height:200px;
   text-align:center;
   margin-top: 5%;
-  margin-left: 98.6%;
+  margin-left: 98.87%;
   writing-mode: vertical-rl;
-  position:sticky inline;
+  position:fixed;
   font-weight: bold;
   font-size: 20px;
   cursor:pointer;
+  text-decoration:none;
+  color:black;
 }
 #kontakt:hover{
   background-color: rgb(0,0,0,0.3);
