@@ -88,7 +88,7 @@ main{
   height:200px;
   text-align:center;
   margin-top: 5%;
-  margin-left: 98.87%;
+  margin-left: 98.88%;
   writing-mode: vertical-rl;
   position:fixed;
   font-weight: bold;
@@ -253,7 +253,7 @@ main{
 /* Styling for nyhets delen av forsiden */
 #nyhettittel{
   font-size: 40px;
-  margin-top: 20%;
+  margin-top: 30%;
   text-align:center;
 }
 #nyhetsboks{
