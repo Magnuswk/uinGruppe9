@@ -10,7 +10,7 @@ const Containerleie = {
         },
         {
         title: "Navn",    
-        name:"name",
+        name:"navn",
         type: "string"
         },
         {

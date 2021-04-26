@@ -10,7 +10,7 @@ const Tjenester = {
         },
         {
         title: "Navn",    
-        name:"name",
+        name:"navn",
         type: "string"
         },
         {
@@ -30,7 +30,7 @@ const Tjenester = {
         },
         {
             title: "Epost adresse",
-            name:"epost",
+            name:"epostadresse",
             type: "string"
         },
         {

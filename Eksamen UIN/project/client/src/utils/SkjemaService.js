@@ -3,7 +3,7 @@ import client from "./client"
 // Tjenester forms
 export const createTjenester = async (data) => {
     try {
-        await client.create({_type: "tjenester", data})
+        await client.create({_type: "tjenester", ...data})
     } catch (error) {
         throw new Error(error)
     }
@@ -20,7 +20,7 @@ export const createBilvraking = async (data) => {
 // Skjema for containerleie
 export const createContainerleie = async (data) => {
     try {
-        await client.create({_type: "containerleie", data})
+        await client.create({_type: "containerleie", ...data})
     } catch (error) {
         throw new Error(error)
     }
@@ -28,7 +28,7 @@ export const createContainerleie = async (data) => {
 // Skjema for henting
 export const createHenting = async (data) => {
     try {
-        await client.create({_type: "henting", data})
+        await client.create({_type: "henting", ...data})
     } catch (error) {
         throw new Error(error)
     }
@@ -36,7 +36,7 @@ export const createHenting = async (data) => {
 // Generelt kontakt oss skjema
 export const createContact = async (data) => {
     try {
-        await client.create({_type: "contact", data})
+        await client.create({_type: "contact", ...data})
     } catch (error) {
         throw new Error(error)
     }
