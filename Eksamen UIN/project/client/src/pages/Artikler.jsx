@@ -81,7 +81,7 @@ const Artikler = () => {
                     <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt='yeetum'></img>
                     {/* Alt innholdet som skal vere på hovuddelen av siden */}
                     <BlockContent blocks={data?.body}/>
-                  <Skjemaer type={data?.slug}/>
+                  <Skjemaer type={data?.tittel}/>
                   </article>
                 </Artikkelmain>
             </>

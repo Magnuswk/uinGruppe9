@@ -1,4 +1,3 @@
-import { useParams } from 'react-router'
 import React, { useState, useEffect } from 'react'
 import { mainnyhetfetch, nyhetsfetch } from '../utils/artikkelService'
 import BlockContent from '@sanity/block-content-to-react'

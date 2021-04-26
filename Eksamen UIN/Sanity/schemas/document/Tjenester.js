@@ -1,6 +1,6 @@
-const contact = {
-    title: "kontakt",
-    name: "contact",
+const Tjenester = {
+    title: "Tjenester",
+    name: "tjenester",
     type: "document",
     fields: [
         {
@@ -12,6 +12,21 @@ const contact = {
         title: "Navn",    
         name:"name",
         type: "string"
+        },
+        {
+            title: "Adresse",
+            name:"adresse",
+            type: "string"
+        },
+        {
+            title: "Post nummer",
+            name:"postnummer",
+            type: "string"
+        },
+        {
+            title: "Post sted",
+            name:"poststed",
+            type: "string"
         },
         {
             title: "Epost adresse",
@@ -38,4 +53,4 @@ const contact = {
     ]
 }
 
-export default contact;
+export default Tjenester;

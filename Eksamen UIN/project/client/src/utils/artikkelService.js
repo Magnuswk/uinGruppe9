@@ -21,7 +21,9 @@ const searchfields = `
   tittel,
   nokkelord,
   'slug': slug.current,
-  'kategori':kategori->kategori
+  'kategori':kategori->kategori,
+  beskrivelse,
+  'bilde': bilde{...,asset->{url}},
 `
 const nyhetsfields = `
   tittel,
@@ -43,7 +45,7 @@ const forsidefields = `
 
 
 /* Fetch som henter bruker slug til å hente all informasjon fra sanity */
-const artikkelfetch = async (slug) => {
+ const artikkelfetch = async (slug) => {
   const data = await client.fetch(`*[_type == "artikler" && slug.current == $slug]{${artikkelfields},body[]{..., asset ->{..., '_key': _id}}}`, {slug}
   );
   if (data?.length > 0){
@@ -73,6 +75,9 @@ export const searchfetch = async () => {
 export const nyhetsfetch = async () => {
   const data = await client.fetch(`*[_type == "nyheter"]{${nyhetsfields}}`
   );
+  if (data === null){
+    return "finnes ikke"
+  }
   return data;
 };
 /* Fetch som henter nødvendig informasjon for Forsiden */
