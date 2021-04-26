@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { createContact, createBilvraking, createContainerleie, createHenting, createTjenester} from '../utils/SkjemaService'
-import Bilvrakingskjema from './BilvrakingSkjema'
+import BilvrakingSkjema from '../components/BilvrakingSkjema'
 import ContainerleieSkjema from './ContainerleieSkjema'
 import KontaktSkjema from './KontaktSkjema'
 import HentingSkjema from './HentingSkjema'
@@ -47,7 +47,7 @@ const Skjemaer = ({type}) => {
             {error ? <p>{error}</p>: null}
             {success ? <p>Takk din henvendelse er motatt!</p>: null}
             {loading ? <p>Loading...</p>: null}      
-            {type==='Bilvraking'?<Bilvrakingskjema onSubmit={onSubmit}/> : null}
+            {type==='Bilvraking'?<BilvrakingSkjema onSubmit={onSubmit}/> : null}
             {/* {type==='Henting av EE-avfall' || 'Bestilling og Henting av Farlig Avfall'?<HentingSkjema onSubmit={onSubmit}/> : null} */}
             {type==='Containerleie'?<ContainerleieSkjema onSubmit={onSubmit}/> : null}
             {(type==='Slamsuging' || 'Tankrengjøring' || 'Fjerning av Oljetank') ? <TjenesterSkjema onSubmit={onSubmit}/> : null}
