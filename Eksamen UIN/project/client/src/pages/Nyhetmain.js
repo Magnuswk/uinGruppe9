@@ -4,6 +4,8 @@ import { mainnyhetfetch, nyhetsfetch } from '../utils/artikkelService'
 import BlockContent from '@sanity/block-content-to-react'
 import Sistenytt from '../components/Sistenytt'
 import {useLocation} from 'react-router-dom'
+import {urlFor} from '../utils/imageUrl'
+
 const Nyhetmain = () => {
     let location = useLocation()
     const [data, setData] = useState(null)
@@ -62,7 +64,7 @@ const Nyhetmain = () => {
         return (
             <section id="mainnyheter">
               <h1>{data.tittel}</h1>
-              <img src={data?.bilde.asset.url} alt={data.tittel}></img>
+              <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
               <BlockContent blocks={data?.body}/>
               <Sistenytt nyheter={arr}/>
 

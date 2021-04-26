@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {urlFor} from '../utils/imageUrl'
+
 const Sistenytt = ({ nyheter }) => {
     return (
         <section id="sistenytt">
@@ -7,7 +9,7 @@ const Sistenytt = ({ nyheter }) => {
             {nyheter.map(function(name, index){
                     return <article className="sistenyttarticle">
                             <h1>{name.tittel}</h1>
-                            <img src={name.bilde.asset.url} alt={name.tittel}></img>
+                            <img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={name.tittel}></img>
                             <Link to={name.slug}><button>Les mer!</button></Link>
                         </article>;
                   })}

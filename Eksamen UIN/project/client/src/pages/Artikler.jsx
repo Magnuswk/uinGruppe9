@@ -7,6 +7,8 @@ import { sidebarfetch } from '../utils/artikkelService'
 import {NavLink, useLocation} from 'react-router-dom'
 import  Skjemaer from "../components/Skjemaer"
 import {urlFor} from '../utils/imageUrl'
+
+
 /*  Denne komponenten lager alle sider */
 /*  Henter alle artikkler med slug som er lik nettadressen */
 const Artikler = () => {
@@ -19,6 +21,7 @@ const Artikler = () => {
             setData (side)
           } catch (error) {
               console.log(error)
+              
           }  
         };
         fetchAsyncData();
@@ -75,7 +78,7 @@ const Artikler = () => {
                         {data?.tittel}
                     </h1>
                     {/* Bilde som skal bli banner */}
-                    <img src={urlFor(data?.bilde.asset).format('auto').url()} alt='yeetum'></img>
+                    <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt='yeetum'></img>
                     {/* Alt innholdet som skal vere på hovuddelen av siden */}
                     <BlockContent blocks={data?.body}/>
                   <Skjemaer type={data?.slug}/>

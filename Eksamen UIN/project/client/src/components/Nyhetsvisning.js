@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
+import {urlFor} from '../utils/imageUrl'
 
 const Nyhetsvisning = (props) => {
     const[sorted, setSorted] = useState(1)
@@ -23,7 +24,7 @@ const Nyhetsvisning = (props) => {
                 <button onClick={Sort} id="sort">Sorter Nyheter</button>
                 <section id='nyhetsboks'>
                     <article id='hovednyhet'>
-                        <img src={props.nyhet[0].bilde.asset.url} alt={props.nyhet[0].beskrivelse}></img>
+                        <img src={urlFor(props.nyhet[0].bilde.asset.url).format('webp').url()} alt={props.nyhet[0].beskrivelse}></img>
                         <h2>{props.nyhet[0].dato.slice(0,10)}</h2>
                         <h1>{props.nyhet[0].beskrivelse}</h1>
                     </article>
@@ -32,7 +33,7 @@ const Nyhetsvisning = (props) => {
                         {props.andre.map(function(name, index){
                             return(
                                 <article className="eldrenyheter" key={name.slug}>
-                                     <img src={name.bilde.asset.url} alt={name.beskrivelse}></img>
+                                     <img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={name.beskrivelse}></img>
                                     <h2>{name.beskrivelse}</h2>
                                 </article>
                             );
