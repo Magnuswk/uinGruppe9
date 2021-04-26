@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Homebutton from "../components/Homebutton"
 import Nyhetsvisning from '../components/Nyhetsvisning'
 import { nyhetsfetch, forsidefetch} from "../utils/artikkelService";
+import { Link } from 'react-router-dom'
 /*  Dette komponenten lager siden!*/
 const Home = () => {
     const [nyhet, setNyhet] = useState(null)
@@ -55,7 +56,7 @@ const Home = () => {
     }else{
         return (
             <>
-                <div id="kontakt">Kontakt Oss</div>
+                <Link to="/Om-Oss/kontakt-oss" id="kontakt">Kontakt Oss</Link>
                 <Homebutton forside={forside} />
                 <Nyhetsvisning nyhet={første} andre={arr} />
             </>
