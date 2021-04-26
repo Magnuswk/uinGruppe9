@@ -10,12 +10,12 @@ const Henting = {
         },
         {
         title: "Firma navn",    
-        name:"name",
+        name:"firmanavn",
         type: "string"
         },
         {
             title: "Bestillers navn",    
-            name:"name",
+            name:"bestillersnavn",
             type: "string"
             },
         {
@@ -50,7 +50,7 @@ const Henting = {
         },
         {
             title: "Hva skal hentes?",
-            name:"henvendelse",
+            name:"hentes",
             type: "string"
         },
         {
@@ -60,12 +60,12 @@ const Henting = {
         },
         {
             title: "Tilleggsopplysninger?",
-            name:"henvendelse",
+            name:"tilleggsopplysninger",
             type: "text"
         },
         {
             title: "Ønsker dere å bli kontaktet før henting?",
-            name:"kontaktførhenting",
+            name:"kontaktforhenting",
             type: "string"
         },
         {

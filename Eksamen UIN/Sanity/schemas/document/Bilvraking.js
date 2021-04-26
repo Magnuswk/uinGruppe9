@@ -5,7 +5,7 @@ const Bilvraking = {
     fields: [
             {
             title: "Navn",    
-            name:"name",
+            name:"navn",
             type: "string"
             },
             {
@@ -25,7 +25,7 @@ const Bilvraking = {
             },
             {
                 title: "Epost adresse",
-                name:"epost",
+                name:"epostadresse",
                 type: "string"
             },
             {
@@ -59,7 +59,7 @@ const Bilvraking = {
             },
             {
                 title: "Er bilen omlakkert?",
-                name:"erbilenomlakkert",
+                name:"omlakkert",
                 type: "string"
             },
             {
@@ -74,7 +74,7 @@ const Bilvraking = {
             },
             {
                 title: "Skal det hentes flere biler på samme sted?",
-                name:"flerebilersammested",
+                name:"flerebiler",
                 type: "string"
             },
             {

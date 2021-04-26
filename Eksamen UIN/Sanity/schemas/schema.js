@@ -10,6 +10,10 @@ import Kategori from './document/Kategori'
 import content from './object/content'
 import contact from './document/contact'
 import forside from "./document/forside"
+import Containerleie from "./document/Containerleie"
+import Bilvraking from "./document/Bilvraking"
+import Henting from "./document/Henting"
+import Tjenester from "./document/Tjenester"
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -24,6 +28,11 @@ export default createSchema({
     Kategori,
     content,
     forside,
-    contact
+    contact,
+    Containerleie,
+    Bilvraking,
+    Henting,
+    Tjenester
+
   ]),
 })
