@@ -20,7 +20,7 @@ const Nyhetsvisning = (props) => {
         return(
             <>
                 <h1 id="nyhettittel">Østbønytt</h1>
-                <button onClick={Sort} id="sort">Sorter Nyheter</button>
+                <button onClick={Sort} id="sort">Sorter Etter dato</button>
                 <section id='nyhetsboks'>
                     <article id='hovednyhet'>
                         <img src={props.nyhet[0].bilde.asset.url} alt={props.nyhet[0].beskrivelse}></img>
