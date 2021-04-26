@@ -1,12 +1,12 @@
 import {useState} from 'react'
 import Contact from "../components/contact"
 import { createContact } from '../utils/kontaktservice'
-const Skjemaer = (type) => {
+const Skjemaer = ({type}) => {
 
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState(false)
-
+    console.log(type)
     const onSubmit = async (name) => {
         setLoading(true)
         setError(false)

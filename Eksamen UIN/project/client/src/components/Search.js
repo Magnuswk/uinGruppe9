@@ -49,7 +49,7 @@ const Search = ({søkeliste}) => {
             <input
                     type="text" 
                     id='searchbox'
-                    placeholder="Search" 
+                    placeholder="Søkeboks" 
                     value={value}
                     onChange={(event) => setValue(event.target.value)}
                     onBlur={handleBlur}
@@ -64,7 +64,7 @@ const Search = ({søkeliste}) => {
             </ul>
             
 
-            <button onClick={handleClick}>Search</button> 
+            <Søkeknapp onClick={handleClick}>Søk</Søkeknapp> 
         </section>
     )
 }
