@@ -422,6 +422,9 @@ main{
 #mainnyheter p{
   font-size: 20px;
 }
+#mainnyheter img{
+  max-width: 700px;
+}
 #searchResult{
   display:grid;
   grid-template-columns: 22% 22% 22% 22%;
