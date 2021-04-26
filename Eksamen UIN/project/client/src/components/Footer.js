@@ -25,23 +25,23 @@ const Footer = () =>  {
             <>
                 <Footerstyle>
                     <img id='grid-1'src={salten} alt="salten logo"  width="400"></img>
-                    <h1 id="grid-2">
-                    <p>Kontakt oss:  </p>
-                    <p>© ØSTBØ AS   </p>
-                    <p>Plassen 5, 8006 Bodø </p>
-                    <p>Postadresse: Postboks 1447, 8038 Bodø </p>
-                    <p>Telefon +47 75 50 09 00</p>
-                    <p>Epost postmottak@ostbo.no</p>
-                    <p>Org.nr 920 508 324</p>
-                    <p>En del av SB-konsernet</p>
-                    <br></br>
-                    </h1>     
-                    <h1 id='grid-3'>test
+                    <section id="grid-2">
+                        <p>Kontakt oss:  </p>
+                        <p>© ØSTBØ AS   </p>
+                        <p>Plassen 5, 8006 Bodø </p>
+                        <p>Postadresse: Postboks 1447, 8038 Bodø </p>
+                        <p>Telefon +47 75 50 09 00</p>
+                        <p>Epost postmottak@ostbo.no</p>
+                        <p>Org.nr 920 508 324</p>
+                        <p>En del av SB-konsernet</p>
+                    </section>
 
-                    </h1>
-                    <h1 id='grid-4'>test
+                    <section id='grid-3'>test
+
+                    </section>
+                    <section id='grid-4'>test
                         
-                    </h1>
+                    </section>
                 </Footerstyle>
             </>
         );
