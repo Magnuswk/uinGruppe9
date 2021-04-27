@@ -468,3 +468,20 @@ main{
   position: absolute;
   bottom: 0;
 }
+#skjemasection{
+  float:right;
+  width: 100%;
+}
+#skjemasection form{
+  margin-left: 20%;
+}
+#skjemasection form textarea{
+  display:block;
+}
+#skjemasection form button{ 
+  margin-bottom: 10%;
+  display:block;
+}
+.radiobutton{
+  display:inline-block;
+}

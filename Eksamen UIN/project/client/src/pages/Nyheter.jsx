@@ -21,7 +21,7 @@ const Nyheter = () => {
                 <h1 id="nyhetoverskrift">Nyheter</h1>
                 <section id="nyhet">
                 {nyhet.map(function(name, index){
-                    return <article> 
+                    return <article key={name.slug}> 
                                 <h1>{name.tittel}</h1>
                                 <img src={name.bilde.asset.url} alt={name.tittel}></img>
                                 <h2>{name.beskrivelse}</h2>

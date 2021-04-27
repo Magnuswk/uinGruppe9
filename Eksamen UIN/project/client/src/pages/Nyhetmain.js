@@ -60,6 +60,7 @@ const Nyhetmain = () => {
     }else{
         return (
             <section id="mainnyheter">
+                {console.log(data)}
               <h1>{data.tittel}</h1>
               <img src={data?.bilde.asset.url} alt={data.tittel}></img>
               <BlockContent blocks={data?.body}/>

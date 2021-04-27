@@ -16,51 +16,66 @@ const TjenesterSkjema = ({onSubmit}) => {
         }
     return (
         <form>
+            <h1>Tjeneste Skjema</h1>
             <label htmlFor='avdeling'>Avdeling</label>
-            <select id='avdeling' 
-            onChange={(event)=> setAvdeling(event.target.value)}>
-                <option value='Bodø'>Bodø</option>
-                <option value='Moirana'>Mo i Rana</option>
-                <option value='Lofoten'>Lofoten</option>
-                <option value='Fauske'>Fauske</option>
-                <option value='Mosjøen'>Mosjøen</option>
-                <option value='Harstad'>Harstad</option>
-            </select>
+                <select id='avdeling' 
+                    onChange={(event)=> setAvdeling(event.target.value)}>
+                    <option value='Bodø'>Bodø</option>
+                    <option value='Moirana'>Mo i Rana</option>
+                    <option value='Lofoten'>Lofoten</option>
+                    <option value='Fauske'>Fauske</option>
+                    <option value='Mosjøen'>Mosjøen</option>
+                    <option value='Harstad'>Harstad</option>
+                </select>
+
             <label htmlFor='navn'>navn</label>
-            <input id='navn' 
-            onChange={(event)=> setNavn(event.target.value)}>
-            </input>
+            <input id='navn' required
+                onChange={(event)=> setNavn(event.target.value)}></input>
+
             <label htmlFor='Adresse'>Adresse</label>
-            <input id='Adresse' 
-            onChange={(event)=> setAdresse(event.target.value)}>
-            </input>
+            <input id='Adresse' required
+                onChange={(event)=> setAdresse(event.target.value)}></input>
+
             <label htmlFor='Postnummer'>Postnummer</label>
-            <input id='Postnummer' 
-            onChange={(event)=> setPostnummer(event.target.value)}>
-            </input>
+            <input id='Postnummer' required
+                onChange={(event)=> setPostnummer(event.target.value)}></input>
+
             <label htmlFor='Poststed'>Poststed</label>
-            <input id='Poststed' onChange={(event)=> setPoststed(event.target.value)}>
-            </input>
+            <input id='Poststed' required
+                onChange={(event)=> setPoststed(event.target.value)}></input>
+
             <label htmlFor='Epostadresse'>Epostadresse</label>
-            <input id='Epostadresse' 
-            onChange={(event)=> setEpostadresse(event.target.value)}>
-            </input>
+            <input id='Epostadresse' required
+                onChange={(event)=> setEpostadresse(event.target.value)}></input>
+
             <label htmlFor='Bekreftepost'>Bekreft epost</label>
-            <input id='Bekreftepost'>
-            </input>
+            <input id='Bekreftepost' required></input>
+
             <label htmlFor='Telefonnummer'>Telefonnummer</label>
-            <input id='Telefonnummer' 
-            onChange={(event)=> setTelefonnummer(event.target.value)}>
-            </input>
+            <input id='Telefonnummer' required
+                onChange={(event)=> setTelefonnummer(event.target.value)}></input>
+
             <label htmlFor='Henvendelse'>Henvendelse</label>
-            <textarea id='Henvendelse' 
-            onChange={(event)=> setHenvendelse(event.target.value)}>
-            </textarea>
-            <label htmlFor='Kontaktmetode'>Telefon eller epost?</label>
-            <input type='radio' value='epost' onChange={(event)=> setKontaktmetode(event.target.value)}></input>
-            <label htmlFor='epost'>Epost</label>
-            <input type='radio' value='Telefon' onChange={(event)=> setKontaktmetode(event.target.value)}></input>
-            <label htmlFor='Telefon'>Telefon</label>
+            <textarea id='Henvendelse' required
+                onChange={(event)=> setHenvendelse(event.target.value)}></textarea>
+
+            <label htmlFor='Kontaktmetode'>Telefon eller epost?</label><br />
+                <input type='radio' 
+                        defaultChecked 
+                        value='epost' 
+                        className="radiobutton" 
+                        name="kontaktmetode" 
+                        onChange={(event)=> setKontaktmetode(event.target.value)}></input>
+                    <label htmlFor='epost'>Epost</label><br />
+
+                <input type='radio' 
+                        value='Telefon'  
+                        className="radiobutton" 
+                        name="kontaktmetode" 
+                        onChange={(event)=> setKontaktmetode(event.target.value)}></input>
+                    <label htmlFor='Telefon'>Telefon</label>
+            
+            
             <button onClick={handleSubmit}>Send inn</button>
         </form>
     )

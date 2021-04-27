@@ -7,7 +7,6 @@ const artikkelfields = `
   'slug': slug.current,
   'kategori':kategori->kategori,
   'bilde': bilde{...,asset->{url}},
-  'kategori':kategori->kategori,
   nokkelord,
   body,
   beskrivelse
@@ -26,15 +25,15 @@ const searchfields = `
   'bilde': bilde{...,asset->{url}},
 `
 const nyhetsfields = `
-  tittel,
-  body,
-  'kategori':kategori->kategori,
-  beskrivelse,
-  'bilde': bilde{...,asset->{url}},
-  nokkelord,
   'forfatter':forfatter->forfatter,
   dato,
+  tittel,
   'slug': slug.current,
+  'kategori':kategori->kategori,
+  'bilde': bilde{...,asset->{url}},
+  nokkelord,
+  body,
+  beskrivelse
 `
 const forsidefields = `
   tittel,
@@ -94,7 +93,7 @@ export const sortfetch = async () => {
 };
 /* Fetch som henter bruker slug til å hente riktig nyhet */
 export const mainnyhetfetch = async (slug) => {
-  const data = await client.fetch(`*[_type == "nyheter" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
+  const data = await client.fetch(`*[_type == "nyheter" && slug.current == $slug]{${nyhetsfields},body[]{...}}`, {slug}
   );
   if (data?.length > 0){
     return data?.[0];

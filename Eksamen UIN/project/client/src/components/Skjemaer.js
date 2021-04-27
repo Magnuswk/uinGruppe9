@@ -42,18 +42,17 @@ const Skjemaer = ({type}) => {
     }
 
     return (
-        <div id='mainskjemawrapper'>
-            <h1>Kontakt Skjema</h1>
+        <section id='skjemasection'>
+            
             {error ? <p>{error}</p>: null}
+            {loading ? <p>Sender henvendelse!</p>: null}
             {success ? <p>Takk din henvendelse er motatt!</p>: null}
-            {loading ? <p>Loading...</p>: null}      
+            {type === "Containerleie" ? <ContainerleieSkjema onSubmit={onSubmit} /> : null}
             {type==='Bilvraking'?<BilvrakingSkjema onSubmit={onSubmit}/> : null}
-            {/* {type==='Henting av EE-avfall' || 'Bestilling og Henting av Farlig Avfall'?<HentingSkjema onSubmit={onSubmit}/> : null} */}
-            {type==='Containerleie'?<ContainerleieSkjema onSubmit={onSubmit}/> : null}
-            {(type==='Slamsuging' || 'Tankrengjøring' || 'Fjerning av Oljetank') ? <TjenesterSkjema onSubmit={onSubmit}/> : null}
-            {console.log(type)}
+            {type==='Henting av EE-avfall' || type ==='Bestilling og Henting av Farlig Avfall'?<HentingSkjema onSubmit={onSubmit}/> : null}
+            {(type==='Slamsuging' || type==='Tankrengjøring' || type==='Fjerning av Oljetank') ? <TjenesterSkjema onSubmit={onSubmit}/> : null}
             {!Sideliste.includes(type)? <KontaktSkjema onSubmit={onSubmit}/> : null }
-        </div>
+        </section>
     )
 }
 
