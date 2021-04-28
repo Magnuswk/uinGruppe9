@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { mainnyhetfetch, nyhetsfetch } from '../utils/artikkelService'
+import { mainnyhetfetch, tinyhetsfetch } from '../utils/artikkelService'
 import BlockContent from '@sanity/block-content-to-react'
 import Sistenytt from '../components/Sistenytt'
 import {useLocation} from 'react-router-dom'
@@ -23,7 +23,7 @@ const Nyhetmain = () => {
     useEffect(()=> {
         const fetchAsyncNyhet = async () =>{
             try {
-                const resultat = await nyhetsfetch()
+                const resultat = await tinyhetsfetch()
                 setNyhet(resultat)
                 } catch (error) {
                     console.log(error)
@@ -32,25 +32,11 @@ const Nyhetmain = () => {
             fetchAsyncNyhet();
     }, []);
 
-
-    const arr = []
     /* Sorterer nyhetene etter dato */
     nyhet?.sort(function (a, b) {
         return b.dato.localeCompare(a.dato);
     });
-    for (let i = 0; i < nyhet?.length; i++) {
-        if(nyhet[i].tittel === data?.tittel){
-            //skip
-        }else if(i === 11){
-            break;
-        }else{
-            arr.push(nyhet[i]);
-        }
-      }
-
-
-
-    if (data === null){
+    if (data === null || nyhet === null){
         return(<Loading status='loading' />)
     }else if (data === "ikke funnet"){
         return(<Loading status ='error'/>)
@@ -61,7 +47,7 @@ const Nyhetmain = () => {
               <h1>{data.tittel}</h1>
               <img src={data?.bilde.asset.url} alt={data.tittel}></img>
               <BlockContent blocks={data?.body}/>
-              <Sistenytt nyheter={arr}/>
+              <Sistenytt nyheter={nyhet} />
 
             </section>
         )

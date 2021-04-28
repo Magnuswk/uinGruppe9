@@ -79,6 +79,15 @@ export const nyhetsfetch = async () => {
   }
   return data;
 };
+export const tinyhetsfetch = async () => {
+  const data = await client.fetch(`*[_type == "nyheter"]{${nyhetsfields}}[0...10]`
+  );
+  if (data === null){
+    return "finnes ikke"
+  }
+  console.log(data)
+  return data;
+};
 /* Fetch som henter nødvendig informasjon for Forsiden */
 export const forsidefetch = async () => {
   const data = await client.fetch(`*[_type == "Forside"]{${forsidefields}}`

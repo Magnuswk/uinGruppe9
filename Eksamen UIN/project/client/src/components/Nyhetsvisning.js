@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Nyhetsvisning = (props) => {
     const[sorted, setSorted] = useState(1)
-    
+    console.log(props.andre)
     const Sort = () => {
         if (sorted === 1){
             setSorted(2)
@@ -23,9 +23,9 @@ const Nyhetsvisning = (props) => {
                 <button onClick={Sort} id="sort">Sorter Etter dato</button>
                 <section id='nyhetsboks'>
                     <article id='hovednyhet'>
-                        <img src={props.nyhet[0].bilde.asset.url} alt={props.nyhet[0].beskrivelse}></img>
-                        <h2>{props.nyhet[0].dato.slice(0,10)}</h2>
-                        <h1>{props.nyhet[0].beskrivelse}</h1>
+                        <img src={props.nyhet.bilde.asset.url} alt={props.nyhet.beskrivelse}></img>
+                        <h2>{props.nyhet.dato.slice(0,10)}</h2>
+                        <h1>{props.nyhet.beskrivelse}</h1>
                     </article>
                     <article id="extranyhet">
                         <h1>Flere nyheter</h1>
