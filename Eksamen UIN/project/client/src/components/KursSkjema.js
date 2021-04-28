@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
-const KursSkjema = ({onSubmit, pris}) => {
+const KursSkjema = ({onSubmit, pris, tittel}) => {
     const [epost, setEpost] = useState(null)
     const [telefon, setTelefon] = useState('Ingen')
     const [navn, setNavn] = useState('Ingen')
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('test')
-        onSubmit({navn, epost, telefon})
+        onSubmit({navn, epost, telefon, tittel})
     }
     return (
             <form>

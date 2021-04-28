@@ -3,11 +3,15 @@ const Oppmelding = {
     name: "oppmelding",
     type: "document",
     fields: [
-
         {
-        title: "Navn",    
-        name:"navn",
-        type: "string"
+            title: "Tittel",    
+            name:"tittel",
+            type: "string"
+        },
+        {
+            title: "Navn",    
+            name:"navn",
+            type: "string"
         },
         {
             title: "Telefon",

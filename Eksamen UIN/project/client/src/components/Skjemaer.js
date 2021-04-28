@@ -7,7 +7,7 @@ import HentingSkjema from './HentingSkjema'
 import TjenesterSkjema from './TjenesterSkjema'
 import KursSkjema from './KursSkjema'
 
-const Skjemaer = ({type, pris}) => {
+const Skjemaer = ({type, pris, tittel}) => {
     const Sideliste = ['Slamsuging', 'Tankrengjøring', ' Fjerning av Oljetank', 'Henting av EE-avfall', 'Bestilling og Henting av Farlig Avfall', 'Bilvraking', 'Containerleie', 'Kurs']
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
@@ -55,7 +55,7 @@ const Skjemaer = ({type, pris}) => {
             {type==='Henting av EE-avfall' || type ==='Bestilling og Henting av Farlig Avfall'?<HentingSkjema onSubmit={onSubmit}/> : null}
             {(type==='Slamsuging' || type==='Tankrengjøring' || type==='Fjerning av Oljetank') ? <TjenesterSkjema onSubmit={onSubmit}/> : null}
             {!Sideliste.includes(type)? <KontaktSkjema onSubmit={onSubmit}/> : null }
-            {type === 'Kurs'? <KursSkjema onSubmit={onSubmit} pris={pris}/> : null }
+            {type === 'Kurs'? <KursSkjema onSubmit={onSubmit} pris={pris} tittel={tittel}/> : null }
         </section>
     )
 }

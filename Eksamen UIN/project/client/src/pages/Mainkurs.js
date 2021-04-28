@@ -62,7 +62,7 @@ const Kursmain = () => {
                 <img src={data?.bilde.asset.url} alt={data.tittel}></img>
                 <Sidebar sidebar={sidebar}/>
                 <BlockContent blocks={data?.body}/>
-                <Skjemaer type='Kurs' pris={data.pris}/>
+                <Skjemaer type='Kurs' pris={data.pris} tittel={data.tittel}/>
             </section>
         )
     }
