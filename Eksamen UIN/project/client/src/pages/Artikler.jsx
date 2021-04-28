@@ -6,8 +6,10 @@ import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
 import {NavLink, useLocation} from 'react-router-dom'
 import  Skjemaer from "../components/Skjemaer"
+import Loading from '../components/Loading'
 /*  Denne komponenten lager alle sider */
 /*  Henter alle artikkler med slug som er lik nettadressen */
+
 const Artikler = () => {
     let location = useLocation()
     const [data, setData] = useState(null)
@@ -39,15 +41,10 @@ const Artikler = () => {
 
       /*  Fetch loader */
       if (data === null){
-          return(<h1 id="loading">Loading...</h1>)
+          return(<Loading status='loading'/>)
       /* Siden er ikke funnet */
       }else if(data === "ikke funnet"){
-            return(
-                <>
-                <h1 id="error">Denne siden finnes ikke!</h1>
-                <img id="finnes-ikke" src="https://media1.tenor.com/images/a74df99c03852b2f99fa0e813807822f/tenor.gif?itemid=14884175" alt="finnes-ikke"/>
-                </>
-            )
+            return(<Loading status='error' />)
       }
       /* Lag Siden */
       else{

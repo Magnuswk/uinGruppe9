@@ -118,7 +118,7 @@ const HentingSkjema = ({onSubmit}) => {
             <input type='date' id='Hentedato' 
             onChange={(event)=> setHentedato(event.target.value)}>
             </input>
-            <button onSubmit={handleSubmit}>Send inn</button>
+            <button onClick={handleSubmit}>Send inn</button>
         </form>
     )
 }

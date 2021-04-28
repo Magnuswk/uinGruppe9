@@ -14,6 +14,8 @@ import Bilvraking from "./document/Bilvraking"
 import Henting from "./document/Henting"
 import Tjenester from "./document/Tjenester"
 import Kontakt from "./document/Kontakt"
+import Kurs from './document/Kurs'
+import Oppmelding from './document/Oppmelding'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,7 +35,9 @@ export default createSchema({
     Containerleie,
     Bilvraking,
     Henting,
-    Tjenester
+    Tjenester,
+    Kurs,
+    Oppmelding
 
   ]),
 })

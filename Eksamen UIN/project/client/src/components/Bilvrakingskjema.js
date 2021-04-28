@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Bilvrakingskjema = ({onSubmit}) => {
+const BilvrakingSkjema = ({onSubmit}) => {
     const [navn, setNavn] = useState(null)
     const [adresse, setAdresse] = useState(null)
     const [postnummer, setPostnummer] = useState(null)
@@ -116,4 +116,4 @@ const Bilvrakingskjema = ({onSubmit}) => {
     )
 }
 
-export default Bilvrakingskjema
+export default BilvrakingSkjema
