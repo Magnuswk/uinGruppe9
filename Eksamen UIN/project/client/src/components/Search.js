@@ -12,7 +12,9 @@ const Søkeknapp = styled.button`
 const Search = ({søkeliste}) => {
     const [value, setValue] = useState('')
     const [result, setResult] = useState([])
+    const [open, setOpen] = useState(false)
     const ulRef = useRef()
+    const node = useRef()
 
     /* Fjerner søkealternative når du trykker på dokumentet */    
     useEffect(() =>{
@@ -32,19 +34,37 @@ const Search = ({søkeliste}) => {
         filter();
     },[value, søkeliste])
 
+
+    useEffect (() => {
+        if(open){
+            document.addEventListener('mousedown',handleClickOutside)
+        }else{
+            document.removeEventListener('mousedown',handleClickOutside)
+        }
+        return()=>{document.removeEventListener('mousedown',handleClickOutside)}
+    },[open])
+
     const handleBlur = () =>{
-        /* ulRef.addEventListener("click", (event) => {
+        setOpen(true)
+        /*ulRef.addEventListener("click", (event) => {
             return;
         })*/
-        //setResult([]) 
     }
+
+    const handleClickOutside = (e) =>{
+        if(node.current.contains(e.target)){
+            return
+        }
+        setOpen(false)
+    } 
+
     const handleClick = () =>{
         if (value){
             window.location.href = "/Search/" + value;
         }
     }
     return (
-        <section id="search">
+        <section id="search" ref={node}>
             {/* Input for søk */}
             <input
                     type="text" 
@@ -52,8 +72,9 @@ const Search = ({søkeliste}) => {
                     placeholder="Søkeboks" 
                     value={value}
                     onChange={(event) => setValue(event.target.value)}
-                    onBlur={handleBlur}
+                    onClick={(event) => handleBlur(event)}
                     />
+            { open && 
              <ul id="searchresult" ref={ulRef}>{}
                  {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
                 {
@@ -61,7 +82,7 @@ const Search = ({søkeliste}) => {
                    return <li key={ name.slug }><Link to={name.slug}>{name.title}</Link></li>;
                 })
              }
-            </ul>
+            </ul>}
             
 
             <Søkeknapp onClick={handleClick}>Søk</Søkeknapp> 
