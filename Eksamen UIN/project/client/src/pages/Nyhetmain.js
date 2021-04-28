@@ -3,6 +3,7 @@ import { mainnyhetfetch, nyhetsfetch } from '../utils/artikkelService'
 import BlockContent from '@sanity/block-content-to-react'
 import Sistenytt from '../components/Sistenytt'
 import {useLocation} from 'react-router-dom'
+import Loading from '../components/Loading'
 const Nyhetmain = () => {
     let location = useLocation()
     const [data, setData] = useState(null)
@@ -50,13 +51,9 @@ const Nyhetmain = () => {
 
 
     if (data === null){
-        return(<h1 id="loading">Loading...</h1>)
+        return(<Loading status='loading' />)
     }else if (data === "ikke funnet"){
-        return(  
-        <>
-            <h1 id="error">Denne Nyhetssiden finnes ikke!</h1>
-            <img id="finnes-ikke" src="https://media1.tenor.com/images/a74df99c03852b2f99fa0e813807822f/tenor.gif?itemid=14884175" alt="finnes-ikke"/>
-        </>)
+        return(<Loading status ='error'/>)
     }else{
         return (
             <section id="mainnyheter">

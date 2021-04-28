@@ -3,6 +3,7 @@ import Homebutton from "../components/Homebutton"
 import Nyhetsvisning from '../components/Nyhetsvisning'
 import { nyhetsfetch, forsidefetch} from "../utils/artikkelService";
 import { Link } from 'react-router-dom'
+import Loading from "../components/Loading";
 /*  Dette komponenten lager siden!*/
 const Home = () => {
     const [nyhet, setNyhet] = useState(null)
@@ -52,7 +53,7 @@ const Home = () => {
       }
     
     if (forside === null || nyhet === null){
-        return(<h1 id="loading">Loading...</h1>)
+        return(<Loading status='loading' />)
     }else{
         return (
             <>

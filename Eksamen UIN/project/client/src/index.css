@@ -195,10 +195,10 @@ main{
 }
 /*  Siden Loader */
 #loading{
-  position:absolute;
-  left:40%;
-  top:45%;
-  font-size: 100px;
+  margin-left: 40%;
+  margin-top: 15%;
+  margin-bottom: 100%;
+  font-size: 75px;
 }
 /* Breadcrumbs */ 
 #breadcrumbs li{
