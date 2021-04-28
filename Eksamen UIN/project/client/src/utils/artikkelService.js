@@ -40,6 +40,18 @@ const forsidefields = `
   'bilde': bilde{...,asset->{url}},
   link
 `
+const kursfields = `
+  startdato,
+  tittel,
+  'slug': slug.current,
+  'bilde': bilde{...,asset->{url}},
+  body,
+  beskrivelse,
+  adresse,
+  postnummer,
+  poststed,
+  pris
+`
 
 
 
@@ -109,4 +121,30 @@ export const mainnyhetfetch = async (slug) => {
   }else{
     return "ikke funnet"
   }
+};
+export const kursfetch = async () => {
+  const data = await client.fetch(`*[_type == "kurs"]{${kursfields}}`
+  );
+  if (data === null){
+    return "finnes ikke"
+  }
+  return data;
+};
+export const mainkursfetch = async (slug) => {
+  const data = await client.fetch(`*[_type == "kurs" && slug.current == $slug]{${kursfields},body[]{...}}`, {slug}
+  );
+  if (data?.length > 0){
+    return data?.[0];
+  }else{
+    return "ikke funnet"
+  }
+};
+export const tikursfetch = async () => {
+  const data = await client.fetch(`*[_type == "kurs"]{${kursfields}}[0...10]`
+  );
+  if (data === null){
+    return "finnes ikke"
+  }
+  console.log(data)
+  return data;
 };

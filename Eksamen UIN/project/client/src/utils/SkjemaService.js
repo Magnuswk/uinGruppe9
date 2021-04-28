@@ -41,3 +41,11 @@ export const createContact = async (data) => {
         throw new Error(error)
     }
 }
+// Kurs skjema
+export const createKurs = async (data) => {
+    try {
+        await client.create({_type: "oppmelding", ...data})
+    } catch (error) {
+        throw new Error(error)
+    }
+}

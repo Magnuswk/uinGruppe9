@@ -485,3 +485,66 @@ main{
 .radiobutton{
   display:inline-block;
 }
+/* Kurs */
+#kurs{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  height: 100%;
+  text-align:center;
+}
+#kursoverskrift{
+  font-size: 50px;
+  text-align:center;
+}
+#kurs article{
+  margin-left: 50%;
+  margin-top: 20%;
+  width: 400px;
+  text-align:center;
+  position:relative;
+}
+#kurs article h1{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#kurs article h2{
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+#kurs article h3{
+  font-size: 10px;
+  margin-bottom: 40px;
+}
+#kurs article img{
+  width: 200px;
+}
+#kurs article a button{
+  font-size: 20px;
+  border: solid 1px;
+  width: 25%;
+  left: 36%;
+  bottom: 0;
+  position:absolute;
+}
+#mainkurs{
+  margin-left: 30%;
+  margin-top: 15px;
+}
+#mainkurs h1{
+  font-size: 30px;
+  margin-left: 10%;
+  margin-bottom: 30px;
+}
+#mainkurs p{
+  font-size: 20px;
+}
+#mainkurs img{
+  max-width: 700px;
+}
+#mainkurs form{
+  margin-top: 5%;
+}
+#mainkurs form label{
+  margin-bottom: 5px;
+  font-size: 16px;
+}

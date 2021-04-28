@@ -111,7 +111,7 @@ const BilvrakingSkjema = ({onSubmit}) => {
                 <textarea id='tilleggsinformasjon' required
                     onChange={(event)=> setTilleggsinformasjon(event.target.value)}></textarea>
 
-            <button onSubmit={handleSubmit}>Send skjema</button>
+            <button onClick={handleSubmit}>Send skjema</button>
         </form>
     )
 }

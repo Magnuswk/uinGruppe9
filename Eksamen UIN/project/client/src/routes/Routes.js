@@ -8,6 +8,8 @@ import Footer from "../components/Footer"
 import Testkategorisort from "../pages/Testkategorisort"
 import Nyhetmain from "../pages/Nyhetmain"
 import Search from "../pages/Search"
+import Kurs from "../pages/Kurs"
+import Mainkurs from "../pages/Mainkurs"
 
 
 
@@ -33,6 +35,12 @@ const Routes = () =>(
             </Route>
             <Route exact path="/Testkategorisort">
                 <Testkategorisort />
+            </Route>
+            <Route exact path="/Kurs">
+                <Kurs />
+            </Route>
+            <Route path="/Kurs/:slug">
+                <Mainkurs />
             </Route>
             <Route path="/:slug">
                 <Artikler />
