@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { createContact, createBilvraking, createContainerleie, createHenting, createTjenester} from '../utils/SkjemaService'
-import BilvrakingSkjema from '../components/BilvrakingSkjema'
+import BilvrakingSkjema from './BilvrakingSkjema'
 import ContainerleieSkjema from './ContainerleieSkjema'
 import KontaktSkjema from './KontaktSkjema'
 import HentingSkjema from './HentingSkjema'
