@@ -76,7 +76,7 @@ const TjenesterSkjema = ({onSubmit}) => {
                     <label htmlFor='Telefon'>Telefon</label>
             
             
-            <button onClick={handleSubmit}>Send inn</button>
+            <button onSubmit={handleSubmit}>Send inn</button>
         </form>
     )
 }

@@ -151,7 +151,7 @@ const ContainerleieSkjema = ({onSubmit}) => {
                 <textarea  id='Beskrivplasseringen'  required
                     onChange={(event)=> setBeskrivplasseringen(event.target.value)}></textarea>
 
-            <button onClick={handleSubmit}>Send inn</button>
+            <button onSubmitk={handleSubmit}>Send inn</button>
         </form>
     )
 }
