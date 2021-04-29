@@ -15,12 +15,12 @@ const Header = () => {
                 setHeader (resultat)
               } catch (error) {
                   console.log(error)
-              }  
+              }
             };
             fetchAsyncSearch();
     }, []);
 
-    
+
 
 
 
@@ -37,7 +37,7 @@ const Header = () => {
                     <li><NavLink to="/">Hjem</NavLink></li>
                     <li><NavLink to="/Tjenester">Tjenester</NavLink></li>
                     <li><NavLink to="/Sortering">Sortering</NavLink></li>
-                    <li><NavLink to="/Om-Oss">Om-Oss</NavLink></li>
+                    <li><NavLink to="/Om-Oss">Om Oss</NavLink></li>
                 </ul>
                 {/* Sender tidliger fetch som prop til søkeliste komponenten */}
                 <Search søkeliste={header}/>

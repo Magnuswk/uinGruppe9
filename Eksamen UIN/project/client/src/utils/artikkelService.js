@@ -1,4 +1,4 @@
-// Dette er en demo for måter å hente data på. 
+// Dette er en demo for måter å hente data på.
 // Du må huske å erstatte ADD_YOUR_TYPE_HERE med egne dokumenttyper fra Sanity
 
 import client from './client';
@@ -50,6 +50,7 @@ const kursfields = `
   adresse,
   postnummer,
   poststed,
+  'kategori':kategori->kategori,
   pris
 `
 
@@ -64,7 +65,7 @@ const kursfields = `
   }else{
     return "ikke funnet"
   }
-  
+
 };
 export default artikkelfetch
 

@@ -38,12 +38,11 @@ const Home = () => {
     nyhet?.sort(function (a, b) {
         return b.dato.localeCompare(a.dato);
     });
-      if (nyhet != null) {
-        console.log(nyhet[0])
-      }
 
-    if (forside === null || nyhet === null){
-        return(<Loading status='loading' />)
+    if (nyhet === null || nyhet === "ikke funnet"){
+        return(
+          <Loading data={nyhet}/>
+        )
     }else{
         return (
             <>

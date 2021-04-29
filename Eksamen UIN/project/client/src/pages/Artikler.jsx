@@ -9,7 +9,11 @@ import KursContent from '../components/KursContent';
 import NyhetContent from '../components/NyhetContent';
 import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Sidebar'
+import  Skjemaer from "../components/Skjemaer/Skjemaer"
+import {urlFor} from '../utils/imageUrl'
+
+
 /*  Denne komponenten lager alle sider */
 /*  Henter alle artikkler med slug som er lik nettadressen */
 
@@ -45,17 +49,17 @@ const Artikler = () => {
   return(
     <main id="artikkelmain">
       <section>
-      <article>
-      <Sidebar kategori={data?.kategori}/>
-        <Breadcrumbs  data={data} location={location} />
-        <h1>{data.tittel}</h1>
-        <img src={data?.bilde.asset.url} alt={data.tittel}></img>
-        <BlockContent blocks={data?.body}/>
-        {slug === "Kurs" ? <KursContent data={data} />: null}
-        {slug === "Kurs" ? <KursContent data={data} />: null}
-        {slug === "Tjenester" || slug === "Sortering" || slug === "Om-Oss" ? <Artikelcontent data={data} location={location} />:null}
-        {slug === "Nyheter" ? <NyhetContent data={data}/> : null}
-        </article>
+        <article>
+        <Sidebar kategori={data?.kategori}/>
+          <Breadcrumbs  data={data} location={location} />
+          <h1>{data.tittel}</h1>
+          <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
+          <BlockContent blocks={data?.body}/>
+          {slug === "Kurs" ? <KursContent data={data} />: null}
+          {slug === "Kurs" ? <KursContent data={data} />: null}
+          {slug === "Tjenester" || slug === "Sortering" || slug === "Om-Oss" ? <Artikelcontent data={data} location={location} />:null}
+          {slug === "Nyheter" ? <NyhetContent data={data}/> : null}
+          </article>
         </section>
     </main>
   )
@@ -64,12 +68,3 @@ const Artikler = () => {
 
 
 export default Artikler
-
-/*  Fetch loader */
-      /*if (data === null){
-          return(<Loading status='loading'/>)
-      /* Siden er ikke funnet */
-      /*}else if(data === "ikke funnet"){
-            return(<Loading status='error' />)
-      }*/
-      /* Lag Siden */

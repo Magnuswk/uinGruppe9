@@ -9,7 +9,7 @@ const Sidebar = ({kategori}) => {
     useEffect(()=> {
         const fetchAsyncsidebar = async () =>{
           try {
-              if (kategori === "Tjenester" || kategori === "Sortering" || kategori === "Om-Oss"){
+              if (kategori === "Tjenester" || kategori === "Sortering" || kategori === "Om Oss"){
                 const info = await sidebarfetch(kategori)
                 setSidebar (info)
               }else if (kategori === "Nyheter"){

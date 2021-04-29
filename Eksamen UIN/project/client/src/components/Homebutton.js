@@ -8,6 +8,7 @@ import Om_oss from "../Images/Om_oss.png"
 import Tjenester from "../Images/Tjenester.png"
 import Åpningstider from "../Images/Åpningstider.png" */
 import { Link } from 'react-router-dom' 
+import {urlFor} from '../utils/imageUrl'
 
 
 const Homebutton = ({forside}) => {
@@ -15,8 +16,8 @@ const Homebutton = ({forside}) => {
         <section id="mainsection">
             {forside?.map(function(name, index){
                 return(
-                    <article key={name.link}>
-                        {<Link to={name.link}><h2>{name.tittel}</h2><img src={name.bilde.asset.url} alt={name.tittel}></img></Link>}
+                    <article>
+                        {<Link to={name.link}><h2>{name.tittel}</h2><img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={name.tittel}></img></Link>}
                     </article>
                 )
             })}
