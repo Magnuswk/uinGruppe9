@@ -40,7 +40,7 @@ const Home = () => {
     });
 
     if (nyhet === null || nyhet === "ikke funnet"){
-          return(
+        return(
           <Loading data={nyhet}/>
         )
     }else{
