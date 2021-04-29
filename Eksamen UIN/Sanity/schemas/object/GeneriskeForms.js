@@ -1,6 +1,6 @@
-const Generiskforms = {
+const Generiskeforms = {
     title: 'Generiske forms',
-    name: 'generiskform',
+    name: 'generiskeforms',
     type: 'object',
     fields: [
             {
@@ -26,4 +26,4 @@ const Generiskforms = {
             ]
 }
 
-export default Generiskforms
+export default Generiskeforms
