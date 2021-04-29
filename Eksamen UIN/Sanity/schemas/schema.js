@@ -16,6 +16,7 @@ import Tjenester from "./document/Tjenester"
 import Kontakt from "./document/Kontakt"
 import Kurs from './document/Kurs'
 import Oppmelding from './document/Oppmelding'
+import Generiskforms from './object/Generiskforms'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,7 +38,8 @@ export default createSchema({
     Henting,
     Tjenester,
     Kurs,
-    Oppmelding
+    Oppmelding,
+    Generiskforms
 
   ]),
 })

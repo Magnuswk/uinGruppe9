@@ -4,23 +4,13 @@ const Bilvraking = {
     type: "document",
     fields: [
             {
-            title: "Navn",    
-            name:"navn",
-            type: "string"
+                title: "Navn",    
+                name:"navn",
+                type: "string"
             },
             {
                 title: "Adresse",
                 name:"adresse",
-                type: "string"
-            },
-            {
-                title: "Post nummer",
-                name:"postnummer",
-                type: "string"
-            },
-            {
-                title: "Post sted",
-                name:"poststed",
                 type: "string"
             },
             {
@@ -33,6 +23,17 @@ const Bilvraking = {
                 name:"telefonnummer",
                 type: "string"
             },
+            {
+                title: "Post nummer",
+                name:"postnummer",
+                type: "string"
+            },
+            {
+                title: "Post sted",
+                name:"poststed",
+                type: "string"
+            },
+
             {
                 title: "Kontonummer",
                 name:"kontonummer",

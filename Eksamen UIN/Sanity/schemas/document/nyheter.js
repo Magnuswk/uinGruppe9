@@ -37,11 +37,10 @@ const Nyheter = {
         {
             title: 'Dato',
             name: 'dato',
-            type: 'datetime',
+            type: 'date',
             validation: Rule => Rule.required().error('Dette feltet må utfylles'),
             options: {
                 dateFormat: "DD-MM-YYYY",
-                timeFormat: "HH:mm",
                 calendarTodayLabel: "Today"
             }
         },
