@@ -59,7 +59,7 @@ const Search = () => {
                     result?.map(function(name, index){
                     return (<article key={ name.slug }>
                                     <Link to={name.slug}><h2>{name.tittel}</h2></Link>
-                                    <img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={data?.tittel}></img>
+                                    <img src={urlFor(name.bilde.asset.url).format('webp').width(400).height(233).url()} alt={data?.tittel}></img>
                                     <h3>{name.beskrivelse}</h3>
                                     <Link to={name.slug}><button>Les mer</button></Link>
                                 </article>);

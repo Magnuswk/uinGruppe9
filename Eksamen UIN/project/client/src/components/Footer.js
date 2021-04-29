@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import salten from '../Images/salten.png'
+import {urlFor} from '../utils/imageUrl'
 const Footerstyle = styled.footer`
     background-color: #93ba3d;
     font-Size: 20px;

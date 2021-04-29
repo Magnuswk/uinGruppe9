@@ -25,7 +25,7 @@ const Nyheter = () => {
                 {nyhet.map(function(name, index){
                     return <article> 
                             <h1>{name.tittel}</h1>
-                            <img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={name.tittel}></img>
+                            <img src={urlFor(name.bilde.asset.url).format('webp').width(200).height(200).url()} alt={name.tittel}></img>
                             <h2>{name.beskrivelse}</h2>
                             <h3>{name.dato.slice(0,10)}</h3>
                             <Link to={name.slug}><button>Les mer</button></Link>

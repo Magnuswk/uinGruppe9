@@ -25,7 +25,7 @@ const Kurs = () => {
         {kurs.map(function(name, index){
             return <article key={name.slug}>
                         <h1>{name.tittel}</h1>
-                        <img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={name.tittel}></img>
+                        <img src={urlFor(name.bilde.asset.url).format('webp').width(200).height(200).url()} alt={name.tittel}></img>
                         <h2>{name.beskrivelse}</h2>
                         <h3>{name.startdato.slice(0,10)}</h3>
                         <Link to={name.slug}><button>Les mer</button></Link>
