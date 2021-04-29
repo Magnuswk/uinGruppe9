@@ -12,11 +12,11 @@ const KontaktSkjema = ({onSubmit}) => {
         onSubmit({avdeling, navn, epostadresse, telefonnummer, henvendelse, kontaktmetode})
         }
     return (
-        <form>
+        <form onSubmit={handleSubmit} method="post" action="#">
             <h1>Kontakt Skjema</h1>
 
             <label htmlFor='avdeling'>Avdeling</label>
-                <select id='avdeling' 
+                <select id='avdeling'
                     onChange={(event)=> setAvdeling(event.target.value)}>
                         <option value='Bodø'>Bodø</option>
                         <option value='Moirana'>Mo i Rana</option>
@@ -46,21 +46,21 @@ const KontaktSkjema = ({onSubmit}) => {
                     onChange={(event)=> setHenvendelse(event.target.value)}></textarea>
 
             <label htmlFor='Kontaktmetode'>Telefon eller epost?</label><br />
-                <input type='radio' 
-                        value='epost' 
-                        className="radiobutton" 
-                        defaultChecked name="kontaktmetode" 
+                <input type='radio'
+                        value='epost'
+                        className="radiobutton"
+                        defaultChecked name="kontaktmetode"
                         onChange={(event)=> setKontaktmetode(event.target.value)}></input>
                 <label htmlFor='epost' >Epost</label><br />
-                <input type='radio' 
-                        value='Telefon' 
-                        className="radiobutton" 
-                        name="kontaktmetode" 
+                <input type='radio'
+                        value='Telefon'
+                        className="radiobutton"
+                        name="kontaktmetode"
                         onChange={(event)=> setKontaktmetode(event.target.value)}></input>
                 <label htmlFor='Telefon'>Telefon</label>
-                
-            
-            <button onClick={handleSubmit}>Send inn</button>
+
+
+            <button type="submit" >Send inn</button>
         </form>
     )
 }
