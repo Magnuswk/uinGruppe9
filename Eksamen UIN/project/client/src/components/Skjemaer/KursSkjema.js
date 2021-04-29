@@ -10,7 +10,7 @@ const KursSkjema = ({onSubmit, pris, tittel}) => {
         onSubmit({navn, epost, telefon, tittel})
     }
     return (
-            <form>
+            <form onSubmit={handleSubmit} method="post" action="#">
                 <label htmlFor='epost'>Epost</label>
                 <input id='epost'
                     onChange={(event)=> setEpost(event.target.value)}></input>
@@ -20,14 +20,14 @@ const KursSkjema = ({onSubmit, pris, tittel}) => {
                     <label htmlFor='Navn'>Navn</label>
                     <input name='Navn'
                         onChange={(event)=> setNavn(event.target.value)}></input>
-                    
+
                     <label htmlFor='Telefon'>Telefon</label>
                     <input name='Telefon'
                         onChange={(event)=> setTelefon(event.target.value)}></input>
-                    
+
                 </>
                 :null}
-                <button onClick={handleSubmit}>Send skjema</button>
+                <button type="submit">Send skjema</button>
             </form>
     )
 }

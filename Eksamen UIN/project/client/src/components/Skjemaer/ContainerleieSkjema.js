@@ -26,11 +26,11 @@ const ContainerleieSkjema = ({onSubmit}) => {
         onSubmit({avdeling, navn, adresse, postnummer, poststed, telefonnummer, fakturatiladresse, fakturamottaker, fakturaadresse, fakturapostnummer, fakturapoststed, fakturaepostadresse, postellerepost, plasseringsadresse, datoforutsetting, datoforhenting, tilleggsopplysninger, beskrivplasseringen})
     }
     return (
-        <form>
+        <form onSubmit={handleSubmit} method="post" action="#">
             <h1>Containerleie Skjema</h1>
 
             <label htmlFor='avdeling'>Avdeling</label>
-                <select id='avdeling'
+                <select id='avdeling' title="Hvilken avdeling ønsker du å bestille fra?"
                 onChange={(event)=> setAvdeling(event.target.value)}>
                     <option value='Bodø'>Bodø</option>
                     <option value='Moirana'>Mo i Rana</option>
@@ -41,23 +41,23 @@ const ContainerleieSkjema = ({onSubmit}) => {
                 </select>
 
             <label htmlFor='navn'>Navn</label>
-                <input id='navn'  required
+                <input id='navn'  required title="Skriv inn ditt fulle Navn"
                     onChange={(event)=> setNavn(event.target.value)}></input>
 
             <label htmlFor='Adresse'>Adresse</label>
-                <input id='Adresse'  required
+                <input id='Adresse'  required title="Hva er din Adresse?"
                     onChange={(event)=> setAdresse(event.target.value)}></input>
 
             <label htmlFor='Postnummer'>Postnummer</label>
-                <input id='Postnummer'  required
+                <input id='Postnummer'  required title="Hva er ditt Postnummer?"
                     onChange={(event)=> setPostnummer(event.target.value)}></input>
 
             <label htmlFor='Poststed'>Poststed</label>
-                <input id='Poststed' required
+                <input id='Poststed' required title="Hva er ditt Poststed?"
                     onChange={(event)=> setPoststed(event.target.value)}></input>
 
             <label htmlFor='telefonnummer'>Telefonnummer</label>
-                <input id='telefonnummer'  required
+                <input id='telefonnummer'  required title="Hva er ditt Telefonnummer?"
                     onChange={(event)=> setTelefonnummer(event.target.value)}></input>
 
             <label htmlFor='Epostadresse'>Epostadresse</label>
@@ -67,26 +67,26 @@ const ContainerleieSkjema = ({onSubmit}) => {
             <label htmlFor='Bekreftepostadresse'>Bekreft epostadresse</label>
                 <input id='Bekreftepostadresse'  required></input>
 
-    
+
 
             <label htmlFor='Fakturatiladresse'>Skal fakturaen til adressen over?</label><br />
-                <input type='radio' 
-                        value='Ja' 
-                        className="radiobutton" 
-                        defaultChecked 
-                        name="Fakturatiladresse" 
+                <input type='radio'
+                        value='Ja'
+                        className="radiobutton"
+                        defaultChecked
+                        name="Fakturatiladresse"
                         onChange={(event)=> setFakturatiladresse(event.target.value)}></input>
                     <label htmlFor='Ja' >Ja</label><br />
 
-                <input type='radio' 
-                        value='Nei' 
-                        className="radiobutton" 
-                        name="Fakturatiladresse" 
+                <input type='radio'
+                        value='Nei'
+                        className="radiobutton"
+                        name="Fakturatiladresse"
                         onChange={(event)=> setFakturatiladresse(event.target.value)}></input>
                     <label htmlFor='Nei'>Nei</label><br/>
 
 
-            {fakturatiladresse === "Nei" ? 
+            {fakturatiladresse === "Nei" ?
                 <>
                     <label htmlFor='Fakturamottaker'>Fakturamottaker</label>
                         <input id='Fakturamottaker'  required
@@ -117,20 +117,20 @@ const ContainerleieSkjema = ({onSubmit}) => {
 
 
             <label htmlFor='postellerepost'>post eller epost?</label><br/>
-            <input type='radio' 
-                    name="postellerespost" 
-                    value='epost' 
-                    defaultChecked 
-                    className="radiobutton" 
+            <input type='radio'
+                    name="postellerespost"
+                    value='epost'
+                    defaultChecked
+                    className="radiobutton"
                     onChange={(event)=> setPostellerepost(event.target.value)}></input>
                 <label htmlFor='Epost'>Epost</label><br/>
             <input type='radio'
-                     name="postellerespost" 
-                     className="radiobutton" 
-                     value='post' 
+                     name="postellerespost"
+                     className="radiobutton"
+                     value='post'
                      onChange={(event)=> setPostellerepost(event.target.value)}></input>
                 <label htmlFor='Post'>Post</label><br/>
-        
+
             <label htmlFor='Plasseringsadresse'>Plasseringsadresse</label>
                 <input id='Plasseringsadresse'  required
                     onChange={(event)=> setPlasseringsadresse(event.target.value)}></input>

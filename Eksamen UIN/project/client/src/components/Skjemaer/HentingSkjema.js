@@ -21,10 +21,10 @@ const HentingSkjema = ({onSubmit}) => {
         onSubmit({avdeling, firmanavn, bestillersnavn, epostadresse, telefonnummer, henteadresse, kontaktperson, telefonkontaktperson, hvilketavfall, henvendelse, tilleggsopplysninger, kontaktforhenting, farligavfallsdeklarasjon, bytteembalasje, hentedato})
     }
     return (
-        <form>
+        <form onSubmit={handleSubmit} method="post" action="#">
             <h1>Hente Skjema</h1>
             <label htmlFor='avdeling'>Avdeling</label>
-            <select id='avdeling' 
+            <select id='avdeling'
                 onChange={(event)=> setAvdeling(event.target.value)}>
                     <option value='Bodø'>Bodø</option>
                     <option value='Moirana'>Mo i Rana</option>
@@ -43,7 +43,7 @@ const HentingSkjema = ({onSubmit}) => {
                     onChange={(event)=> setBestillersnavn(event.target.value)}></input>
 
             <label htmlFor='epostadresse'>Epostadresse</label>
-                <input id='epostadresse' 
+                <input id='epostadresse'
                     onChange={(event)=> setEpostadresse(event.target.value)}></input>
 
             <label htmlFor='bekreftepostadresse'>Bekreft epostadresse</label>
@@ -64,7 +64,7 @@ const HentingSkjema = ({onSubmit}) => {
             <label htmlFor='Telefonkontaktperson'>Telefonkontaktperson</label>
                 <input id='Telefonkontaktperson' required
                     onChange={(event)=> setTelefonkontaktperson(event.target.value)}></input>
-         
+
             <label htmlFor='Henvendelse'>Henvendelse</label>
                 <input id='Henvendelse' required
                     onChange={(event)=> setHenvendelse(event.target.value)}></input>
@@ -74,23 +74,23 @@ const HentingSkjema = ({onSubmit}) => {
                     onChange={(event)=> setTilleggsopplysninger(event.target.value)}></input>
 
             <label htmlFor='Kontaktforhenting'>Kontakt før henting</label><br/>
-                <input type="radio" 
-                        className="radiobutton" 
-                        name="kontaktForHenting" 
-                        defaultCheckedvalue="ja" 
-                        id='Kontaktforhenting' 
+                <input type="radio"
+                        className="radiobutton"
+                        name="kontaktForHenting"
+                        defaultCheckedvalue="ja"
+                        id='Kontaktforhenting'
                         onChange={(event)=> setKontaktforhenting(event.target.value)}></input>
             <label htmlFor="kontaktForHenting">Ja</label><br/>
-                <input type="radio" 
-                        className="radiobutton" 
+                <input type="radio"
+                        className="radiobutton"
                         value="Nei" name="kontaktForHenting"
-                        id='Kontaktforhenting' 
+                        id='Kontaktforhenting'
                         onChange={(event)=> setKontaktforhenting(event.target.value)}></input>
                 <label>Nei</label><br/>
 
 
             <label>Hvilket avfall</label>
-                <select id='Hvilketavfall' 
+                <select id='Hvilketavfall'
                     onChange={(event)=> setHvilketavfall(event.target.value)}>
                         <option value='eeAvfall'>EE-Avfall</option>
                         <option value='farligAvfall'>Farlig avfall</option>
@@ -98,12 +98,12 @@ const HentingSkjema = ({onSubmit}) => {
                     {hvilketavfall === "farligAvfall" ?
                         <>
                             <label htmlFor='Farligavfallsdeklarasjon'>Farlig avfallsdeklarasjon</label>
-                            <input id='Farligavfallsdeklarasjon' 
+                            <input id='Farligavfallsdeklarasjon'
                             onChange={(event)=> setFarligavfallsdeklarasjon(event.target.value)}>
                             </input>
-                            
+
                             <label htmlFor='Bytteembalasje'>Bytte embalasje</label>
-                            <input id='Bytteembalasje' 
+                            <input id='Bytteembalasje'
                             onChange={(event)=> setBytteembalasje(event.target.value)}>
                             </input>
                         </>
@@ -115,10 +115,10 @@ const HentingSkjema = ({onSubmit}) => {
             <label htmlFor='epostadresse'>Bekreftelse</label>
             <input type='checkbox' id='epostadresse' value='godta'></input>
             <label htmlFor='Hentedato'>Hentedato</label>
-            <input type='date' id='Hentedato' 
+            <input type='date' id='Hentedato'
             onChange={(event)=> setHentedato(event.target.value)}>
             </input>
-            <button onClick={handleSubmit}>Send inn</button>
+            <button type="submit">Send inn</button>
         </form>
     )
 }

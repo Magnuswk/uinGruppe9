@@ -1,37 +1,18 @@
 import React, {useState} from 'react'
 
 const KontaktSkjema = ({onSubmit}) => {
-    const [submitted, setSubmitted] = useState(false)
-    const [formData, setFormData] = useState({avdeling: "Bodø", navn: "", epostadresse: "", telefonnummer: "", henvendelse: "", kontaktmetode: "" })
-
-
     const [avdeling, setAvdeling] = useState('Bodø')
     const [navn, setNavn] = useState(null)
     const [epostadresse, setEpostadresse] = useState(null)
     const [telefonnummer, setTelefonnummer] = useState(null)
     const [henvendelse, setHenvendelse] = useState(null)
     const [kontaktmetode, setKontaktmetode] = useState(null)
-
-
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({avdeling, navn, epostadresse, telefonnummer, henvendelse, kontaktmetode})
-        setSubmitted(true)
-        onSubmit(formData)
         }
-
-    const handleFormData = (event) => {
-        setSubmitted(false);
-        const inputName = event.target.name;
-        const inputValue = event.target.value;
-        const newData = { [inputName]: inputValue };
-        setFormData((prev) => ({
-        ...prev,
-        ...newData
-    }));
-  };
     return (
-        <form>
+        <form onSubmit={handleSubmit} method="post" action="#">
             <h1>Kontakt Skjema</h1>
 
             <label htmlFor='avdeling'>Avdeling</label>
@@ -79,7 +60,7 @@ const KontaktSkjema = ({onSubmit}) => {
                 <label htmlFor='Telefon'>Telefon</label>
 
 
-            <button onClick={handleSubmit}>Send inn</button>
+            <button type="submit" >Send inn</button>
         </form>
     )
 }
