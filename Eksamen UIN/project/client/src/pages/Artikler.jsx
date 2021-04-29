@@ -49,17 +49,17 @@ const Artikler = () => {
   return(
     <main id="artikkelmain">
       <section>
-      <article>
-      <Sidebar kategori={data?.kategori}/>
-        <Breadcrumbs  data={data} location={location} />
-        <h1>{data.tittel}</h1>
-        <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
-        <BlockContent blocks={data?.body}/>
-        {slug === "Kurs" ? <KursContent data={data} />: null}
-        {slug === "Kurs" ? <KursContent data={data} />: null}
-        {slug === "Tjenester" || slug === "Sortering" || slug === "Om-Oss" ? <Artikelcontent data={data} location={location} />:null}
-        {slug === "Nyheter" ? <NyhetContent data={data}/> : null}
-        </article>
+        <article>
+        <Sidebar kategori={data?.kategori}/>
+          <Breadcrumbs  data={data} location={location} />
+          <h1>{data.tittel}</h1>
+          <img src={data?.bilde.asset.url} alt={data.tittel}></img>
+          <BlockContent blocks={data?.body}/>
+          {slug === "Kurs" ? <KursContent data={data} />: null}
+          {slug === "Kurs" ? <KursContent data={data} />: null}
+          {slug === "Tjenester" || slug === "Sortering" || slug === "Om-Oss" ? <Artikelcontent data={data} location={location} />:null}
+          {slug === "Nyheter" ? <NyhetContent data={data}/> : null}
+          </article>
         </section>
     </main>
   )
@@ -68,4 +68,3 @@ const Artikler = () => {
 
 
 export default Artikler
-
