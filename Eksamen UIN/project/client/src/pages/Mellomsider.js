@@ -23,7 +23,11 @@ const Kurs = () => {
                     setResult(false)
                 }else{
                     const resultat = await searchfetch()
-                    setData(resultat)
+                    const find = []
+                    const value = location.substring(7)
+                    resultat?.map(item => item.nokkelord.filter(x => x.includes(value.toLowerCase())).length > 0 ? find.push(item) : null);
+                    setResult([...find])
+                    setData(false)
                 }
 
               } catch (error) {
@@ -34,17 +38,8 @@ const Kurs = () => {
     },[location]);
 
 
-    useEffect(() => {
-        if (location.includes("Search")){
-            const find = []
-            const value = location.substring(7)
-            data?.map(item => item.nokkelord.filter(x => x.includes(value.toLowerCase())).length > 0 ? find.push(item) : null);
-            setResult([...find])
-
-        }
 
 
-    },[data, location])
     const handleGrid = () =>{
         endreStyle.current.style.gridTemplateColumns = "22% 22% 22% 22%"
     }
@@ -57,6 +52,10 @@ const Kurs = () => {
           <Loading data={data}/>
     )
     }else{
+        console.log("data")
+        console.log(data)
+        console.log("result")
+        console.log(result)
     return (
         <main>
             <section id="searchTop">
@@ -65,7 +64,7 @@ const Kurs = () => {
                     <h1 id="nyhetoverskrift">{location.includes("Search")? "Søkeresultater": location}</h1>
             </section>
             <section id="nyhet" ref={endreStyle}>
-                { location === "Kurs" || location === "Nyheter" ? <Mellomsidecontent data={data} location={location} />: <Mellomsidecontent data={result} location={location} />}
+                { result === false? <Mellomsidecontent data={data} location={location} />: <Mellomsidecontent data={result} location={location} />}
             </section>
         </main>
     )
