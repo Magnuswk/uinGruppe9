@@ -6,7 +6,6 @@ const NyhetContent = ({data}) => {
     if (data !== null && data !== "ikke funnet"){
         return (
             <section id="mainnyheter">
-            { /* <Sistenytt nyheter={data} /> */}
 
             </section>
         )
