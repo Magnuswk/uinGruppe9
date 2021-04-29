@@ -1,8 +1,6 @@
 import React from 'react'
-import Breadcrumbs from './Breadcrumbs'
-import Sidebar from './Sidebar'
 import Skjemaer from './Skjemaer/Skjemaer'
-import BlockContent from '@sanity/block-content-to-react'
+
 
 const Artikelcontent = ({data, location}) => {
     if (data !== null && data !== "ikke funnet"){
