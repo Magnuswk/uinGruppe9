@@ -34,7 +34,7 @@ const Nyheter = () => {
             </main>
         )
     }else{
-        return(<h1 id="loading">Loading...</h1>)
+        return(<Loading status='loading' />)
     }
     
 }

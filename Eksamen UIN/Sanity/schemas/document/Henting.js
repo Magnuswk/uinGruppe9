@@ -10,22 +10,22 @@ const Henting = {
         },
         {
         title: "Firma navn",    
-        name:"name",
+        name:"firmanavn",
         type: "string"
         },
         {
             title: "Bestillers navn",    
-            name:"name",
+            name:"bestillersnavn",
             type: "string"
             },
         {
             title: "Hente adresse",
-            name:"adresse",
+            name:"henteadresse",
             type: "string"
         },
         {
             title: "Epost adresse",
-            name:"epost",
+            name:"epostadresse",
             type: "string"
         },
         {
@@ -35,12 +35,12 @@ const Henting = {
         },
         {
             title: "Kontakt person ved hentestedet",
-            name:"kontaktmetode",
+            name:"kontaktperson",
             type: "string"
         },
         {
             title: "Telefon for kontakt person",    
-            name:"telefonforkontaktperson",
+            name:"telefonkontaktperson",
             type: "string"
         },
         {
@@ -50,7 +50,7 @@ const Henting = {
         },
         {
             title: "Hva skal hentes?",
-            name:"henvendelse",
+            name:"hvilketavfall",
             type: "string"
         },
         {
@@ -60,17 +60,17 @@ const Henting = {
         },
         {
             title: "Tilleggsopplysninger?",
-            name:"henvendelse",
+            name:"tilleggsopplysninger",
             type: "text"
         },
         {
             title: "Ønsker dere å bli kontaktet før henting?",
-            name:"kontaktførhenting",
+            name:"kontaktforhenting",
             type: "string"
         },
         {
             title: "Noe farlig avfall som må deklareres?",
-            name:"farligavfalldeklarasjon",
+            name:"farligavfallsdeklarasjon",
             type: "string"
         },
         {

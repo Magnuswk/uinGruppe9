@@ -7,7 +7,6 @@ const artikkelfields = `
   'slug': slug.current,
   'kategori':kategori->kategori,
   'bilde': bilde{...,asset->{url}},
-  'kategori':kategori->kategori,
   nokkelord,
   body,
   beskrivelse
@@ -26,20 +25,32 @@ const searchfields = `
   'bilde': bilde{...,asset->{url}},
 `
 const nyhetsfields = `
-  tittel,
-  body,
-  'kategori':kategori->kategori,
-  beskrivelse,
-  'bilde': bilde{...,asset->{url}},
-  nokkelord,
   'forfatter':forfatter->forfatter,
   dato,
+  tittel,
   'slug': slug.current,
+  'kategori':kategori->kategori,
+  'bilde': bilde{...,asset->{url}},
+  nokkelord,
+  body,
+  beskrivelse
 `
 const forsidefields = `
   tittel,
   'bilde': bilde{...,asset->{url}},
   link
+`
+const kursfields = `
+  startdato,
+  tittel,
+  'slug': slug.current,
+  'bilde': bilde{...,asset->{url}},
+  body,
+  beskrivelse,
+  adresse,
+  postnummer,
+  poststed,
+  pris
 `
 
 
@@ -80,6 +91,15 @@ export const nyhetsfetch = async () => {
   }
   return data;
 };
+export const tinyhetsfetch = async () => {
+  const data = await client.fetch(`*[_type == "nyheter"]{${nyhetsfields}}[0...10]`
+  );
+  if (data === null){
+    return "finnes ikke"
+  }
+  console.log(data)
+  return data;
+};
 /* Fetch som henter nødvendig informasjon for Forsiden */
 export const forsidefetch = async () => {
   const data = await client.fetch(`*[_type == "Forside"]{${forsidefields}}`
@@ -94,11 +114,37 @@ export const sortfetch = async () => {
 };
 /* Fetch som henter bruker slug til å hente riktig nyhet */
 export const mainnyhetfetch = async (slug) => {
-  const data = await client.fetch(`*[_type == "nyheter" && slug.current == $slug]{${artikkelfields},body[]{...}}`, {slug}
+  const data = await client.fetch(`*[_type == "nyheter" && slug.current == $slug]{${nyhetsfields},body[]{...}}`, {slug}
   );
   if (data?.length > 0){
     return data?.[0];
   }else{
     return "ikke funnet"
   }
+};
+export const kursfetch = async () => {
+  const data = await client.fetch(`*[_type == "kurs"]{${kursfields}}`
+  );
+  if (data === null){
+    return "finnes ikke"
+  }
+  return data;
+};
+export const mainkursfetch = async (slug) => {
+  const data = await client.fetch(`*[_type == "kurs" && slug.current == $slug]{${kursfields},body[]{...}}`, {slug}
+  );
+  if (data?.length > 0){
+    return data?.[0];
+  }else{
+    return "ikke funnet"
+  }
+};
+export const tikursfetch = async () => {
+  const data = await client.fetch(`*[_type == "kurs"]{${kursfields}}[0...10]`
+  );
+  if (data === null){
+    return "finnes ikke"
+  }
+  console.log(data)
+  return data;
 };

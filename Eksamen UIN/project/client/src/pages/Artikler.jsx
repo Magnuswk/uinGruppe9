@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import Artikkelmain from "../components/Artikkelmain"
 import artikkelfetch from '../utils/artikkelService'
-import Sidebar from "../components/Sidebar"
+import { useLocation, useParams } from 'react-router'
+import Artikelcontent from '../components/artikelcontent'
+import Loading from '../components/Loading';
+import { mainkursfetch } from '../utils/artikkelService'
+import { mainnyhetfetch } from '../utils/artikkelService'
+import KursContent from '../components/KursContent';
+import NyhetContent from '../components/NyhetContent';
+import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
 import {NavLink, useLocation} from 'react-router-dom'
@@ -11,39 +17,62 @@ import {urlFor} from '../utils/imageUrl'
 
 /*  Denne komponenten lager alle sider */
 /*  Henter alle artikkler med slug som er lik nettadressen */
+
 const Artikler = () => {
-    let location = useLocation()
-    const [data, setData] = useState(null)
-    useEffect(()=> {
-        const fetchAsyncData = async () =>{
+  let location = useLocation();
+  let { slug } = useParams()
+  const [data, setData] = useState(null);
+  useEffect(() => {
+      const fetchAsyncData = async () => {
           try {
-            const side = await artikkelfetch(location.pathname)
-            setData (side)
+            if (slug === "Kurs"){
+              const side = await mainkursfetch(location.pathname)
+              setData(side);
+            }else if(slug === "Nyheter"){
+              const side = await mainnyhetfetch(location.pathname)
+              setData(side);
+            }else{
+                const side = await artikkelfetch(location.pathname);
+                setData(side);
+            }
           } catch (error) {
-              console.log(error)
-              
-          }  
-        };
-        fetchAsyncData();
-    }, [location]);
+              console.log(error);
+          }
+      };
+      fetchAsyncData();
+  }, [location, slug]);
 
-    /* Fetcher tittel, kategori og slug fra alle sider som har samme kategori som siden */
-    const [sidebar, setSidebar] = useState(null)
-    useEffect(()=> {
-        const fetchAsyncsidebar = async () =>{
-          try {
-            const info = await sidebarfetch(data?.kategori || [])
-            setSidebar (info)
-          } catch (error) {
-              console.log(error)
-          }  
-        };
-        fetchAsyncsidebar();
-    }, [data?.kategori]);
+  if (data === null || data === "ikke funnet"){
+    return(
+      <Loading data={data}/>
+    )
+  }else{
+  return(
+    <main id="artikkelmain">
+      <section>
+      <article>
+      <Sidebar kategori={data?.kategori}/>
+        <Breadcrumbs  data={data} location={location} />
+        <h1>{data.tittel}</h1>
+        <img src={data?.bilde.asset.url} alt={data.tittel}></img>
+        <BlockContent blocks={data?.body}/>
+        {slug === "Kurs" ? <KursContent data={data} />: null}
+        {slug === "Kurs" ? <KursContent data={data} />: null}
+        {slug === "Tjenester" || slug === "Sortering" || slug === "Om-Oss" ? <Artikelcontent data={data} location={location} />:null}
+        {slug === "Nyheter" ? <NyhetContent data={data}/> : null}
+        </article>
+        </section>
+    </main>
+  )
+  }
+};
 
-      /*  Fetch loader */
-      if (data === null){
-          return(<h1 id="loading">Loading...</h1>)
+
+export default Artikler
+
+/*  Fetch loader */
+      /*if (data === null){
+          return(<Loading status='loading'/>)
       /* Siden er ikke funnet */
       }else if(data === "ikke funnet"){
             return(
