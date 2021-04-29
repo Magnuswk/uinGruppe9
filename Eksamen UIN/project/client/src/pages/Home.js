@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Homebutton from "../components/Homebutton"
-import Nyhetsvisning from '../components/Nyhetsvisning'
+import Nyhetsvisning from '../components/Nyheter/Nyhetsvisning'
 import { forsidefetch, tinyhetsfetch} from "../utils/artikkelService";
 import { Link } from 'react-router-dom'
 import Loading from "../components/Loading";
@@ -14,7 +14,7 @@ const Home = () => {
                 setNyhet (resultat)
               } catch (error) {
                   console.log(error)
-              }  
+              }
             };
             fetchAsyncNyhet();
     }, []);
@@ -28,7 +28,7 @@ const Home = () => {
                 setForside (resultat)
             } catch (error) {
                 console.log(error)
-                }  
+                }
             };
             fetchAsyncforside();
         }, []);
