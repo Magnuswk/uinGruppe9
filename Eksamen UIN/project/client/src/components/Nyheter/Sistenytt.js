@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {urlFor} from '../utils/imageUrl'
+import {urlFor} from '../../utils/imageUrl'
 
 const Sistenytt = ({ nyheter }) => {
     return (

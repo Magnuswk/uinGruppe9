@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
-import {urlFor} from '../utils/imageUrl'
+import {urlFor} from '../../utils/imageUrl'
 
 const Nyhetsvisning = (props) => {
     const[sorted, setSorted] = useState(1)
@@ -24,9 +24,9 @@ const Nyhetsvisning = (props) => {
                 <button onClick={Sort} id="sort">Sorter Etter dato</button>
                 <section id='nyhetsboks'>
                     <article id='hovednyhet'>
-                        <img src={urlFor(props.nyhet[0].bilde.asset.url).format('webp').url()} alt={props.nyhet[0].beskrivelse}></img>
-                        <h2>{props.nyhet[0].dato.slice(0,10)}</h2>
-                        <h1>{props.nyhet[0].beskrivelse}</h1>
+                        <img src={urlFor(props.nyhet.bilde.asset.url).format('webp').url()} alt={props.nyhet.beskrivelse}></img>
+                        <h2>{props.nyhet.dato.slice(0,10)}</h2>
+                        <h1>{props.nyhet.beskrivelse}</h1>
                     </article>
                     <article id="extranyhet">
                         <h1>Flere nyheter</h1>

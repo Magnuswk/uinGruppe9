@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import { nyhetsfetch} from "../utils/artikkelService";
 import { Link } from 'react-router-dom'
 import {urlFor} from '../utils/imageUrl'
+import Loading from '../components/Loading'
 const Nyheter = () => {
     const [nyhet, setNyhet] = useState(null)
     useEffect(()=> {

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import {useLocation, Link} from 'react-router-dom'
 import { searchfetch } from '../utils/artikkelService'
+import {urlFor} from '../utils/imageUrl'
 
 const Search = () => {
     const endreStyle = useRef()
@@ -58,7 +59,7 @@ const Search = () => {
                     result?.map(function(name, index){
                     return (<article key={ name.slug }>
                                     <Link to={name.slug}><h2>{name.tittel}</h2></Link>
-                                    <img src={name.bilde.asset.url} alt={data?.tittel}></img>
+                                    <img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={data?.tittel}></img>
                                     <h3>{name.beskrivelse}</h3>
                                     <Link to={name.slug}><button>Les mer</button></Link>
                                 </article>);
