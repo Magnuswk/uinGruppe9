@@ -10,7 +10,6 @@ import NyhetContent from '../components/NyhetContent';
 import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
-import {NavLink, useLocation} from 'react-router-dom'
 import  Skjemaer from "../components/Skjemaer"
 import {urlFor} from '../utils/imageUrl'
 
