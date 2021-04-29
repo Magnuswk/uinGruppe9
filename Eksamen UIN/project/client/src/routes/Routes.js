@@ -6,13 +6,13 @@ import Header from "../components/Header"
 import Nyheter from "../pages/Nyheter"
 import Footer from "../components/Footer"
 import Testkategorisort from "../pages/Testkategorisort"
-import Nyhetmain from "../pages/Nyhetmain"
 import Search from "../pages/Search"
+import Kurs from "../pages/Kurs"
 
 
 
 const Routes = () =>(
-    
+
     <Router>
         <Header />
         <Switch>
@@ -28,11 +28,11 @@ const Routes = () =>(
             <Route exact path="/Search/">
                 <Search />
             </Route>
-            <Route  path="/Nyheter/:slug">
-                <Nyhetmain />
-            </Route>
             <Route exact path="/Testkategorisort">
                 <Testkategorisort />
+            </Route>
+            <Route exact path="/Kurs">
+                <Kurs />
             </Route>
             <Route path="/:slug">
                 <Artikler />

@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { sidebarfetch, tinyhetsfetch, tikursfetch } from '../utils/artikkelService';
 
-const Sidebar = ({sidebar}) => {
-    /* Sorterer innhold i JSON  basert på tittel*/
-    sidebar?.sort(function (a, b) {return a.tittel.localeCompare(b.tittel);});
+const Sidebar = ({kategori}) => {
+
+    /* Fetcher tittel, kategori og slug fra alle sider som har samme kategori som siden */
+    const [sidebar, setSidebar] = useState(null)
+    useEffect(()=> {
+        const fetchAsyncsidebar = async () =>{
+          try {
+              if (kategori === "Tjenester" || kategori === "Sortering" || kategori === "Om-Oss"){
+                const info = await sidebarfetch(kategori)
+                setSidebar (info)
+              }else if (kategori === "Nyheter"){
+                const info = await tinyhetsfetch()
+                setSidebar (info)
+              }else{
+                const info = await tikursfetch()
+                setSidebar (info)
+              }
+          } catch (error) {
+              console.log(error)
+          }
+        };
+        fetchAsyncsidebar();
+    }, [kategori]);
+
+    if (kategori !== "Kurs" && kategori !== "Nyheter"){
+        sidebar?.sort(function (a, b) {return a.tittel.localeCompare(b.tittel);});
+    }
+
     /* Pusher til nytt array for å unngå at kategorisiden vises i sidebar */
     const newArray = []
     sidebar?.map(item =>  item.tittel !== item.kategori ? newArray.push(item) : null);
@@ -24,6 +50,6 @@ const Sidebar = ({sidebar}) => {
     }else{
         return null;
     }
-    
+
 }
 export default Sidebar

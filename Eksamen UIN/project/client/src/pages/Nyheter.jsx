@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import { nyhetsfetch} from "../utils/artikkelService";
 import { Link } from 'react-router-dom'
+import Loading from '../components/Loading';
 const Nyheter = () => {
     const [nyhet, setNyhet] = useState(null)
     useEffect(()=> {
@@ -21,7 +22,7 @@ const Nyheter = () => {
                 <h1 id="nyhetoverskrift">Nyheter</h1>
                 <section id="nyhet">
                 {nyhet.map(function(name, index){
-                    return <article> 
+                    return <article key={name.slug}> 
                                 <h1>{name.tittel}</h1>
                                 <img src={name.bilde.asset.url} alt={name.tittel}></img>
                                 <h2>{name.beskrivelse}</h2>
@@ -33,7 +34,7 @@ const Nyheter = () => {
             </main>
         )
     }else{
-        return(<h1 id="loading">Loading...</h1>)
+        return(<Loading status='loading' />)
     }
     
 }
