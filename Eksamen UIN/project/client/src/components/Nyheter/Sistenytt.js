@@ -4,7 +4,7 @@ const Sistenytt = ({ nyheter }) => {
     return (
         <section id="sistenytt">
             <h1 id="sistenyttoverskrift">Siste Nytt!</h1>
-            {nyheter.map(function(name, index){
+            {nyheter?.map(function(name, index){
                     return <article className="sistenyttarticle" key={name.slug}>
                             <h1>{name.tittel}</h1>
                             <img src={name.bilde.asset.url} alt={name.tittel}></img>

@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { createContact, createBilvraking, createContainerleie, createHenting, createTjenester, createKurs} from '../utils/SkjemaService'
+import { createContact, createBilvraking, createContainerleie, createHenting, createTjenester, createKurs} from '../../utils/SkjemaService'
 import BilvrakingSkjema from './BilvrakingSkjema'
 import ContainerleieSkjema from './ContainerleieSkjema'
 import KontaktSkjema from './KontaktSkjema'
@@ -32,7 +32,7 @@ const Skjemaer = ({type, pris, tittel}) => {
                     break;
                 case 'Kurs':
                     await createKurs(data)
-                    break;    
+                    break;
                 default:
                     await createContact(data)
                     break;
@@ -40,13 +40,13 @@ const Skjemaer = ({type, pris, tittel}) => {
             setSuccess(true)
         } catch (error) {
             setError(error.message)
-        } finally { 
+        } finally {
             setLoading(false)
         }
     }
     return (
         <section id='skjemasection'>
-            
+
             {error ? <p>{error}</p>: null}
             {loading ? <p>Sender henvendelse!</p>: null}
             {success ? <p>Takk din henvendelse er motatt!</p>: null}

@@ -13,18 +13,18 @@ const Kurs = () => {
                 setKurs(resultat)
               } catch (error) {
                   console.log(error)
-              }  
+              }
             };
             fetchAsyncKurs();
     },[]);
-    console.log(kurs)
+
     if (kurs?.length > 0){
     return (
         <main>
         <h1 id="kursoverskrift">Kurs</h1>
         <section id="kurs">
         {kurs.map(function(name, index){
-            return <article key={name.slug}> 
+            return <article key={name.slug}>
                         <h1>{name.tittel}</h1>
                         <img src={name.bilde.asset.url} alt={name.tittel}></img>
                         <h2>{name.beskrivelse}</h2>
