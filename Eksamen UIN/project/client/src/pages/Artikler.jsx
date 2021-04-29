@@ -50,7 +50,7 @@ const Artikler = () => {
           <Sidebar kategori={data?.kategori}/>
           <Breadcrumbs  data={data} location={location} />
           <h1>{data.tittel}</h1>
-          <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
+          <img src={urlFor(data?.bilde.asset.url).format('webp').width(900).height(600).url()} alt={data.tittel}></img>
           <BlockContent blocks={data?.body}/>
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </article>
