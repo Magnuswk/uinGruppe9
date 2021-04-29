@@ -12,17 +12,17 @@ const KursSkjema = ({onSubmit, pris, tittel}) => {
     return (
             <form>
                 <label htmlFor='epost'>Epost</label>
-                <input id='epost'
+                <input id='epost' required
                     onChange={(event)=> setEpost(event.target.value)}></input>
 
                 {pris !== '0'?
                 <>
                     <label htmlFor='Navn'>Navn</label>
-                    <input name='Navn'
+                    <input name='Navn' required
                         onChange={(event)=> setNavn(event.target.value)}></input>
                     
                     <label htmlFor='Telefon'>Telefon</label>
-                    <input name='Telefon'
+                    <input name='Telefon' required
                         onChange={(event)=> setTelefon(event.target.value)}></input>
                     
                 </>
