@@ -6,9 +6,13 @@ import { mainkursfetch } from '../utils/artikkelService'
 import { mainnyhetfetch } from '../utils/artikkelService'
 import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
-import Sidebar from '../components/Sidebar';
-import Skjemaer from '../components/Skjemaer/Skjemaer';
+import Sidebar from '../components/Sidebar'
+import  Skjemaer from "../components/Skjemaer/Skjemaer"
+import {urlFor} from '../utils/imageUrl'
 
+
+/*  Denne komponenten lager alle sider */
+/*  Henter alle artikkler med slug som er lik nettadressen */
 
 const Artikler = () => {
   let location = useLocation();
@@ -46,7 +50,7 @@ const Artikler = () => {
           <Sidebar kategori={data?.kategori}/>
           <Breadcrumbs  data={data} location={location} />
           <h1>{data.tittel}</h1>
-          <img src={data?.bilde.asset.url} alt={data.tittel}></img>
+          <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
           <BlockContent blocks={data?.body}/>
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </article>
