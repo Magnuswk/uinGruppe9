@@ -7,26 +7,27 @@ const Footerstyle = styled.footer`
     font-Size: 20px;
     color: black;
     border-Top: 1px solid #E7E7E7;
-    text-Align: center;
-    padding: 20px;
-    padding-bottom: 20px;
-    border: solid;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 1 rem;
     left: 0;
     bottom: 0;
-    height: 150px;
     overflow: hidden;
     margin-top: 5%;
     display: grid;
-    grid-template-columns: 20% 33% 20%;
-    grid-gap: 50px;
+    grid-template-columns: 41% 39% 10%;
+    grid-gap: 5%;
 `
 const Footer = () =>  {
 
         return (
             <>
-                <Footerstyle>
-                    <img id='grid-1'src={salten} alt="salten logo"  width="400"></img>
-                    <section id="grid-2">
+                <Footerstyle className="grid-container">
+                    <section className='grid-item'> 
+                    <img src={salten} alt="salten logo"  width="600"></img>
+                    </section>
+                    
+                    <section className="grid-item">
                         <p>Kontakt oss:  </p>
                         <p>© ØSTBØ AS   </p>
                         <p>Plassen 5, 8006 Bodø </p>
@@ -37,12 +38,10 @@ const Footer = () =>  {
                         <p>En del av SB-konsernet</p>
                     </section>
 
-                    <section id='grid-3'>test
+                    <section className='grid-item'>test
 
                     </section>
-                    <section id='grid-4'>test
-                        
-                    </section>
+    
                 </Footerstyle>
             </>
         );
