@@ -146,6 +146,5 @@ export const tikursfetch = async () => {
   if (data === null){
     return "finnes ikke"
   }
-  console.log(data)
   return data;
 };

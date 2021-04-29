@@ -1,22 +1,41 @@
 import React, {useState} from 'react'
 
 const KontaktSkjema = ({onSubmit}) => {
+    const [submitted, setSubmitted] = useState(false)
+    const [formData, setFormData] = useState({avdeling: "Bodø", navn: "", epostadresse: "", telefonnummer: "", henvendelse: "", kontaktmetode: "" })
+
+
     const [avdeling, setAvdeling] = useState('Bodø')
     const [navn, setNavn] = useState(null)
     const [epostadresse, setEpostadresse] = useState(null)
     const [telefonnummer, setTelefonnummer] = useState(null)
     const [henvendelse, setHenvendelse] = useState(null)
     const [kontaktmetode, setKontaktmetode] = useState(null)
+
+
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({avdeling, navn, epostadresse, telefonnummer, henvendelse, kontaktmetode})
+        setSubmitted(true)
+        onSubmit(formData)
         }
+
+    const handleFormData = (event) => {
+        setSubmitted(false);
+        const inputName = event.target.name;
+        const inputValue = event.target.value;
+        const newData = { [inputName]: inputValue };
+        setFormData((prev) => ({
+        ...prev,
+        ...newData
+    }));
+  };
     return (
         <form>
             <h1>Kontakt Skjema</h1>
 
             <label htmlFor='avdeling'>Avdeling</label>
-                <select id='avdeling' 
+                <select id='avdeling'
                     onChange={(event)=> setAvdeling(event.target.value)}>
                         <option value='Bodø'>Bodø</option>
                         <option value='Moirana'>Mo i Rana</option>
@@ -46,20 +65,20 @@ const KontaktSkjema = ({onSubmit}) => {
                     onChange={(event)=> setHenvendelse(event.target.value)}></textarea>
 
             <label htmlFor='Kontaktmetode'>Telefon eller epost?</label><br />
-                <input type='radio' 
-                        value='epost' 
-                        className="radiobutton" 
-                        defaultChecked name="kontaktmetode" 
+                <input type='radio'
+                        value='epost'
+                        className="radiobutton"
+                        defaultChecked name="kontaktmetode"
                         onChange={(event)=> setKontaktmetode(event.target.value)}></input>
                 <label htmlFor='epost' >Epost</label><br />
-                <input type='radio' 
-                        value='Telefon' 
-                        className="radiobutton" 
-                        name="kontaktmetode" 
+                <input type='radio'
+                        value='Telefon'
+                        className="radiobutton"
+                        name="kontaktmetode"
                         onChange={(event)=> setKontaktmetode(event.target.value)}></input>
                 <label htmlFor='Telefon'>Telefon</label>
-                
-            
+
+
             <button onClick={handleSubmit}>Send inn</button>
         </form>
     )

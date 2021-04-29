@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import artikkelfetch from '../utils/artikkelService'
 import { useLocation, useParams } from 'react-router'
-import Artikelcontent from '../components/artikelcontent'
 import Loading from '../components/Loading';
 import { mainkursfetch } from '../utils/artikkelService'
 import { mainnyhetfetch } from '../utils/artikkelService'
-import KursContent from '../components/KursContent';
-import NyhetContent from '../components/NyhetContent';
 import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
 import Sidebar from '../components/Sidebar';
-/*  Denne komponenten lager alle sider */
-/*  Henter alle artikkler med slug som er lik nettadressen */
+import Skjemaer from '../components/Skjemaer/Skjemaer';
+
 
 const Artikler = () => {
   let location = useLocation();
@@ -46,15 +43,12 @@ const Artikler = () => {
     <main id="artikkelmain">
       <section>
         <article>
-        <Sidebar kategori={data?.kategori}/>
+          <Sidebar kategori={data?.kategori}/>
           <Breadcrumbs  data={data} location={location} />
           <h1>{data.tittel}</h1>
           <img src={data?.bilde.asset.url} alt={data.tittel}></img>
           <BlockContent blocks={data?.body}/>
-          {slug === "Kurs" ? <KursContent data={data} />: null}
-          {slug === "Kurs" ? <KursContent data={data} />: null}
-          {slug === "Tjenester" || slug === "Sortering" || slug === "Om-Oss" ? <Artikelcontent data={data} location={location} />:null}
-          {slug === "Nyheter" ? <NyhetContent data={data}/> : null}
+          <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </article>
         </section>
     </main>
