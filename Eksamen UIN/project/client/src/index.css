@@ -163,6 +163,7 @@ main{
 }
 #artikkelmain section article{
   width:70%;
+  padding-bottom: 5rem;
 }
 #artikkelmain section article h1{
   text-align:center;

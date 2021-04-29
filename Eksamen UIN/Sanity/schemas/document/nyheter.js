@@ -13,7 +13,7 @@ const Nyheter = {
             title: 'Content',
             name: 'body',
             type: 'content',
-            validation: Rule => Rule.required().error('Dette feltet må utfylles') 
+            validation: Rule => Rule.required().error('Dette feltet må utfylles')
         },
         {
             title: 'Kategori',
@@ -26,7 +26,7 @@ const Nyheter = {
             title: 'Beskrivelse',
             name: 'beskrivelse',
             type: 'string',
-            validation: Rule => Rule.required().error('Dette feltet må utfylles')   
+            validation: Rule => Rule.required().error('Dette feltet må utfylles')
         },
         {
             title: 'Bilde',
@@ -53,7 +53,7 @@ const Nyheter = {
                 source: 'tittel'
             },
         },
-        {   
+        {
             title: 'Nokkelord',
             name: 'nokkelord',
             type: "array",
