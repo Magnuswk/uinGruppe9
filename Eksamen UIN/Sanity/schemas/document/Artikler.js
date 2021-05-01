@@ -3,6 +3,12 @@ const Artikler = {
     name: 'artikler',
     type: 'document',
     fields: [
+        { 
+            title: 'Tittel',
+            name: 'tittel',
+            type: 'string',
+            validation: Rule => Rule.required().error('Dette feltet må utfylles') 
+        },
         {
             title: 'Bilde',
             name: 'bilde',
@@ -32,12 +38,6 @@ const Artikler = {
             },
         },
         { 
-            title: 'Tittel',
-            name: 'tittel',
-            type: 'string',
-            validation: Rule => Rule.required().error('Dette feltet må utfylles') 
-        },
-        { 
             title: 'Beskrivelse',
             name: 'beskrivelse',
             type: 'string',
@@ -65,7 +65,7 @@ const Artikler = {
             
         }
 
-
+        
     ],
 
     preview: {

@@ -15,12 +15,16 @@ code {
 /* NAVBAR */
 header{
   width: 100%;
-  height: 20%;
+  height: 15%;
+  top: 0%;
   border-bottom: 1px solid black;
+  position:fixed;
+  background-color: white;
+  z-index: 10;
 }
 #katLink{
   position:absolute;
-  top: 3%;
+  top: 25%;
   left: 25%;
   width: 40%;
 }
@@ -35,23 +39,26 @@ header{
 }
 #search{
   position:absolute;
-  top: 5%;
+  top: 20%;
   left:70%;
   display:flex;
 }
 #search input{
   height: 30px;
   width:350px;
+  margin-top: 10px;
   border-radius: 10px;
   margin-right:5px;
 }
 #search button{
   height: 35px;
   width: 90px;
+  left: 95%;
   font-size: 20px;
   color:black;
   text-align:center;
   border-radius: 10px;
+  position: absolute;
 }
 #search a:hover{
   background-color: rgb(200,200,200)
@@ -202,11 +209,15 @@ main{
   font-size: 75px;
 }
 /* Breadcrumbs */
+#breadcrumbs {
+  margin-top: 25px;
+}
 #breadcrumbs li{
   display: inline;
   text-decoration:none;
   margin-right: 0px;
   margin-left:0px;
+
 }
 /* Error denne siden finnes ikke */
 #error{

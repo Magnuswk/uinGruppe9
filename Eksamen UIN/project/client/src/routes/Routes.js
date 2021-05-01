@@ -6,6 +6,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Testkategorisort from "../pages/Testkategorisort"
 import Kurs from "../pages/Mellomsider"
+import Kontakt from "../components/Kontakt"
 
 
 
@@ -13,6 +14,7 @@ const Routes = () =>(
 
     <Router>
         <Header />
+        <Kontakt/>
         <Switch>
             <Route exact path="/">
                 <Home />

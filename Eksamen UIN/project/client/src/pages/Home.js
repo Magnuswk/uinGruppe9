@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Homebutton from "../components/Homebutton"
 import Nyhetsvisning from '../components/Nyheter/Nyhetsvisning'
 import { forsidefetch, tinyhetsfetch} from "../utils/artikkelService";
-import { Link } from 'react-router-dom'
 import Loading from "../components/Loading";
 /*  Dette komponenten lager siden!*/
 const Home = () => {
@@ -46,7 +45,6 @@ const Home = () => {
     }else{
         return (
             <>
-                <Link to="/Om-Oss/kontakt-oss" id="kontakt">Kontakt Oss</Link>
                 <Homebutton forside={forside} />
                 <Nyhetsvisning nyhet={nyhet[0]} andre={nyhet.slice(1)} />
             </>
