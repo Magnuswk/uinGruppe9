@@ -18,7 +18,6 @@ const Oppmelding = {
             name:"telefon",
             type: "string"
         },
-
         {
             title: "Epost adresse",
             name:"epost",

@@ -16,7 +16,7 @@ const Homebutton = ({forside}) => {
         <section id="mainsection">
             {forside?.map(function(name, index){
                 return(
-                    <article>
+                    <article key={name.tittel}>
                         {<Link to={name.link}><h2>{name.tittel}</h2><img src={urlFor(name.bilde.asset.url).format('webp').url()} alt={name.tittel}></img></Link>}
                     </article>
                 )

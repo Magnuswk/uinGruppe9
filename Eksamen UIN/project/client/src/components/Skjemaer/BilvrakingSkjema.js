@@ -19,7 +19,7 @@ const BilvrakingSkjema = ({onSubmit}) => {
     const [tilleggsinformasjon, setTilleggsinformasjon] = useState(null)
     const handleSubmit = (event) => {
         event.preventDefault()
-        onSubmit({navn, adresse, postnummer, poststed, epostadresse, telefonnummer, kontonummer, henteadresse, beskrivelseavplassering, merkeogmodell, farge, omlakkert, registreringsnummer, chassisnummer, flerebiler, tilleggsinformasjon})
+        onSubmit({navn, adresse, epostadresse, telefonnummer, postnummer, poststed,  kontonummer, henteadresse, beskrivelseavplassering, merkeogmodell, farge, omlakkert, registreringsnummer, chassisnummer, flerebiler, tilleggsinformasjon})
     }
     return (
         <form onSubmit={handleSubmit} method="post" action="#">
