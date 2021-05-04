@@ -124,7 +124,7 @@ main{
 /*  Sidenbar */
 #sidebar{
   width:25%;
-  margin-top: 16.5rem;
+  margin-top: 19rem;
   float: right;
   background-color:#93ba3d;
   border-radius: 10px;
@@ -181,7 +181,7 @@ main{
   border: solid;
 }
 #artikkelmain section article{
-  width:75%;
+  width:70%;
   padding-bottom: 5rem;
   border:solid;
 }
