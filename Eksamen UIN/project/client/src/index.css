@@ -65,9 +65,9 @@ main{
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
   row-gap: 10rem;
-  top: 10%;
+  top: 20rem;
   position:absolute;
-  left:30%;
+  left:80rem;
   vertical-align: top;
   text-align: center;
   padding: 5rem;
@@ -124,7 +124,7 @@ main{
 /*  Sidenbar */
 #sidebar{
   width:25%;
-  margin-top: 16.5rem;
+  margin-top: 21rem;
   float: right;
   background-color:#93ba3d;
   border-radius: 10px;
@@ -178,12 +178,13 @@ main{
   margin-top: 20px;
   font-size: 20px;
   margin-left:10%;
+  margin-right: 10%;
   border: solid;
 }
 #artikkelmain section article{
-  width:75%;
   padding-bottom: 5rem;
   border:solid;
+  
 }
  .h1tjenester{
   text-align:center;
@@ -228,7 +229,7 @@ main{
 }
 /* Breadcrumbs */
 #breadcrumbs {
-  margin-top: 25px;
+  margin-top: 5rem;
 }
 #breadcrumbs li{
   display: inline;
@@ -283,13 +284,13 @@ main{
 /* Styling for nyhets delen av forsiden */
 #nyhettittel{
   font-size: 40px;
-  margin-top: 40%;
+  margin-top: 90rem;
   text-align:center;
 }
 #nyhetsboks{
   width: 60%;
   margin-left: 20%;
-  height:700px;
+  height:60rem;
   display: grid;
   grid-template-columns: 70% 30%;
 }
