@@ -11,18 +11,18 @@ const KursSkjema = ({onSubmit, pris, tittel}) => {
     }
     return (
             <form onSubmit={handleSubmit} method="post" action="#">
-                <label htmlFor='epost'>Epost</label>
-                <input id='epost' required
+                <label htmlFor='epost'>Epostadresse</label>
+                <input id='epost' required title="Vennligst skriv inn din epostadresse!"
                     onChange={(event)=> setEpost(event.target.value)}></input>
 
                 {pris !== '0'?
                 <>
-                    <label htmlFor='Navn'>Navn</label>
-                    <input name='Navn' required
+                    <label htmlFor='Navn'>Fullt Navn</label>
+                    <input name='Navn' required title="Vennligst skriv inn ditt fulle navn!"
                         onChange={(event)=> setNavn(event.target.value)}></input>
 
-                    <label htmlFor='Telefon'>Telefon</label>
-                    <input name='Telefon' required
+                    <label htmlFor='Telefon'>Telefonnummer</label>
+                    <input name='Telefon' required title="Vennligst skriv inn ditt telefonnummer!"
                         onChange={(event)=> setTelefon(event.target.value)}></input>
 
                 </>
