@@ -61,15 +61,15 @@ const ContainerleieSkjema = ({onSubmit}) => {
                     onChange={(event)=> setTelefonnummer(event.target.value)}></input>
 
             <label htmlFor='Epostadresse'>Epostadresse</label>
-                <input id='Epostadresse'  required
+                <input id='Epostadresse'  required title="Vennligst skriv inn din epostadresse!"
                     onChange={(event)=> setEpostadresse(event.target.value)}></input>
 
             <label htmlFor='Bekreftepostadresse'>Bekreft epostadresse</label>
-                <input id='Bekreftepostadresse'  required></input>
+                <input id='Bekreftepostadresse'  required title="Vennligst skriv inn samme epostadresse som over!"></input>
 
 
 
-            <label htmlFor='Fakturatiladresse'>Skal fakturaen til adressen over?</label><br />
+            <label htmlFor='Fakturatiladresse'>Skal fakturaen sendes til adressen over?</label><br />
                 <input type='radio'
                         value='Ja'
                         className="radiobutton"
@@ -88,35 +88,35 @@ const ContainerleieSkjema = ({onSubmit}) => {
 
             {fakturatiladresse === "Nei" ?
                 <>
-                    <label htmlFor='Fakturamottaker'>Fakturamottaker</label>
-                        <input id='Fakturamottaker'  required
+                    <label htmlFor='Fakturamottaker'>Navnet for Faktura mottaker</label>
+                        <input id='Fakturamottaker'  required title="Vennligst skriv inn fakturamottakers fulle navn!"
                     onChange={(event)=> setFakturamottaker(event.target.value)}></input>
 
-                    <label htmlFor='Fakturaadresse'>Fakturaadresse</label>
-                        <input id='Fakturaadresse'  required
+                    <label htmlFor='Fakturaadresse'>Faktura adresse</label>
+                        <input id='Fakturaadresse'  required 
                             onChange={(event)=> setFakturaadresse(event.target.value)}></input>
 
-                    <label htmlFor='Fakturapostnummer'>Fakturapostnummer</label>
-                        <input id='Fakturapostnummer'  required
+                    <label htmlFor='Fakturapostnummer'>Faktura postnummer</label>
+                        <input id='Fakturapostnummer'  required title="Vennligst skriv inn postnummer!"
                             onChange={(event)=> setFakturapostnummer(event.target.value)}></input>
 
-                    <label htmlFor='Fakturapoststed'>Fakturapoststed</label>
-                        <input id='Fakturapoststed'  required
+                    <label htmlFor='Fakturapoststed'>Faktura poststed</label>
+                        <input id='Fakturapoststed'  required title="Vennligst skriv inn poststed!"
                             onChange={(event)=> setFakturapoststed(event.target.value)}></input>
 
-                    <label htmlFor='Fakturaepostadresse'>Fakturaepostadresse</label>
-                        <input id='Fakturaepostadresse'  required
+                    <label htmlFor='Fakturaepostadresse'>Faktura mottakers epostadresse</label>
+                        <input id='Fakturaepostadresse'  required title="Vennligst skriv inn fakturamottakers epostadresse!"
                             onChange={(event)=> setFakturaepostadresse(event.target.value)}></input>
 
-                    <label htmlFor='Bekreftmottakersepost'>Bekreftmottakersepost</label>
-                        <input id='Bekreftmottakersepost'  required></input>
+                    <label htmlFor='Bekreftmottakersepost'>Bekreft mottakers epost</label>
+                        <input id='Bekreftmottakersepost'  required title="Vennligst skriv inn samme epostadresse som over!"></input>
                 </>
                 : null
             }
 
 
 
-            <label htmlFor='postellerepost'>post eller epost?</label><br/>
+            <label htmlFor='postellerepost'>Ønsker du svaret på Post eller Epost?</label><br/>
             <input type='radio'
                     name="postellerespost"
                     value='epost'
@@ -132,23 +132,23 @@ const ContainerleieSkjema = ({onSubmit}) => {
                 <label htmlFor='Post'>Post</label><br/>
 
             <label htmlFor='Plasseringsadresse'>Plasseringsadresse</label>
-                <input id='Plasseringsadresse'  required
+                <input id='Plasseringsadresse'  required title="Vennligst skriv inn hvor containeren skal plasseres!"
                     onChange={(event)=> setPlasseringsadresse(event.target.value)}></input>
 
-            <label htmlFor='Datoforutsetting'>Datoforutsetting</label>
-                <input type='date' id='Datoforutsetting'  required
+            <label htmlFor='Datoforutsetting'>Dato for utsetting</label>
+                <input type='date' id='Datoforutsetting'  required title="Vennligst skriv inn datoen du ønsker den skal settes ut på!"
                     onChange={(event)=> setDatoforutsetting(event.target.value)}></input>
 
-            <label htmlFor='Datoforhenting'>Datoforhenting</label>
-                <input type='date' id='Datoforhenting'  required
+            <label htmlFor='Datoforhenting'>Dato for henting</label>
+                <input type='date' id='Datoforhenting'  required title="Vennligst skriv inn datoen du ønsker den skal hentes på!"
                     onChange={(event)=> setDatoforhenting(event.target.value)}></input>
 
             <label htmlFor='Tilleggsopplysninger'>Tilleggsopplysninger</label>
-                <textarea  id='Tilleggsopplysninger'  required
+                <textarea  id='Tilleggsopplysninger'  required title="Vennligst skriv inn tilleggsinformasjon!"
                     onChange={(event)=> setTilleggsopplysninger(event.target.value)}></textarea>
 
-            <label htmlFor='Beskrivplasseringen'>Beskrivplasseringen</label>
-                <textarea  id='Beskrivplasseringen'  required
+            <label htmlFor='Beskrivplasseringen'>Beskriv plasseringen</label>
+                <textarea  id='Beskrivplasseringen'  required title="Vennligst beskriv plasseringen nærmere!"
                     onChange={(event)=> setBeskrivplasseringen(event.target.value)}></textarea>
 
             <button onClick={handleSubmit}>Send inn</button>

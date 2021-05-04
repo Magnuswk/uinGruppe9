@@ -27,25 +27,25 @@ const KontaktSkjema = ({onSubmit}) => {
                 </select>
 
             <label htmlFor='navn'>Navn</label>
-                <input id='navn' required
+                <input id='navn' required title="Vennligst skriv inn ditt fulle navn!"
                     onChange={(event)=> setNavn(event.target.value)}></input>
 
             <label htmlFor='Epostadresse'>Epostadresse</label>
-                <input id='Epostadresse' required
+                <input id='Epostadresse' required title="Vennligst skriv inn din epostadresse!"
                     onChange={(event)=> setEpostadresse(event.target.value)}></input>
 
             <label htmlFor='Bekreftepost' required>Bekreft epost</label>
-                <input id='Bekreftepost'></input>
+                <input id='Bekreftepost' title="Vennligst skriv inn samme epostadresse som over!"></input>
 
             <label htmlFor='Telefonnummer'>Telefonnummer</label>
-                <input id='Telefonnummer' required
+                <input id='Telefonnummer' required title="Vennligst skriv inn telefonnummer!"
                     onChange={(event)=> setTelefonnummer(event.target.value)}></input>
 
-            <label htmlFor='Henvendelse'>Henvendelse</label>
-                <textarea id='Henvendelse' required
+            <label htmlFor='Henvendelse'>Hva gjelder din henvendelse?</label>
+                <textarea id='Henvendelse' required title="Vennligst skriv inn hva din henvendelse gjelder!"
                     onChange={(event)=> setHenvendelse(event.target.value)}></textarea>
 
-            <label htmlFor='Kontaktmetode'>Telefon eller epost?</label><br />
+            <label htmlFor='Kontaktmetode'>Ønsker du svar på Telefon eller Epost?</label><br />
                 <input type='radio'
                         value='epost'
                         className="radiobutton"

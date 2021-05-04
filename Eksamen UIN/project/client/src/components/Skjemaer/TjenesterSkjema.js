@@ -28,7 +28,7 @@ const TjenesterSkjema = ({onSubmit}) => {
                     <option value='Harstad'>Harstad</option>
                 </select>
 
-            <label htmlFor='navn'>navn</label>
+            <label htmlFor='navn'>Fullt navn</label>
             <input id='navn' required
                 onChange={(event)=> setNavn(event.target.value)}></input>
 
@@ -48,18 +48,18 @@ const TjenesterSkjema = ({onSubmit}) => {
             <input id='Epostadresse' required
                 onChange={(event)=> setEpostadresse(event.target.value)}></input>
 
-            <label htmlFor='Bekreftepost'>Bekreft epost</label>
+            <label htmlFor='Bekreftepost'>Bekreft Epostadresse</label>
             <input id='Bekreftepost' required></input>
 
             <label htmlFor='Telefonnummer'>Telefonnummer</label>
             <input id='Telefonnummer' required
                 onChange={(event)=> setTelefonnummer(event.target.value)}></input>
 
-            <label htmlFor='Henvendelse'>Henvendelse</label>
+            <label htmlFor='Henvendelse'>Hva gjelder din henvendelse?</label>
             <textarea id='Henvendelse' required
                 onChange={(event)=> setHenvendelse(event.target.value)}></textarea>
 
-            <label htmlFor='Kontaktmetode'>Telefon eller epost?</label><br />
+            <label htmlFor='Kontaktmetode'>Ønsker du svar på Telefon eller epost?</label><br />
                 <input type='radio'
                         defaultChecked
                         value='epost'
