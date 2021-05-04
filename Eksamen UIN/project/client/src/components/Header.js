@@ -4,8 +4,17 @@ import { NavLink } from 'react-router-dom'
 import Search from './Search'
 import { searchfetch } from '../utils/artikkelService'
 import { useEffect, useState } from 'react'
-
+import styled from 'styled-components'
 /* Fetcher nødvendig informasjon til søkefeltet */
+const Headerstyle = styled.header`
+    width: 100%;
+    height: 15%;
+    top: 0%;
+    border-bottom: 1px solid black;
+    position:fixed;
+    background-color: white;
+    z-index: 10;
+`
 const Header = () => {
     const [header, setHeader] = useState(null)
     useEffect(()=> {
@@ -20,15 +29,8 @@ const Header = () => {
             fetchAsyncSearch();
     }, []);
 
-
-
-
-
-
-
-
     return (
-        <header>
+        <Headerstyle>
             <a id="logocontainer" href="/">
                 <img src={ostbo} alt="Østbø Logo"/>
             </a>
@@ -42,7 +44,7 @@ const Header = () => {
                 {/* Sender tidliger fetch som prop til søkeliste komponenten */}
                 <Search søkeliste={header}/>
             </nav>
-        </header>
+        </Headerstyle>
     )
 }
 
