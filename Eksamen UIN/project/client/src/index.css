@@ -65,22 +65,43 @@ main{
 #mainsection{
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
-  top: 30%;
+  row-gap: 10rem;
+  top: 10%;
   position:absolute;
   left:30%;
-
+  vertical-align: top;
+  text-align: center;
+  padding: 5rem;
 }
 #mainsection article{
+  width: 10rem;
+  height: 10rem;
   margin-top: 15%;
-  border: solid 1px grey;
+  border: solid 1px black;
   margin-left:50px;
   border-radius: 30px;
-  text-align:center;
+  text-align: center;
   cursor:pointer;
-  background-color:rgb(0,0,0, 0.3);
+  background-color: #93ba3d;
+  padding: 2rem;
 }
+
+#mainsection div a{
+  text-decoration: none;
+}
+
+.caption{
+  display: block;
+  padding-top: 1rem;
+  font-size: x-large;
+  width: 16rem;
+  margin-left: 4rem;
+  text-align: center;
+  color: black;
+}
+
 #mainsection article:hover{
-  background-color:rgb(0,0,0,0.5);
+  background-color:#597225;
 }
 /* KONTAKT OSS */
 #kontakt{
@@ -104,17 +125,19 @@ main{
 /*  Sidenbar */
 #sidebar{
   width:25%;
-  margin-top:5%;
+  margin-top: 16.5rem;
   float: right;
   background-color:#93ba3d;
   border-radius: 10px;
   padding-bottom: 30px;
   border-bottom: 1px solid, #ddd;
   list-style: none;
+  
+  
 }
 #sidebar h1{
   display: block;
-  padding: 20px, 20px, 20px, 20px;
+  padding: 2rem;
   background-color: black;
   color: #ddd;
   letter-spacing: 2px;
@@ -125,11 +148,7 @@ main{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-#sidebar h2{
-  margin-left: 10px;
-  margin-top: 10px;
-  font-size: 20px;
-}
+
 #sidebar a{
   display: flex;
   align-items: center;
@@ -154,6 +173,7 @@ main{
   float:left;
   line-height: 1.5;
   position: flex;
+  border:solid;
 }
 #artikkelmain section{
   margin-top: 20px;
@@ -162,38 +182,44 @@ main{
   border: solid;
 }
 #artikkelmain section article{
-  width:70%;
+  width:75%;
   padding-bottom: 5rem;
+  border:solid;
 }
-#artikkelmain section article h1{
+ .h1tjenester{
   text-align:center;
   font-size: 40px;
   margin-bottom: 30px;
   margin-top: 50px;
 }
-#artikkelmain section article h2{
+#artikkelmain section article div h2{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 25px;
 }
-#artikkelmain section article h3{
+#artikkelmain section article div h3{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 20px;
 }
-#artikkelmain section article p{
+#artikkelmain section article div p{
   margin-bottom: 15px;
 }
-#artikkelmain section article ul li{
+#artikkelmain section article div ul li{
   list-style-type: circle;
   margin-left: 50px;
 }
-#artikkelmain section article strong{
+#artikkelmain section article div strong{
   font-weight: bold;
 }
-#artikkelmain section article img{
-  max-width: 900px;
+
+#imagewrapper img{
+  max-width: 60%;
+  max-height: 50%;
+  position: flex;
 }
+
+
 /*  Siden Loader */
 #loading{
   margin-left: 40%;
@@ -254,7 +280,7 @@ main{
 /* Styling for nyhets delen av forsiden */
 #nyhettittel{
   font-size: 40px;
-  margin-top: 30%;
+  margin-top: 40%;
   text-align:center;
 }
 #nyhetsboks{

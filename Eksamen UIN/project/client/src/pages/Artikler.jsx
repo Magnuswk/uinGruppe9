@@ -9,7 +9,7 @@ import BlockContent from '@sanity/block-content-to-react'
 import { sidebarfetch } from '../utils/artikkelService'
 import Sidebar from '../components/Sidebar'
 import {urlFor} from '../utils/imageUrl'
-
+import Skjemaer from '../components/Skjemaer/Skjemaer'
 
 
 /*  Denne komponenten lager alle sider */
@@ -48,12 +48,16 @@ const Artikler = () => {
     <main id="artikkelmain">
       <section>
         <article>
-          <Sidebar kategori={data?.kategori}/>
+          <Sidebar  kategori={data?.kategori}/>
           <Breadcrumbs  data={data} location={location} />
-          <h1>{data.tittel}</h1>
-          <img src={urlFor(data?.bilde.asset.url).format('webp').width(900).height(600).url()} alt={data.tittel}></img>
+          <div>
+          <h1 className='h1tjenester'>{data.tittel}</h1>
+          <div id='imagewrapper' >
+          <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
+          </div>
           <BlockContent blocks={data?.body}/>
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
+          </div>
           </article>
         </section>
     </main>
