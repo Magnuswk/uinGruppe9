@@ -7,7 +7,7 @@ import HentingSkjema from './HentingSkjema'
 import TjenesterSkjema from './TjenesterSkjema'
 import KursSkjema from './KursSkjema'
 
-const Skjemaer = ({type, pris, tittel}) => {
+const Skjemaer = ({type, pris, kategori}) => {
     const Sideliste = ['Slamsuging', 'Tankrengjøring', ' Fjerning av Oljetank', 'Henting av EE-avfall', 'Bestilling og Henting av Farlig Avfall', 'Bilvraking', 'Containerleie', 'Kurs']
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
@@ -17,7 +17,7 @@ const Skjemaer = ({type, pris, tittel}) => {
         setError(false)
         setSuccess(false)
         try {
-            switch (type) {
+            switch (type || kategori) {
                 case 'Slamsuging' || 'Tankrengjøring' || 'Fjerning av Oljetank':
                     await createTjenester(data)
                     break;
@@ -54,8 +54,9 @@ const Skjemaer = ({type, pris, tittel}) => {
             {type==='Bilvraking'?<BilvrakingSkjema onSubmit={onSubmit}/> : null}
             {type==='Henting av EE-avfall' || type ==='Bestilling og Henting av Farlig Avfall'?<HentingSkjema onSubmit={onSubmit}/> : null}
             {(type==='Slamsuging' || type==='Tankrengjøring' || type==='Fjerning av Oljetank') ? <TjenesterSkjema onSubmit={onSubmit}/> : null}
-            {!Sideliste.includes(type)? <KontaktSkjema onSubmit={onSubmit}/> : null }
-            {type === 'Kurs'? <KursSkjema onSubmit={onSubmit} pris={pris} tittel={tittel}/> : null }
+            {kategori === 'Kurs'? <KursSkjema onSubmit={onSubmit} pris={pris} tittel={type}/> : null }
+            {!Sideliste.includes(type) && !Sideliste.includes(kategori)? <KontaktSkjema onSubmit={onSubmit}/> : null }
+
         </section>
     )
 }

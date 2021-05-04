@@ -4,7 +4,6 @@ import {urlFor} from '../../utils/imageUrl'
 
 const Nyhetsvisning = (props) => {
     const[sorted, setSorted] = useState(1)
-    console.log(props.andre)
     const Sort = () => {
         if (sorted === 1){
             setSorted(2)
@@ -16,7 +15,7 @@ const Nyhetsvisning = (props) => {
                 return b.dato.localeCompare(a.dato);
             });
             setSorted(1)
-        }   
+        }
     }
         return(
             <>

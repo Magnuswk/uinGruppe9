@@ -98,7 +98,6 @@ export const tinyhetsfetch = async () => {
   if (data === null){
     return "finnes ikke"
   }
-  console.log(data)
   return data;
 };
 /* Fetch som henter nødvendig informasjon for Forsiden */
@@ -146,6 +145,5 @@ export const tikursfetch = async () => {
   if (data === null){
     return "finnes ikke"
   }
-  console.log(data)
   return data;
 };
