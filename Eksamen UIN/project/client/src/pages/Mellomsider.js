@@ -52,10 +52,6 @@ const Kurs = () => {
           <Loading data={data}/>
     )
     }else{
-        console.log("data")
-        console.log(data)
-        console.log("result")
-        console.log(result)
     return (
         <main>
             <section id="searchTop">
