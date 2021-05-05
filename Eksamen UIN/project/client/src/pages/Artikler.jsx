@@ -21,6 +21,7 @@ const Artikler = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
       const fetchAsyncData = async () => {
+        // Sjekker hva den skal fetche utfra linken på siden
           try {
             if (slug === "Kurs"){
               const side = await mainkursfetch(location.pathname)
@@ -39,6 +40,7 @@ const Artikler = () => {
       fetchAsyncData();
   }, [location, slug]);
 
+  // Om data laster eller ikke finnes bruk loading komponenten til å vise status til brukeren
   if (data === null || data === "ikke funnet"){
     return(
       <Loading data={data}/>

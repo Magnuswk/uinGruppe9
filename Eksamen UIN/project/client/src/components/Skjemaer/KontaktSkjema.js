@@ -7,6 +7,7 @@ const KontaktSkjema = ({onSubmit}) => {
     const [telefonnummer, setTelefonnummer] = useState(null)
     const [henvendelse, setHenvendelse] = useState(null)
     const [kontaktmetode, setKontaktmetode] = useState(null)
+    // Component som Lager Kontaktskjema
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({avdeling, navn, epostadresse, telefonnummer, henvendelse, kontaktmetode})

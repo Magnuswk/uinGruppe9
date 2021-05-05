@@ -16,6 +16,7 @@ const HentingSkjema = ({onSubmit}) => {
     const [farligavfallsdeklarasjon, setFarligavfallsdeklarasjon] = useState('nei')
     const [bytteembalasje, setBytteembalasje] = useState('nei')
     const [hentedato, setHentedato] = useState(null)
+    // Component som Lager Henting skjema
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({avdeling, firmanavn, bestillersnavn, epostadresse, telefonnummer, henteadresse, kontaktperson, telefonkontaktperson, hvilketavfall, henvendelse, tilleggsopplysninger, kontaktforhenting, farligavfallsdeklarasjon, bytteembalasje, hentedato})
