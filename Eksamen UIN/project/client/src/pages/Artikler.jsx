@@ -6,7 +6,6 @@ import { mainkursfetch } from '../utils/artikkelService'
 import { mainnyhetfetch } from '../utils/artikkelService'
 import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
-import { sidebarfetch } from '../utils/artikkelService'
 import Sidebar from '../components/Sidebar'
 import {urlFor} from '../utils/imageUrl'
 import Skjemaer from '../components/Skjemaer/Skjemaer'
@@ -51,8 +50,8 @@ const Artikler = () => {
           <Sidebar  kategori={data?.kategori}/>
           <Breadcrumbs  data={data} location={location} />
           <div>
-          <h1 className='h1tjenester'>{data.tittel}</h1>
-          <div id='imagewrapper' >
+            <h1 className='h1tjenester'>{data.tittel}</h1>
+            <div id='imagewrapper' >
           <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
           </div>
           <BlockContent blocks={data?.body}/>
