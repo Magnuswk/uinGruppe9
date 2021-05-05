@@ -64,13 +64,13 @@ main{
 #mainsection{
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
-  row-gap: 10rem;
+  row-gap: 5rem;
   top: 20rem;
   position:absolute;
-  left:80rem;
+  left:30vw;
   vertical-align: top;
   text-align: center;
-  padding: 5rem;
+  padding: 4rem;
 }
 #mainsection article{
   width: 10rem;
@@ -131,8 +131,8 @@ main{
   padding-bottom: 30px;
   border-bottom: 1px solid, #ddd;
   list-style: none;
-  
-  
+
+
 }
 #sidebar h1{
   display: block;
@@ -184,7 +184,7 @@ main{
 #artikkelmain section article{
   padding-bottom: 5rem;
   border:solid;
-  
+
 }
  .h1tjenester{
   text-align:center;
