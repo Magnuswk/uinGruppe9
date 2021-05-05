@@ -373,9 +373,13 @@ main{
   text-align:center;
   text-decoration:none;
   color:black;
+  margin-top: 2.4%;
 }
 #testartikkel article a{
   font-size: 25px;
+}
+#testartikkel button{
+  margin-top: 7.4%;
 }
 /*  CSS for hovuyd nyhetssiden */
 #nyhet{
@@ -518,4 +522,7 @@ main{
   left: 36%;
   bottom: 0;
   position:absolute;
+}
+.accordian{
+  display: none;
 }

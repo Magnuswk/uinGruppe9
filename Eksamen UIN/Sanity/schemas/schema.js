@@ -18,7 +18,6 @@ import Kurs from './document/Kurs'
 import Oppmelding from './document/Oppmelding'
 import Generiskforms from './object/GeneriskeForms'
 import FAQ from './document/FAQ'
-
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -42,6 +41,5 @@ export default createSchema({
     Oppmelding,
     Generiskforms,
     FAQ
-
   ]),
 })
