@@ -104,11 +104,12 @@ main{
 }
 /* KONTAKT OSS */
 #kontakt{
-  border:solid 1px black;
+  background-color: #93ba3d;
   height:200px;
+  width: 26px;
   text-align:center;
   margin-top: 5%;
-  margin-left: 98.88%;
+  margin-left: 98%;
   writing-mode: vertical-rl;
   position:fixed;
   font-weight: bold;
@@ -116,9 +117,10 @@ main{
   cursor:pointer;
   text-decoration:none;
   color:black;
+  border-radius: 5px;
 }
 #kontakt:hover{
-  background-color: rgb(0,0,0,0.3);
+  background-color: #597225;
 }
 
 /*  Sidenbar */
@@ -129,10 +131,7 @@ main{
   background-color:#93ba3d;
   border-radius: 10px;
   padding-bottom: 30px;
-  border-bottom: 1px solid, #ddd;
   list-style: none;
-  
-  
 }
 #sidebar h1{
   display: block;
@@ -151,7 +150,7 @@ main{
 #sidebar a{
   display: flex;
   align-items: center;
-  border-bottom: 1px solid, #cecece;
+  border-bottom: 2px solid, #cecece;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   position: relative;
@@ -231,12 +230,12 @@ main{
 #breadcrumbs {
   margin-top: 5rem;
 }
+
 #breadcrumbs li{
   display: inline;
   text-decoration:none;
   margin-right: 0px;
-  margin-left:0px;
-
+  margin-left:20px;
 }
 /* Error denne siden finnes ikke */
 #error{
@@ -342,12 +341,16 @@ main{
   margin-left: 45%;
   height: 50px;
   width: 200px;
-  border-radius: 30px;
+  border-radius: 320px;
   font-size: 17px;
+  background-color: #93ba3d;
+}
+#lesmer:hover{
+  background-color: #597225;
 }
 #lesmer a{
   text-decoration: none;
-  color:black;
+  color:rgb(0, 0, 0);
 }
 #sort{
   width: 200px;
@@ -355,6 +358,12 @@ main{
   font-size: 20px;
   margin-left: 20%;
   margin-top: 10px;
+  border:none;
+  background-color: #93ba3d;
+}
+#sort:hover{
+  background-color: #597225;
+  
 }
 /* CSS for skjemaene */
 
