@@ -10,6 +10,8 @@ const TjenesterSkjema = ({onSubmit}) => {
     const [telefonnummer, setTelefonnummer] = useState(null)
     const [henvendelse, setHenvendelse] = useState(null)
     const [kontaktmetode, setKontaktmetode] = useState('farlig avfall')
+    // Component som Lager Tjenesterskjema
+
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({avdeling, navn, adresse, postnummer, poststed, epostadresse, telefonnummer, henvendelse, kontaktmetode})

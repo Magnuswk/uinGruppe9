@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import salten from '../Images/salten.png'
+// Component for footer
+
+// Styled component for footer
 const Footerstyle = styled.footer`
     background-color: #93ba3d;
     font-Size: 20px;
@@ -21,11 +24,12 @@ const Footer = () =>  {
 
         return (
             <>
+                {/* Styled component for hele footer viser informasjonen i grid */}
                 <Footerstyle className="grid-container">
-                    <section className='grid-item'> 
+                    <section className='grid-item'>
                     <img src={salten} alt="salten logo"  width="600"></img>
                     </section>
-                    
+
                     <section className="grid-item">
                         <p>Kontakt oss:  </p>
                         <p>© ØSTBØ AS   </p>
@@ -40,7 +44,7 @@ const Footer = () =>  {
                     <section className='grid-item'>test
 
                     </section>
-    
+
                 </Footerstyle>
             </>
         );

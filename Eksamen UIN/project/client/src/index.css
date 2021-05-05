@@ -70,7 +70,7 @@ main{
   left:25vw;
   vertical-align: top;
   text-align: center;
-  padding: 5rem;
+  padding: 4rem;
 }
 #mainsection article{
   width: 10rem;
@@ -183,7 +183,7 @@ main{
 #artikkelmain section article{
   padding-bottom: 5rem;
   border:solid;
-  
+
 }
  .h1tjenester{
   text-align:center;
@@ -191,12 +191,15 @@ main{
   margin-bottom: 30px;
   margin-top: 50px;
 }
-#artikkelmain section article div h2{
+#artikkelmain section article h1{
+  font-size: 30px;
+}
+#artikkelmain section article h2{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 25px;
 }
-#artikkelmain section article div h3{
+#artikkelmain section article h3{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 20px;
@@ -377,6 +380,9 @@ main{
 }
 #skjema label,input,select{
   display:block;
+}
+#testartikkel button{
+  margin-top: 7.4%;
 }
 #testartikkel article{
   text-align:center;

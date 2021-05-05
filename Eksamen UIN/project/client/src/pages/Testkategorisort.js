@@ -3,8 +3,11 @@ import Displaytestkategori from '../components/displaytestkategori';
 import { sortfetch  } from '../utils/artikkelService';
 
 const Testkategorisort = () => {
+    // For kravet der vi skulle sortere innhold basert på en kategori
     const [artikel, setArtikel] = useState(null)
     const [ny, setNy] = useState(null)
+
+    // henter alle artikler
     useEffect(()=> {
         const fetchAsyncSearch = async () =>{
             try {
@@ -17,11 +20,13 @@ const Testkategorisort = () => {
             };
             fetchAsyncSearch();
     }, []);
+
+    // lager lister for alle kategorier
     const omoss = []
     const tjenester = []
     const sortering = []
 
-
+    //Se igjennom JSON fil og del objekter inni lister
     for (let i = 0; i < artikel?.length; i++) {
         if (artikel[i].kategori === "Om Oss"){
             omoss.push(artikel[i])
@@ -33,7 +38,7 @@ const Testkategorisort = () => {
     }
 
 
-
+    // Ved knappetrykk endre hvilken liste som skal sendes som prop
     const handleOmoss = () => {
         setNy(omoss)
     }
@@ -58,6 +63,7 @@ const Testkategorisort = () => {
             </section>
         )
     }else{
+        /* Status for fetch */
         return( <h1 id="loading">Loading...</h1>)
     }
 

@@ -21,6 +21,7 @@ const Artikler = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
       const fetchAsyncData = async () => {
+        // Sjekker hva den skal fetche utfra linken på siden
           try {
             if (slug === "Kurs"){
               const side = await mainkursfetch(location.pathname)
@@ -39,6 +40,7 @@ const Artikler = () => {
       fetchAsyncData();
   }, [location, slug]);
 
+  // Om data laster eller ikke finnes bruk loading komponenten til å vise status til brukeren
   if (data === null || data === "ikke funnet"){
     return(
       <Loading data={data}/>
@@ -51,8 +53,8 @@ const Artikler = () => {
           <Sidebar  kategori={data?.kategori}/>
           <Breadcrumbs  data={data} location={location} />
           <div>
-          <h1 className='h1tjenester'>{data.tittel}</h1>
-          <div id='imagewrapper' >
+            <h1 className='h1tjenester'>{data.tittel}</h1>
+            <div id='imagewrapper' >
           <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
           </div>
           <BlockContent blocks={data?.body}/>

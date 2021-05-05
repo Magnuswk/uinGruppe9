@@ -5,7 +5,7 @@ import Search from './Search'
 import { searchfetch } from '../utils/artikkelService'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-/* Fetcher nødvendig informasjon til søkefeltet */
+/* Styled component for header */
 const Headerstyle = styled.header`
     width: 100%;
     height: 15%;
@@ -16,6 +16,7 @@ const Headerstyle = styled.header`
     z-index: 10;
 `
 const Header = () => {
+    // Fetcher alle artikler fra sanity og legger de i header variabhelen
     const [header, setHeader] = useState(null)
     useEffect(()=> {
         const fetchAsyncSearch = async () =>{

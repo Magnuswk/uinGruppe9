@@ -4,6 +4,7 @@ const KursSkjema = ({onSubmit, pris, tittel}) => {
     const [epost, setEpost] = useState(null)
     const [telefon, setTelefon] = useState('Ingen')
     const [navn, setNavn] = useState('Ingen')
+    // Component som Lager Kursskjema
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('test')

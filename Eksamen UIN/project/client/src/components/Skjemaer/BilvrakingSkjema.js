@@ -17,6 +17,8 @@ const BilvrakingSkjema = ({onSubmit}) => {
     const [chassisnummer, setChassisnummer] = useState(null)
     const [flerebiler, setFlerebiler] = useState('nei')
     const [tilleggsinformasjon, setTilleggsinformasjon] = useState(null)
+
+    // Component som Lager bilvrakingskjema
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({navn, adresse, epostadresse, telefonnummer, postnummer, poststed,  kontonummer, henteadresse, beskrivelseavplassering, merkeogmodell, farge, omlakkert, registreringsnummer, chassisnummer, flerebiler, tilleggsinformasjon})

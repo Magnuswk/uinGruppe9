@@ -4,6 +4,7 @@ import Accordion from './Accordion';
 
 const FAQ = () => {
     const [faq, setFaq] = useState(null)
+    /* Fetch alle FAQ spørsmål og svar fra sanity og legg det inni faq state variabel*/
     useEffect(()=> {
         const fetchAsyncFaq = async () =>{
             try {
@@ -17,10 +18,10 @@ const FAQ = () => {
     }, []);
     return (
         <>
+        {/* Mapper igjennom fetchet spørsmål og svar og sender det til accordion component*/}
         {faq?.map(function(name, index){
-
-            return(  
-                <Accordion sporsmal={name.sporsmal} svar={name.svar} key={name.sporsmal}/>  
+            return(
+                <Accordion sporsmal={name.sporsmal} svar={name.svar} key={name.sporsmal}/>
             )
         })}
         </>
