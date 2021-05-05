@@ -341,9 +341,11 @@ main{
   margin-left: 45%;
   height: 50px;
   width: 200px;
-  border-radius: 320px;
+  border-radius: 30px;
   font-size: 17px;
   background-color: #93ba3d;
+  border:none;
+  cursor:pointer;
 }
 #lesmer:hover{
   background-color: #597225;
@@ -360,10 +362,10 @@ main{
   margin-top: 10px;
   border:none;
   background-color: #93ba3d;
+  cursor: pointer;
 }
 #sort:hover{
   background-color: #597225;
-  
 }
 /* CSS for skjemaene */
 
