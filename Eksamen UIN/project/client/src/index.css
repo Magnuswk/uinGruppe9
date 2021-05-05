@@ -517,3 +517,6 @@ main{
   bottom: 0;
   position:absolute;
 }
+.accordian{
+  display: none;
+}
