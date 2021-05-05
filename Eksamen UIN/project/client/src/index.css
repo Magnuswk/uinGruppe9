@@ -63,11 +63,11 @@ main{
 
 #mainsection{
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  row-gap: 10rem;
+  grid-template-columns: 8vw 8vw 8vw 8vw;
+  gap: 4vh;
   top: 20rem;
   position:absolute;
-  left:80rem;
+  left:25vw;
   vertical-align: top;
   text-align: center;
   padding: 5rem;
