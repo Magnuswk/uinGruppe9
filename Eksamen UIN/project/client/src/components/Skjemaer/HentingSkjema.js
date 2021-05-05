@@ -70,8 +70,8 @@ const HentingSkjema = ({onSubmit}) => {
                     onChange={(event)=> setHenvendelse(event.target.value)}></textarea>
 
             <label htmlFor='Tilleggsopplysninger'>Tilleggsopplysninger</label>
-                <input id='Tilleggsopplysninger' required title="Vennligst skriv inn tilleggsopplysninger!"
-                    onChange={(event)=> setTilleggsopplysninger(event.target.value)}></input>
+                <textarea id='Tilleggsopplysninger' required title="Vennligst skriv inn tilleggsopplysninger!"
+                    onChange={(event)=> setTilleggsopplysninger(event.target.value)}></textarea>
 
             <label htmlFor='Kontaktforhenting'>Ønsker du å bli kontaktet før henting?</label><br/>
                 <input type="radio"
