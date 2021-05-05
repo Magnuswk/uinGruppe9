@@ -8,12 +8,12 @@ const Nyhetsvisning = ({andre, nyhet}) => {
         // For å sjekke om listen allerede er sortert og sorterer i riktig rekkefølge
         if (sorted === 1){
             setSorted(2)
-            //Elste først
+            //Eldste dato først
             andre?.sort(function (a, b) {
                 return a.dato.localeCompare(b.dato);
             });
         }else{
-            // Nyeste først
+            // Nyeste dato først
             andre?.sort(function (a, b) {
                 return b.dato.localeCompare(a.dato);
             });

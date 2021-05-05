@@ -4,7 +4,7 @@ const Accordion = ({sporsmal, svar}) => {
     //For å referere til svaret
     const style = useRef()
     const handleClick = () => {
-        // Sjekk om svaret er displayet
+        // Sjekk om svaret er vises
         if(style.current.style.display==='block'){
             //Ikke vis svar
             style.current.style.display='none'

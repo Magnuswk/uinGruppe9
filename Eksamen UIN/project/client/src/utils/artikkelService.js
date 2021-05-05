@@ -1,6 +1,3 @@
-// Dette er en demo for måter å hente data på.
-// Du må huske å erstatte ADD_YOUR_TYPE_HERE med egne dokumenttyper fra Sanity
-
 import client from './client';
 const artikkelfields = `
   tittel,
@@ -95,6 +92,7 @@ export const nyhetsfetch = async () => {
   }
   return data;
 };
+/* Fetch som henter de ti nyeste nyhetene */
 export const tinyhetsfetch = async () => {
   const data = await client.fetch(`*[_type == "nyheter"]{${nyhetsfields}}[0...10]`
   );
@@ -125,6 +123,7 @@ export const mainnyhetfetch = async (slug) => {
     return "ikke funnet"
   }
 };
+/* fetch som alt som har typen kurs*/
 export const kursfetch = async () => {
   const data = await client.fetch(`*[_type == "kurs"]{${kursfields}}`
   );
@@ -133,6 +132,7 @@ export const kursfetch = async () => {
   }
   return data;
 };
+/* fetch som alt som har typen kurs, sluggen og blockcontentet*/
 export const mainkursfetch = async (slug) => {
   const data = await client.fetch(`*[_type == "kurs" && slug.current == $slug]{${kursfields},body[]{...}}`, {slug}
   );
