@@ -6,10 +6,10 @@ import { mainkursfetch } from '../utils/artikkelService'
 import { mainnyhetfetch } from '../utils/artikkelService'
 import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
-import { sidebarfetch } from '../utils/artikkelService'
 import Sidebar from '../components/Sidebar'
 import {urlFor} from '../utils/imageUrl'
 import Skjemaer from '../components/Skjemaer/Skjemaer'
+import FAQ from '../components/FAQ';
 
 
 /*  Denne komponenten lager alle sider */
@@ -56,6 +56,7 @@ const Artikler = () => {
           <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
           </div>
           <BlockContent blocks={data?.body}/>
+          {data.tittel === 'Kontakt oss'? <FAQ /> : null}
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </div>
           </article>

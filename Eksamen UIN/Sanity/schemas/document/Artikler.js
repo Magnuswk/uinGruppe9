@@ -67,12 +67,6 @@ const Artikler = {
 
         
     ],
-
-    preview: {
-        select: {
-            ImageUrl: 'asset.url'
-        }
-    }
 }
 
 export default Artikler

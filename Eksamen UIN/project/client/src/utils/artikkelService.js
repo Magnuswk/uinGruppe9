@@ -53,7 +53,10 @@ const kursfields = `
   'kategori':kategori->kategori,
   pris
 `
-
+const faqfields = `
+  sporsmal,
+  svar
+`
 
 
 /* Fetch som henter bruker slug til å hente all informasjon fra sanity */
@@ -145,5 +148,11 @@ export const tikursfetch = async () => {
   if (data === null){
     return "finnes ikke"
   }
+  return data;
+};
+/* Fetch som henter FAQ spørsmål og svar */
+export const faqfetch = async () => {
+  const data = await client.fetch(`*[_type == "faq"]{${faqfields}}`
+  );
   return data;
 };
