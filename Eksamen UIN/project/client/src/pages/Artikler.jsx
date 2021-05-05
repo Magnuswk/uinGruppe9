@@ -48,7 +48,6 @@ const Artikler = () => {
     <main id="artikkelmain">
       <section>
         <article>
-          <Sidebar  kategori={data?.kategori}/>
           <Breadcrumbs  data={data} location={location} />
           <div>
           <h1 className='h1tjenester'>{data.tittel}</h1>
@@ -58,6 +57,7 @@ const Artikler = () => {
           <BlockContent blocks={data?.body}/>
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </div>
+          <Sidebar  kategori={data?.kategori}/>
           </article>
         </section>
     </main>

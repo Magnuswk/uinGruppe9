@@ -169,21 +169,26 @@ main{
 #artikkelmain{
   width: 100%;
   float:left;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 100%;
+  font-size: 16px;
   line-height: 1.5;
   position: flex;
   border:solid;
+  background: "f0f4fb";
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 #artikkelmain section{
-  margin-top: 20px;
-  font-size: 20px;
-  margin-left:10%;
-  margin-right: 10%;
-  border: solid;
+ margin: 2rem auto;
+ max-width: calc(100% - 80px);
+ border: solid;
 }
 #artikkelmain section article{
-  padding-bottom: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
   border:solid;
-  
 }
  .h1tjenester{
   text-align:center;
@@ -191,6 +196,11 @@ main{
   margin-bottom: 30px;
   margin-top: 50px;
 }
+#artikkelmain section article div{
+  background: whitesmoke;
+  border-radius: 20px;
+}
+
 #artikkelmain section article div h2{
   margin-bottom: 0px;
   font-weight:bold;
@@ -213,9 +223,12 @@ main{
 }
 
 #imagewrapper img{
-  max-width: 60%;
-  max-height: 50%;
-  position: flex;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px 20px 0 0;
 }
 
 
