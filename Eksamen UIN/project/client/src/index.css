@@ -63,11 +63,11 @@ main{
 
 #mainsection{
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  row-gap: 10rem;
+  grid-template-columns: 8vw 8vw 8vw 8vw;
+  gap: 4vh;
   top: 20rem;
   position:absolute;
-  left:80rem;
+  left:25vw;
   vertical-align: top;
   text-align: center;
   padding: 5rem;
@@ -104,11 +104,12 @@ main{
 }
 /* KONTAKT OSS */
 #kontakt{
-  border:solid 1px black;
+  background-color: #93ba3d;
   height:200px;
+  width: 26px;
   text-align:center;
   margin-top: 5%;
-  margin-left: 98.88%;
+  margin-left: 98%;
   writing-mode: vertical-rl;
   position:fixed;
   font-weight: bold;
@@ -116,9 +117,10 @@ main{
   cursor:pointer;
   text-decoration:none;
   color:black;
+  border-radius: 5px;
 }
 #kontakt:hover{
-  background-color: rgb(0,0,0,0.3);
+  background-color: #597225;
 }
 
 /*  Sidenbar */
@@ -129,10 +131,7 @@ main{
   background-color:#93ba3d;
   border-radius: 10px;
   padding-bottom: 30px;
-  border-bottom: 1px solid, #ddd;
   list-style: none;
-  
-  
 }
 #sidebar h1{
   display: block;
@@ -151,7 +150,7 @@ main{
 #sidebar a{
   display: flex;
   align-items: center;
-  border-bottom: 1px solid, #cecece;
+  border-bottom: 2px solid, #cecece;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   position: relative;
@@ -231,12 +230,12 @@ main{
 #breadcrumbs {
   margin-top: 5rem;
 }
+
 #breadcrumbs li{
   display: inline;
   text-decoration:none;
   margin-right: 0px;
-  margin-left:0px;
-
+  margin-left:20px;
 }
 /* Error denne siden finnes ikke */
 #error{
@@ -293,9 +292,10 @@ main{
   height:60rem;
   display: grid;
   grid-template-columns: 70% 30%;
+  box-shadow: 0 4px 20px 0 grey,0 1px 20px 0 grey ;
 }
 #hovednyhet{
-  border: 1px solid red;
+  
   text-align:center;
 }
 #hovednyhet img{
@@ -308,20 +308,21 @@ main{
   font-size: 20px;
 }
 #extranyhet{
-  border: 1px solid red;
-  overflow-y:scroll
+  border-left: 3px solid #93ba3d;
+  overflow-y:scroll;
+  margin-left: -1px;
 }
 #extranyhet h1{
   margin-top: 15px;
   font-size: 20px;
   text-align:center;
   padding-bottom: 15px;
-  border-bottom: 1px solid black;
+  box-shadow: 0 4px 1px 0 rgba(0, 0, 0, 0.2);
 }
 .eldrenyheter{
   width:100%;
   height: 20%;
-  border-bottom: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: grid;
   grid-template-columns: 30% 70%;
 }
@@ -329,9 +330,11 @@ main{
   font-size: 15px;
   text-align:center;
   margin-top: 20px;
+  margin-left: -4.5vw;
 }
 .eldrenyheter img{
   width: 100px;
+  margin-top: 5vh;
 }
 #lesmer{
   margin-top: 10px;
@@ -340,10 +343,16 @@ main{
   width: 200px;
   border-radius: 30px;
   font-size: 17px;
+  background-color: #93ba3d;
+  border:none;
+  cursor:pointer;
+}
+#lesmer:hover{
+  background-color: #597225;
 }
 #lesmer a{
   text-decoration: none;
-  color:black;
+  color:rgb(0, 0, 0);
 }
 #sort{
   width: 200px;
@@ -351,6 +360,12 @@ main{
   font-size: 20px;
   margin-left: 20%;
   margin-top: 10px;
+  border:none;
+  background-color: #93ba3d;
+  cursor: pointer;
+}
+#sort:hover{
+  background-color: #597225;
 }
 /* CSS for skjemaene */
 

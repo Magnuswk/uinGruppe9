@@ -41,7 +41,7 @@ const Sidebar = ({kategori}) => {
                 <h1>{sidebar[0].kategori}</h1>
                 <ul>
                 {newArray?.map(function(name, index){
-                        return <li key={ name.slug }> <Link to={name.slug} >{name.tittel}<br /><br /></Link></li>;
+                        return <li key={ name.slug }> <Link to={name.slug} >{name.tittel}</Link></li>;
                       })}
                 </ul>
             </aside>
