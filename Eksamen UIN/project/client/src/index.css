@@ -126,12 +126,14 @@ main{
 /*  Sidenbar */
 #sidebar{
   width:25%;
-  margin-top: 21rem;
+  margin-top: 9.9%;
   float: right;
   background-color:#93ba3d;
   border-radius: 10px;
   padding-bottom: 30px;
   list-style: none;
+  overflow: hidden;
+  height: 17%;
 }
 #sidebar h1{
   display: block;
@@ -178,17 +180,21 @@ main{
   background: "f0f4fb";
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  background-color: lightpink;
 }
 #artikkelmain section{
  margin: 2rem auto;
- max-width: calc(100% - 80px);
+ max-width: calc(80% - 80px);
  border: solid;
+ background-color: lightcoral;
 }
 #artikkelmain section article{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: 200px 50% 100%;
+  grid-template-rows: auto minmax(min, max);
   gap: 2rem;
   border:solid;
+  background-color: lawngreen;
 }
  .h1tjenester{
   text-align:center;
@@ -200,19 +206,24 @@ main{
   background: whitesmoke;
   border-radius: 20px;
 }
-
+#artikkelmain section article div h1{
+  margin-left: 0.8%;
+}
 #artikkelmain section article div h2{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 25px;
+  margin-left: 0.8%;
 }
 #artikkelmain section article div h3{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 20px;
+  margin-left: 0.8%;
 }
 #artikkelmain section article div p{
   margin-bottom: 15px;
+  margin-left: 0.8%;
 }
 #artikkelmain section article div ul li{
   list-style-type: circle;
@@ -242,6 +253,7 @@ main{
 /* Breadcrumbs */
 #breadcrumbs {
   margin-top: 5rem;
+  z-index: 9;
 }
 
 #breadcrumbs li{

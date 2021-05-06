@@ -48,8 +48,8 @@ const Artikler = () => {
     <main id="artikkelmain">
       <section>
         <article>
-          <Breadcrumbs  data={data} location={location} />
-          <div>
+          <Breadcrumbs data={data} location={location} />
+          <div >
           <h1 className='h1tjenester'>{data.tittel}</h1>
           <div id='imagewrapper' >
           <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
@@ -57,7 +57,7 @@ const Artikler = () => {
           <BlockContent blocks={data?.body}/>
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </div>
-          <Sidebar  kategori={data?.kategori}/>
+          <Sidebar kategori={data?.kategori}/>
           </article>
         </section>
     </main>
