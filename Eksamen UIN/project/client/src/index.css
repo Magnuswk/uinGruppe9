@@ -24,6 +24,11 @@ code {
   display: inline;
   margin-right: 10%;
   font-size: 25px;
+  padding: 0.5%;
+  border-radius: 5px;
+}
+#katLink li:hover{
+  background-color: #597225;
 }
 #katLink li a{
   text-decoration: none;
@@ -133,7 +138,7 @@ main{
   padding-bottom: 30px;
   list-style: none;
   overflow: hidden;
-  height: 17%;
+  height: fit-content;
 }
 #sidebar h1{
   display: block;
@@ -164,7 +169,7 @@ main{
   cursor: pointer;
 }
 #sidebar a:hover{
-  color: red;
+  color:whitesmoke;
 }
 
 /* Hovedsiden */
@@ -176,25 +181,17 @@ main{
   font-size: 16px;
   line-height: 1.5;
   position: flex;
-  border:solid;
   background: "f0f4fb";
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  background-color: lightpink;
 }
 #artikkelmain section{
  margin: 2rem auto;
  max-width: calc(80% - 80px);
- border: solid;
- background-color: lightcoral;
 }
 #artikkelmain section article{
   display: grid;
   grid-template-columns: 200px 50% 100%;
   grid-template-rows: auto minmax(min, max);
   gap: 2rem;
-  border:solid;
-  background-color: lawngreen;
 }
  .h1tjenester{
   text-align:center;
@@ -496,8 +493,11 @@ main{
   bottom: 0;
 }
 #skjemasection{
-  float:right;
+  float:none;
   width: 100%;
+  border-radius: 15px;
+  background-color: #93ba3d;
+  padding: 0.5%;
 }
 #skjemasection form{
   margin-left: 20%;
