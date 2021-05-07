@@ -65,13 +65,14 @@ main{
   width: 100%;
 
  }
-
+/* Ikoner meny */
 #mainsection{
   display: grid;
   grid-template-columns: 8vw 8vw 8vw 8vw;
   gap: 4vh;
-  top: 20rem;
-  position:absolute;
+  margin-left: 25%;
+  margin-top: 8%;
+  margin-bottom: 0;
   left:25vw;
   vertical-align: top;
   text-align: center;
@@ -305,7 +306,7 @@ main{
 /* Styling for nyhets delen av forsiden */
 #nyhettittel{
   font-size: 40px;
-  margin-top: 90rem;
+  margin-top: 10%;
   text-align:center;
 }
 #nyhetsboks{
@@ -317,7 +318,6 @@ main{
   box-shadow: 0 4px 20px 0 grey,0 1px 20px 0 grey ;
 }
 #hovednyhet{
-  
   text-align:center;
 }
 #hovednyhet img{
