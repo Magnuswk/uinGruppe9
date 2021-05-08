@@ -28,26 +28,29 @@ code {
   border-radius: 5px;
 }
 #katLink li:hover{
-  background-color: #597225;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #597225;
+  color: #597225;
 }
 #katLink li a{
   text-decoration: none;
   color: inherit;
 }
-#search{
+#search form{
   position:absolute;
   top: 20%;
   left:70%;
   display:flex;
 }
-#search input{
+#search form input{
   height: 30px;
   width:350px;
   margin-top: 10px;
   border-radius: 10px;
   margin-right:5px;
 }
-#search button{
+#search form button{
   height: 35px;
   width: 90px;
   left: 95%;
@@ -57,7 +60,11 @@ code {
   border-radius: 10px;
   position: absolute;
 }
-#search a:hover{
+#search form button:hover{
+  cursor: pointer;
+  background-color: #597225;
+}
+#search form a:hover{
   background-color: rgb(200,200,200)
 }
 /* HOME MAIN SECTION */
@@ -69,6 +76,17 @@ main{
    margin-top: 9.5%;
    min-height: 44.6vh;
  }
+/* mellsomside Vis som liste knapp og vis som grid */
+#searchTop button{
+  font-size: 20px;
+  border: solid 1px;
+  border-color: #93ba3d;
+  width: 10%;
+  border-radius: 15px;
+  background-color: #93ba3d;
+  margin-top: 2%;
+  margin-left: 2%;
+}
 /* Ikoner meny */
 #mainsection{
   display: grid;
@@ -127,6 +145,7 @@ main{
   text-decoration:none;
   color:black;
   border-radius: 5px;
+  box-shadow: 0 4px 10px 0 grey,0 1px 15px 0 grey ;
 }
 #kontakt:hover{
   background-color: #597225;
@@ -281,15 +300,13 @@ main{
   width: 355px;
   display: grid;
   place-items: center;
-  background-color:rgb(0,0,0,0.1);
   position:absolute;
   top:35px;
-  left:20px;
+  margin-top: 3%;
 }
 #searchresult li{
   font-size: 20px;
   width:100%;
-  margin-left:15px;
   border: 1px solid grey;
   border-radius: 10px;
   background-color:rgb(255,255,255);
@@ -299,13 +316,16 @@ main{
 }
 #searchresult li:hover{
   background-color:rgb(200,200,200);
+  overflow: hidden;
 }
 #searchresult li a{
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 10px;
   display: block;
   height:100%;
   width: 100%;
+  text-decoration: none;
+  color:black ;
 }
 /* Styling for nyhets delen av forsiden */
 #nyhettittel{
@@ -416,11 +436,12 @@ main{
 #nyhet{
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
-  height:max-content;
-  gap: 5%;
+  grid-auto-rows: minmax(280px, auto);
+  column-gap: 5%;
+  row-gap: 15px;
   text-align:center;
-  margin-left: 10%;
-  border: solid;
+  margin-left: 7%;
+  
 }
 #nyhetoverskrift{
   font-size: 50px;
@@ -431,13 +452,17 @@ main{
   width: 400px;
   text-align:center;
   position:relative;
-  border: solid;
+  box-shadow: 0 4px 20px 0 grey,0 1px 20px 0 grey ;
+  border-radius: 20px;
+  padding: 10px;
+  border: solid 1px;
+  border-color: #93ba3d;
 }
 #nyhet article h1{
   font-size: 20px;
   margin-bottom: 10px;
 }
-#nyhet article h2{
+#nyhet article p{
   font-size: 15px;
   margin-bottom: 10px;
 }
@@ -451,10 +476,17 @@ main{
 #nyhet article a button{
   font-size: 20px;
   border: solid 1px;
+  border-color: #93ba3d;
   width: 25%;
   left: 36%;
-  bottom: 0;
+  bottom: 3%;
   position:absolute;
+  border-radius: 15px;
+  background-color: #93ba3d;
+}
+#nyhet article a button:hover{
+  cursor: pointer;
+  background-color: #597225;
 }
 #searchResult{
   display:grid;

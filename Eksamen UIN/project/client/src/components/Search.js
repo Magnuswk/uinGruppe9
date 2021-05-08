@@ -58,34 +58,31 @@ const Search = ({søkeliste}) => {
         setOpen(false)
     } 
 
-    const handleClick = () =>{
-        if (value){
-            window.location.href = "/Search/" + value;
-        }
-    }
     return (
         <section id="search" ref={node}>
-            {/* Input for søk */}
-            <input
-                    type="text" 
-                    id='searchbox'
-                    placeholder="Søkeboks" 
-                    value={value}
-                    onChange={(event) => setValue(event.target.value)}
-                    onClick={(event) => handleBlur(event)}
-                    />
-            { open && 
-             <ul id="searchresult" ref={ulRef}>{}
-                 {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
-                {
-                result?.map(function(name, index){
-                   return <li key={ name.slug }><Link to={name.slug}>{name.title}</Link></li>;
-                })
-             }
-            </ul>}
-            
+            <form action={"/Search/" + value} method="get">
+                {/* Input for søk */}
+                <input
+                        type="text" 
+                        id='searchbox'
+                        placeholder="Søkeboks" 
+                        value={value}
+                        onChange={(event) => setValue(event.target.value)}
+                        onClick={(event) => handleBlur(event)}
+                        />
+                { open && 
+                <ul id="searchresult" ref={ulRef}>{}
+                    {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
+                    {
+                    result?.map(function(name, index){
+                    return <li key={ name.slug }><Link to={name.slug}>{name.title}</Link></li>;
+                    })
+                }
+                </ul>}
+                
 
-            <Søkeknapp onClick={handleClick}>Søk</Søkeknapp> 
+                <Søkeknapp>Søk</Søkeknapp> 
+            </form>
         </section>
     )
 }
