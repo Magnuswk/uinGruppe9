@@ -575,5 +575,5 @@ main{
   position:absolute;
 }
 .accordian{
-  display: none;
+  display: none !important;
 }
