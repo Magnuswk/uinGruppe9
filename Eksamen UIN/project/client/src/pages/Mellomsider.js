@@ -41,7 +41,7 @@ const Kurs = () => {
 
 
     const handleGrid = () =>{
-        endreStyle.current.style.gridTemplateColumns = "22% 22% 22% 22%"
+        endreStyle.current.style.gridTemplateColumns = "20% 20% 20% 20%"
     }
     const handleListe = () =>{
         endreStyle.current.style.gridTemplateColumns = "22%"
