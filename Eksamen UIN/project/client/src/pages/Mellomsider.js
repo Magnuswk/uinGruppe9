@@ -61,7 +61,7 @@ const Kurs = () => {
     )
     }else{
     return (
-        <main>
+        <main id='mellomsidemain'>
             <section id="searchTop">
                     <button onClick={handleListe}>Vis Som Liste</button>
                     <button onClick={handleGrid}>Vis Som Grid</button>

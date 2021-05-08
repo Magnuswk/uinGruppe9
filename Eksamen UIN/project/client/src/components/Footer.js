@@ -14,7 +14,6 @@ const Footerstyle = styled.footer`
     margin-bottom: 1 rem;
     left: 0;
     bottom: 0;
-    overflow: hidden;
     margin-top: 5%;
     display: grid;
     grid-template-columns: 41% 39% 10%;
@@ -29,7 +28,6 @@ const Footer = () =>  {
                     <section className='grid-item'>
                     <img src={salten} alt="salten logo"  width="600"></img>
                     </section>
-
                     <section className="grid-item">
                         <p>Kontakt oss:  </p>
                         <p>© ØSTBØ AS   </p>
@@ -41,7 +39,7 @@ const Footer = () =>  {
                         <p>En del av SB-konsernet</p>
                     </section>
 
-                    <section className='grid-item'>test
+                    <section className='grid-item'>
 
                     </section>
 

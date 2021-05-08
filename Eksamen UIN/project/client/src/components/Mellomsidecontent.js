@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-// prop er forskjellige JSON filer for hvilket content som skal displayest,  location er linken brukeren er på
+import {urlFor}from '../utils/imageUrl';
+
 const Mellomsidecontent = ({data, location}) => {
     // Viser alle mellomsider, Søk, Kurs eller Nyheter
     return (
@@ -9,9 +10,8 @@ const Mellomsidecontent = ({data, location}) => {
                 {data?.map(function(name, index){
                     return <article key={name.slug}>
                                 <h1>{name.tittel}</h1>
-                                <img src={name.bilde.asset.url} alt={name.tittel}></img>
-                                <h2>{name.beskrivelse}</h2>
-                                {/* Vis forskjellig dato dersom det er kurs */}
+                                <img src={urlFor(name.bilde.asset.url).width(900).height(600).format('webp').url()} alt={name.tittel}></img>
+                                <p>{name.beskrivelse}</p>
                                 {location === "Kurs" ?<h3>{name.startdato}</h3>: null}
                                 {/* Vis forskjellig dato dersom det er nyhet */}
                                 {location === "Nyheter" ? <h3>{name.dato}</h3> : null}

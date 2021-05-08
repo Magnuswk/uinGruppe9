@@ -5,7 +5,7 @@ const Kontakt = () => {
     // Komponent som sender brukeren til kontakt oss siden
     return (
         <section>
-            <Link to='/Om-Oss/kontakt-oss' id='kontakt'>Kontakt Oss</Link>
+            <Link to='/Om-Oss/kontakt-oss' id='kontakt'>Kontakt oss</Link> 
         </section>
     )
 }

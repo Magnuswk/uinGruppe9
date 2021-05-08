@@ -50,17 +50,17 @@ const Artikler = () => {
     <main id="artikkelmain">
       <section>
         <article>
-          <Sidebar  kategori={data?.kategori}/>
-          <Breadcrumbs  data={data} location={location} />
-          <div>
-            <h1 className='h1tjenester'>{data.tittel}</h1>
-            <div id='imagewrapper' >
+          <Breadcrumbs data={data} location={location} />
+          <div >
+          <h1 className='h1tjenester'>{data.tittel}</h1>
+          <div id='imagewrapper' >
           <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
           </div>
           <BlockContent blocks={data?.body}/>
           {data.tittel === 'Kontakt oss'? <FAQ /> : null}
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </div>
+          <Sidebar kategori={data?.kategori}/>
           </article>
         </section>
     </main>
