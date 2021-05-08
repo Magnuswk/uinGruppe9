@@ -11,7 +11,7 @@ import Kontakt from "../components/Kontakt"
 
 
 const Routes = () =>(
-
+    // Standard routes compontent, men som har Header, kontakt og Footer komponentene inkludert her istedet for å inkludere dem over alt
     <Router>
         <Header />
         <Kontakt/>

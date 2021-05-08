@@ -6,10 +6,10 @@ import { mainkursfetch } from '../utils/artikkelService'
 import { mainnyhetfetch } from '../utils/artikkelService'
 import Breadcrumbs from '../components/Breadcrumbs';
 import BlockContent from '@sanity/block-content-to-react'
-import { sidebarfetch } from '../utils/artikkelService'
 import Sidebar from '../components/Sidebar'
 import {urlFor} from '../utils/imageUrl'
 import Skjemaer from '../components/Skjemaer/Skjemaer'
+import FAQ from '../components/FAQ';
 
 
 /*  Denne komponenten lager alle sider */
@@ -21,6 +21,7 @@ const Artikler = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
       const fetchAsyncData = async () => {
+        // Sjekker hva den skal fetche utfra linken på siden
           try {
             if (slug === "Kurs"){
               const side = await mainkursfetch(location.pathname)
@@ -39,6 +40,7 @@ const Artikler = () => {
       fetchAsyncData();
   }, [location, slug]);
 
+  // Om data laster eller ikke finnes bruk loading komponenten til å vise status til brukeren
   if (data === null || data === "ikke funnet"){
     return(
       <Loading data={data}/>
@@ -55,6 +57,7 @@ const Artikler = () => {
           <img src={urlFor(data?.bilde.asset.url).format('webp').url()} alt={data.tittel}></img>
           </div>
           <BlockContent blocks={data?.body}/>
+          {data.tittel === 'Kontakt oss'? <FAQ /> : null}
           <Skjemaer type={data.tittel} pris={data.pris} kategori={slug}/>
           </div>
           <Sidebar kategori={data?.kategori}/>

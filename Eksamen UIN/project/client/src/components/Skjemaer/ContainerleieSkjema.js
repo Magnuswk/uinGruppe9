@@ -20,7 +20,7 @@ const ContainerleieSkjema = ({onSubmit}) => {
     const [datoforhenting, setDatoforhenting] = useState(null)
     const [tilleggsopplysninger, setTilleggsopplysninger] = useState(null)
     const [beskrivplasseringen, setBeskrivplasseringen] = useState(null)
-
+    // Component som Lager Containerleieskjema
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({avdeling, navn, adresse, postnummer, poststed, telefonnummer, fakturatiladresse, fakturamottaker, fakturaadresse, fakturapostnummer, fakturapoststed, fakturaepostadresse, postellerepost, plasseringsadresse, datoforutsetting, datoforhenting, tilleggsopplysninger, beskrivplasseringen})
@@ -93,7 +93,7 @@ const ContainerleieSkjema = ({onSubmit}) => {
                     onChange={(event)=> setFakturamottaker(event.target.value)}></input>
 
                     <label htmlFor='Fakturaadresse'>Faktura adresse</label>
-                        <input id='Fakturaadresse'  required 
+                        <input id='Fakturaadresse'  required
                             onChange={(event)=> setFakturaadresse(event.target.value)}></input>
 
                     <label htmlFor='Fakturapostnummer'>Faktura postnummer</label>

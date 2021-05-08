@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { sidebarfetch, tinyhetsfetch, tikursfetch } from '../utils/artikkelService';
-
+// props er hvilken kategori siden tilhører
 const Sidebar = ({kategori}) => {
 
     /* Fetcher tittel, kategori og slug fra alle sider som har samme kategori som siden */
     const [sidebar, setSidebar] = useState(null)
     useEffect(()=> {
         const fetchAsyncsidebar = async () =>{
+          // Velger hvilken fetch som skal brukes på he forskjellige kategoriene
           try {
+            // om kategorien er en artikel
               if (kategori === "Tjenester" || kategori === "Sortering" || kategori === "Om Oss"){
                 const info = await sidebarfetch(kategori)
                 setSidebar (info)
@@ -25,12 +27,12 @@ const Sidebar = ({kategori}) => {
         };
         fetchAsyncsidebar();
     }, [kategori]);
-
+    // Sorter JSON filen etter tittel om siden er en artikkelside
     if (kategori !== "Kurs" && kategori !== "Nyheter"){
         sidebar?.sort(function (a, b) {return a.tittel.localeCompare(b.tittel);});
     }
 
-    /* Pusher til nytt array for å unngå at kategorisiden vises i sidebar */
+    /* Om tittel ikke er lik kategorisiden */
     const newArray = []
     sidebar?.map(item =>  item.tittel !== item.kategori ? newArray.push(item) : null);
     /* Sjekker om JSON er fetchet */

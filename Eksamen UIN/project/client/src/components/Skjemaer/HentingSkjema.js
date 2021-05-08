@@ -16,6 +16,7 @@ const HentingSkjema = ({onSubmit}) => {
     const [farligavfallsdeklarasjon, setFarligavfallsdeklarasjon] = useState('nei')
     const [bytteembalasje, setBytteembalasje] = useState('nei')
     const [hentedato, setHentedato] = useState(null)
+    // Component som Lager Henting skjema
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit({avdeling, firmanavn, bestillersnavn, epostadresse, telefonnummer, henteadresse, kontaktperson, telefonkontaktperson, hvilketavfall, henvendelse, tilleggsopplysninger, kontaktforhenting, farligavfallsdeklarasjon, bytteembalasje, hentedato})
@@ -70,8 +71,8 @@ const HentingSkjema = ({onSubmit}) => {
                     onChange={(event)=> setHenvendelse(event.target.value)}></textarea>
 
             <label htmlFor='Tilleggsopplysninger'>Tilleggsopplysninger</label>
-                <input id='Tilleggsopplysninger' required title="Vennligst skriv inn tilleggsopplysninger!"
-                    onChange={(event)=> setTilleggsopplysninger(event.target.value)}></input>
+                <textarea id='Tilleggsopplysninger' required title="Vennligst skriv inn tilleggsopplysninger!"
+                    onChange={(event)=> setTilleggsopplysninger(event.target.value)}></textarea>
 
             <label htmlFor='Kontaktforhenting'>Ønsker du å bli kontaktet før henting?</label><br/>
                 <input type="radio"
