@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import {urlFor}from '../utils/imageUrl';
 
 const Mellomsidecontent = ({data, location}) => {
     return (
@@ -7,8 +8,8 @@ const Mellomsidecontent = ({data, location}) => {
                 {data?.map(function(name, index){
                     return <article key={name.slug}>
                                 <h1>{name.tittel}</h1>
-                                <img src={name.bilde.asset.url} alt={name.tittel}></img>
-                                <h2>{name.beskrivelse}</h2>
+                                <img src={urlFor(name.bilde.asset.url).width(900).height(600).format('webp').url()} alt={name.tittel}></img>
+                                <p>{name.beskrivelse}</p>
                                 {location === "Kurs" ?<h3>{name.startdato}</h3>: null}
                                 {location === "Nyheter" ? <h3>{name.dato}</h3> : null}
                                 <Link to={name.slug}><button>Les mer</button></Link>

@@ -63,7 +63,11 @@ code {
 /* HOME MAIN SECTION */
 main{
   width: 100%;
-
+ }
+ /* MAIN SECTION FOR MELLOMSIDER */
+ #mellomsidemain{
+   margin-top: 9.5%;
+   min-height: 44.6vh;
  }
 /* Ikoner meny */
 #mainsection{
@@ -115,7 +119,6 @@ main{
   width: 26px;
   text-align:center;
   margin-top: 5%;
-  margin-left: 98%;
   writing-mode: vertical-rl;
   position:fixed;
   font-weight: bold;
@@ -132,7 +135,7 @@ main{
 /*  Sidenbar */
 #sidebar{
   width:25%;
-  margin-top: 9.9%;
+  margin-top: 9.6%;
   float: right;
   background-color:#93ba3d;
   border-radius: 10px;
@@ -176,21 +179,20 @@ main{
 /* Hovedsiden */
 #artikkelmain{
   width: 100%;
-  float:left;
   font-family: 'PT Sans', sans-serif;
   font-size: 100%;
   font-size: 16px;
   line-height: 1.5;
-  position: flex;
   background: "f0f4fb";
+  margin-top: 8%;
 }
 #artikkelmain section{
  margin: 2rem auto;
- max-width: calc(80% - 80px);
+ max-width: calc(90% - 80px);
 }
 #artikkelmain section article{
   display: grid;
-  grid-template-columns: 200px 50% 100%;
+  grid-template-columns: 23% 50% 100%;
   grid-template-rows: auto minmax(min, max);
   gap: 2rem;
 }
@@ -198,14 +200,12 @@ main{
   text-align:center;
   font-size: 40px;
   margin-bottom: 30px;
-  margin-top: 50px;
+  margin-top: 8%;
+  
 }
 #artikkelmain section article div{
   background: whitesmoke;
   border-radius: 20px;
-}
-#artikkelmain section article div h1{
-  margin-left: 0.8%;
 }
 #artikkelmain section article div h2{
   margin-bottom: 0px;
@@ -250,7 +250,7 @@ main{
 }
 /* Breadcrumbs */
 #breadcrumbs {
-  margin-top: 5rem;
+  margin-top: 8%;
   z-index: 9;
 }
 
@@ -258,7 +258,11 @@ main{
   display: inline;
   text-decoration:none;
   margin-right: 0px;
-  margin-left:20px;
+  margin-left: 10px;
+  font-size: 10pt;
+}
+#breadcrumbs li:first-child{
+  margin-left: 1px;
 }
 /* Error denne siden finnes ikke */
 #error{
@@ -412,19 +416,22 @@ main{
 #nyhet{
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
-  height: 100%;
+  height:max-content;
+  gap: 5%;
   text-align:center;
+  margin-left: 10%;
+  border: solid;
 }
 #nyhetoverskrift{
   font-size: 50px;
   text-align:center;
+  margin-bottom: 2%;
 }
 #nyhet article{
-  margin-left: 50%;
-  margin-top: 20%;
   width: 400px;
   text-align:center;
   position:relative;
+  border: solid;
 }
 #nyhet article h1{
   font-size: 20px;
@@ -498,6 +505,10 @@ main{
   border-radius: 15px;
   background-color: #93ba3d;
   padding: 0.5%;
+}
+#skjemasection form h1{
+  padding-bottom: 6px;
+  font-weight: bold;
 }
 #skjemasection form{
   margin-left: 20%;
