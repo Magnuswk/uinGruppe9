@@ -75,7 +75,7 @@ const Search = ({søkeliste}) => {
                         placeholder="Søkeboks" 
                         value={value}
                         onChange={(event) => setValue(event.target.value)}
-                        onClick={(event) => handleBlur(event)}
+                        onClick={(event) => handleFocus(event)}
                         />
                 { open && 
                 <ul id="searchresult" ref={ulRef}>{}

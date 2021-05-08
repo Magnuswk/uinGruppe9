@@ -74,7 +74,7 @@ main{
  /* MAIN SECTION FOR MELLOMSIDER */
  #mellomsidemain{
    margin-top: 9.5%;
-   min-height: 44.6vh;
+   min-height: 51.8vh;
  }
 /* mellsomside Vis som liste knapp og vis som grid */
 #searchTop button{
@@ -98,7 +98,7 @@ main{
   left:25vw;
   vertical-align: top;
   text-align: center;
-  padding: 4rem;
+  padding: 5rem;
 }
 #mainsection article{
   width: 10rem;
@@ -226,16 +226,13 @@ main{
   background: whitesmoke;
   border-radius: 20px;
 }
-#artikkelmain section article h1{
-  font-size: 30px;
-}
-#artikkelmain section article h2{
+#artikkelmain section article div h2{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 25px;
   margin-left: 0.8%;
 }
-#artikkelmain section article h3{
+#artikkelmain section article div h3{
   margin-bottom: 0px;
   font-weight:bold;
   font-size: 20px;
@@ -427,20 +424,13 @@ main{
 #skjema label,input,select{
   display:block;
 }
-#testartikkel button{
-  margin-top: 7.4%;
-}
 #testartikkel article{
   text-align:center;
   text-decoration:none;
   color:black;
-  margin-top: 2.4%;
 }
 #testartikkel article a{
   font-size: 25px;
-}
-#testartikkel button{
-  margin-top: 7.4%;
 }
 /*  CSS for hovuyd nyhetssiden */
 #nyhet{
@@ -606,6 +596,15 @@ main{
   bottom: 0;
   position:absolute;
 }
-.accordian{
-  display: none;
+
+#accordion .accordian{
+  display:none;
+}
+
+#accordion button{
+  background-color: #93ba3d;
+  border-radius: 20px;
+  width:100%;
+  font-weight: bold;
+  padding-top: 10px;
 }

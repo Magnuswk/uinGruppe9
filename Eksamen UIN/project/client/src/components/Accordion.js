@@ -14,7 +14,7 @@ const Accordion = ({sporsmal, svar}) => {
         }
     }
     return (
-        <section>
+        <section id='accordion'>
             <button onClick={handleClick}>
                 <p>
                     {sporsmal}
