@@ -64,37 +64,32 @@ const Search = ({søkeliste}) => {
         // om brukeren ikke trykker på noe som ikke er inni node fjern søkeforslag
         setOpen(false)
     }
-    // Om brukeren trykker på Søke knappen
-    const handleClick = () =>{
-        if (value){
-            // redirect brukeren til siden for søk og ha med søkestrengen i linken
-            window.location.href = "/Search/" + value;
-        }
-    }
     return (
         <section id="search" ref={node}>
-            {/* Input for søk */}
-            <input
-                    type="text"
-                    id='searchbox'
-                    placeholder="Søkeboks"
-                    value={value}
-                    onChange={(event) => setValue(event.target.value)}
-                    onClick={(event) => handleFocus(event)}
-                    />
-            {/* Bare render dette om open === true */}
-            { open &&
-             <ul id="searchresult" ref={ulRef}>{}
-                 {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
-                {
-                result?.map(function(name, index){
-                   return <li key={ name.slug }><Link to={name.slug}>{name.title}</Link></li>;
-                })
-             }
-            </ul>}
+            <form action={"/Search/" + value} method="get">
+                {/* Input for søk */}
+                <input
+                        type="text"
+                        id='searchbox'
+                        placeholder="Søkeboks"
+                        value={value}
+                        onChange={(event) => setValue(event.target.value)}
+                        onClick={(event) => handleFocus(event)}
+                        />
+                {/* Bare render dette om open === true */}
+                { open &&
+                <ul id="searchresult" ref={ulRef}>{}
+                    {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}
+                    {
+                    result?.map(function(name, index){
+                    return <li key={ name.slug }><Link to={name.slug}>{name.title}</Link></li>;
+                    })
+                }
+                </ul>}
 
 
-            <Søkeknapp onClick={handleClick}>Søk</Søkeknapp>
+                <Søkeknapp>Søk</Søkeknapp>
+            </form>
         </section>
     )
 }
