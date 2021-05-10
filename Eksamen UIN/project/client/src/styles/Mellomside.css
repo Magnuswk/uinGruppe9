@@ -1,0 +1,73 @@
+/* MAIN SECTION FOR MELLOMSIDER */
+#mellomsidemain{
+    margin-top: 9.5%;
+    min-height: 51.8vh;
+  }
+ 
+/* mellsomside Vis som liste knapp og vis som grid */
+#searchTop button{
+    font-size: 20px;
+    border: solid 1px;
+    border-color: #93ba3d;
+    width: 10%;
+    border-radius: 15px;
+    background-color: #93ba3d;
+    margin-top: 2%;
+    margin-left: 2%;
+  }
+/*  CSS for mellomside grid*/
+#mellomSide{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-auto-rows: minmax(280px, auto);
+    column-gap: 5%;
+    row-gap: 15px;
+    text-align:center;
+    margin-left: 7%;
+    
+  }
+  #mellomSideOverskrift{
+    font-size: 50px;
+    text-align:center;
+    margin-bottom: 2%;
+  }
+  #mellomSide article{
+    width: 400px;
+    text-align:center;
+    position:relative;
+    box-shadow: 0 4px 20px 0 grey,0 1px 20px 0 grey ;
+    border-radius: 20px;
+    padding: 10px;
+    border: solid 1px;
+    border-color: #93ba3d;
+  }
+  #mellomSide article h1{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  #mellomSide article p{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  #mellomSide article h3{
+    font-size: 10px;
+    margin-bottom: 40px;
+  }
+  #mellomSide article img{
+    width: 200px;
+  }
+  #mellomSide article a button{
+    font-size: 20px;
+    border: solid 1px;
+    border-color: #93ba3d;
+    width: 25%;
+    left: 36%;
+    bottom: 3%;
+    position:absolute;
+    border-radius: 15px;
+    background-color: #93ba3d;
+  }
+  #mellomSide article a button:hover{
+    cursor: pointer;
+    background-color: #597225;
+  }

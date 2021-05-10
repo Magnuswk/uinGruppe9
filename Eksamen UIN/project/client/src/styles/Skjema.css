@@ -1,0 +1,54 @@
+/* CSS for skjemaene */
+
+#skjema{
+    border: 1px solid black;
+    width: 62%;
+    display:block;
+    position: "flex";
+  }
+  #skjema label,input,select{
+    display:block;
+  }
+  #testartikkel article{
+    text-align:center;
+    text-decoration:none;
+    color:black;
+  }
+  #testartikkel article a{
+    font-size: 25px;
+  }
+  #skjemasection{
+    float:none;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #93ba3d;
+    padding: 0.5%;
+  }
+  #skjemasection form h1{
+    padding-bottom: 6px;
+    font-weight: bold;
+  }
+  #skjemasection form{
+    margin-left: 20%;
+  }
+  #skjemasection form textarea{
+    display:block;
+  }
+  #skjemasection form button{
+    margin-bottom: 10%;
+    display:block;
+  }
+  .radiobutton{
+    display:inline-block;
+  }
+  #accordion .accordian{
+    display:none;
+  }
+  
+  #accordion button{
+    background-color: #93ba3d;
+    border-radius: 20px;
+    width:100%;
+    font-weight: bold;
+    padding-top: 10px;
+  }

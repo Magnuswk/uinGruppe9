@@ -64,6 +64,7 @@ const Search = ({søkeliste}) => {
         // om brukeren ikke trykker på noe som ikke er inni node fjern søkeforslag
         setOpen(false)
     }
+
     return (
         <section id="search" ref={node}>
             <form action={"/Search/" + value} method="get">
@@ -76,7 +77,6 @@ const Search = ({søkeliste}) => {
                         onChange={(event) => setValue(event.target.value)}
                         onClick={(event) => handleFocus(event)}
                         />
-                {/* Bare render dette om open === true */}
                 { open &&
                 <ul id="searchresult" ref={ulRef}>{}
                     {/* Mapper igjennom tidligere array og gjør det om til klikkbare linker */}

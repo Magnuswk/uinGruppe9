@@ -1,0 +1,133 @@
+/* HOME MAIN SECTION */
+main{
+    width: 100%;
+   }
+/* Ikoner meny */
+#mainsection{
+  display: grid;
+  grid-template-columns: 8vw 8vw 8vw 8vw;
+  gap: 4vh;
+  margin-left: 25%;
+  margin-top: 8%;
+  margin-bottom: 0;
+  left:25vw;
+  vertical-align: top;
+  text-align: center;
+  padding: 5rem;
+}
+#mainsection article{
+  width: 10rem;
+  height: 10rem;
+  margin-top: 15%;
+  border: solid 1px black;
+  margin-left:50px;
+  border-radius: 30px;
+  text-align: center;
+  cursor:pointer;
+  background-color: #93ba3d;
+  padding: 2rem;
+}
+
+#mainsection div a{
+  text-decoration: none;
+}
+
+.caption{
+  display: block;
+  padding-top: 1rem;
+  font-size: x-large;
+  width: 16rem;
+  margin-left: 4rem;
+  text-align: center;
+  color: black;
+}
+
+#mainsection article:hover{
+  background-color:#597225;
+}
+/* Styling for nyhets delen av forsiden */
+#nyhettittel{
+    font-size: 40px;
+    margin-top: 10%;
+    text-align:center;
+  }
+  #nyhetsboks{
+    width: 60%;
+    margin-left: 20%;
+    height:60rem;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    box-shadow: 0 4px 20px 0 grey,0 1px 20px 0 grey ;
+  }
+  #hovednyhet{
+    text-align:center;
+  }
+  #hovednyhet img{
+    width:450px;
+  }
+  #hovednyhet h1{
+    font-size: 40px;
+  }
+  #hovednyhet h2{
+    font-size: 20px;
+  }
+  #extranyhet{
+    border-left: 3px solid #93ba3d;
+    overflow-y:scroll;
+    margin-left: -1px;
+  }
+  #extranyhet h1{
+    margin-top: 15px;
+    font-size: 20px;
+    text-align:center;
+    padding-bottom: 15px;
+    box-shadow: 0 4px 1px 0 rgba(0, 0, 0, 0.2);
+  }
+  .eldrenyheter{
+    width:100%;
+    height: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  .eldrenyheter h2{
+    font-size: 15px;
+    text-align:center;
+    margin-top: 20px;
+    margin-left: -4.5vw;
+  }
+  .eldrenyheter img{
+    width: 100px;
+    margin-top: 5vh;
+  }
+  #lesmer{
+    margin-top: 10px;
+    margin-left: 45%;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    font-size: 17px;
+    background-color: #93ba3d;
+    border:none;
+    cursor:pointer;
+  }
+  #lesmer:hover{
+    background-color: #597225;
+  }
+  #lesmer a{
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+  }
+  #sort{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    margin-left: 20%;
+    margin-top: 10px;
+    border:none;
+    background-color: #93ba3d;
+    cursor: pointer;
+  }
+  #sort:hover{
+    background-color: #597225;
+  }
