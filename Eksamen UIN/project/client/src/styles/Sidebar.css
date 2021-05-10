@@ -1,0 +1,44 @@
+/*  Sidenbar */
+#sidebar{
+    width:25%;
+    margin-top: 9.6%;
+    float: right;
+    background-color:#93ba3d;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    list-style: none;
+    overflow: hidden;
+    height: fit-content;
+  }
+  #sidebar h1{
+    display: block;
+    padding: 2rem;
+    background-color: black;
+    color: #ddd;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align:center;
+    font-size: 25px;
+    margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  #sidebar a{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid, #cecece;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    margin-left: 25px;
+    text-decoration:none;
+    color: black;
+    cursor: pointer;
+  }
+  #sidebar a:hover{
+    color:whitesmoke;
+  }
+  

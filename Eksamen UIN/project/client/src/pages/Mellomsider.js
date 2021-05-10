@@ -66,9 +66,9 @@ const Kurs = () => {
                     <button onClick={handleListe}>Vis Som Liste</button>
                     <button onClick={handleGrid}>Vis Som Grid</button>
                     {/* Om brukeren har søkt etter noke vis Søkeresultater ellers vis linken */}
-                    <h1 id="nyhetoverskrift">{location.includes("Search")? "Søkeresultater": location}</h1>
+                    <h1 id="mellomSideOverskrift">{location.includes("Search")? "Søkeresultater": location}</h1>
             </section>
-            <section id="nyhet" ref={endreStyle}>
+            <section id="mellomSide" ref={endreStyle}>
                 { result === false? <Mellomsidecontent data={data} location={location} />: <Mellomsidecontent data={result} location={location} />}
             </section>
         </main>

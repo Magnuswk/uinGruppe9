@@ -1,0 +1,28 @@
+/* Finnes ikke Main wrapper */
+#grid-container{
+  width: 100%;
+  height: 100%;
+
+}
+/*  Siden Loader */
+#loading{
+    margin-left: 40%;
+    margin-top: 15%;
+    margin-bottom: 100%;
+    font-size: 75px;
+  }
+  
+  /* Error denne siden finnes ikke */
+  #error{
+    position:absolute;
+    left:25%;
+    top:78%;
+    font-size: 100px;
+  }
+  /* Bilde på denne siden finnes ikke */
+  #finnes-ikke{
+    width: 1000px;
+    margin-left:25%;
+    margin-top: 10%;
+  }
+  
